@@ -2,64 +2,200 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto border-b border-gray-100">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/TekZuri Logo - 1 - Edited.png"
+          alt="TekZuri Logo"
+          width={70}
+          height={70}
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="hidden md:flex items-center gap-10">
+          <a href="#services" className="text-gray-600 hover:text-burgundy transition-colors tracking-wide text-sm uppercase">
+            Services
+          </a>
+          <a href="#about" className="text-gray-600 hover:text-burgundy transition-colors tracking-wide text-sm uppercase">
+            About
+          </a>
+          <a href="#contact" className="text-gray-600 hover:text-burgundy transition-colors tracking-wide text-sm uppercase">
+            Contact
+          </a>
+        </div>
+        <a
+          href="#contact"
+          className="bg-burgundy text-white px-6 py-3 hover:bg-burgundy-dark transition-colors font-medium text-sm tracking-wide uppercase"
+        >
+          Get Started
+        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="px-8 py-24 max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-20">
+          <div className="flex-1 text-center lg:text-left">
+            <p className="text-burgundy uppercase tracking-[0.3em] text-sm mb-6">Work with Elegance</p>
+            <h1 className="text-5xl md:text-7xl font-light text-gray-900 leading-tight mb-8">
+              Technology
+              <span className="block font-semibold">Crafted with Care</span>
+            </h1>
+            <p className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed">
+              Inspired by the Japanese philosophy of monozukuri, we blend meticulous craftsmanship
+              with cutting-edge technology to build solutions that stand the test of time.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a
+                href="#services"
+                className="bg-gray-900 text-white px-8 py-4 hover:bg-burgundy transition-colors font-medium text-sm tracking-wide uppercase"
+              >
+                Explore Services
+              </a>
+              <a
+                href="#about"
+                className="border border-gray-900 text-gray-900 px-8 py-4 hover:bg-gray-900 hover:text-white transition-colors font-medium text-sm tracking-wide uppercase"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+          <div className="flex-1 flex justify-center">
+            <Image
+              src="/TekZuri Logo - 1 - Edited.png"
+              alt="TekZuri"
+              width={420}
+              height={420}
+              className="w-full max-w-md"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="h-px bg-gray-200"></div>
+      </div>
+
+      {/* Services Section */}
+      <section id="services" className="px-8 py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <p className="text-burgundy uppercase tracking-[0.3em] text-sm mb-4">What We Do</p>
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900">Our Services</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-px bg-gray-200">
+            {/* Service Card 1 */}
+            <div className="bg-white p-12 hover:bg-gray-50 transition-colors group">
+              <div className="w-12 h-12 border border-burgundy flex items-center justify-center mb-8 group-hover:bg-burgundy transition-colors">
+                <svg className="w-6 h-6 text-burgundy group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-medium text-gray-900 mb-4">Web Development</h3>
+              <p className="text-gray-500 leading-relaxed">
+                Custom websites and web applications built with modern technologies and best practices.
+              </p>
+            </div>
+            {/* Service Card 2 */}
+            <div className="bg-white p-12 hover:bg-gray-50 transition-colors group">
+              <div className="w-12 h-12 border border-burgundy flex items-center justify-center mb-8 group-hover:bg-burgundy transition-colors">
+                <svg className="w-6 h-6 text-burgundy group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-medium text-gray-900 mb-4">Mobile Solutions</h3>
+              <p className="text-gray-500 leading-relaxed">
+                Native and cross-platform mobile apps that deliver seamless user experiences.
+              </p>
+            </div>
+            {/* Service Card 3 */}
+            <div className="bg-white p-12 hover:bg-gray-50 transition-colors group">
+              <div className="w-12 h-12 border border-burgundy flex items-center justify-center mb-8 group-hover:bg-burgundy transition-colors">
+                <svg className="w-6 h-6 text-burgundy group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-medium text-gray-900 mb-4">IT Consulting</h3>
+              <p className="text-gray-500 leading-relaxed">
+                Strategic guidance to help your business leverage technology effectively.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="px-8 py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
+            <div className="flex-1">
+              <div className="w-full aspect-square border border-gray-200 bg-white flex items-center justify-center">
+                <div className="text-center p-12">
+                  <span className="text-5xl md:text-6xl font-light text-burgundy tracking-tight">TekZuri</span>
+                  <div className="w-16 h-px bg-burgundy mx-auto my-6"></div>
+                  <p className="text-gray-500 text-lg tracking-wide">Tech + Monozukuri</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1">
+              <p className="text-burgundy uppercase tracking-[0.3em] text-sm mb-4">Our Philosophy</p>
+              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-8">
+                The Art of Making Things
+              </h2>
+              <p className="text-lg text-gray-500 mb-6 leading-relaxed">
+                <strong className="text-burgundy font-medium">Monozukuri</strong> (ものづくり) is a Japanese concept
+                that encompasses not just making things, but the spirit and mindset behind creating
+                products with dedication and craftsmanship.
+              </p>
+              <p className="text-lg text-gray-500 mb-6 leading-relaxed">
+                At TekZuri, we bring this philosophy to technology. Every line of code,
+                every design decision, every solution is crafted with intention and care.
+              </p>
+              <p className="text-lg text-gray-500 leading-relaxed">
+                Formerly known as Interconnect, we&apos;ve evolved our identity to better reflect
+                our commitment to elegant, thoughtful technology solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="px-8 py-24 bg-gray-900">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-burgundy-light uppercase tracking-[0.3em] text-sm mb-4">Contact</p>
+          <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
+            Ready to Build Something Elegant?
+          </h2>
+          <p className="text-lg text-gray-400 mb-10 leading-relaxed">
+            Let&apos;s discuss how we can help bring your vision to life with craftsmanship and care.
+          </p>
+          <a
+            href="mailto:hello@tekzuri.com"
+            className="inline-block bg-burgundy text-white px-10 py-4 hover:bg-burgundy-light transition-colors font-medium text-sm tracking-wide uppercase"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-8 py-10 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <Image
+              src="/TekZuri Logo - 1 - Edited.png"
+              alt="TekZuri Logo"
+              width={36}
+              height={36}
+            />
+            <span className="font-medium text-gray-900 tracking-wide">TekZuri</span>
+          </div>
+          <p className="text-gray-500 text-sm tracking-wide">
+            © {new Date().getFullYear()} TekZuri — Work with Elegance
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </footer>
     </div>
   );
 }
