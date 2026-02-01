@@ -8,9 +8,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="h-px bg-gray-200"></div>
-      </div>
       <ServicesSection />
       <PortfolioSection />
       <AboutSection />

@@ -1,20 +1,79 @@
 export function ContactSection() {
   return (
-    <section id="contact" className="px-8 py-24 bg-warm-900">
-      <div className="max-w-3xl mx-auto text-center">
-        <p className="text-burgundy-light uppercase tracking-[0.3em] text-sm mb-4">Contact</p>
-        <h2 className="text-4xl md:text-5xl font-light text-[#FEFBF6] mb-6">
-          Ready to Build Something Elegant?
+    <section id="contact" className="py-24 lg:py-32 bg-gray-900 relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
+      </div>
+
+      {/* Gradient orbs */}
+      <div className="absolute -top-40 -left-40 w-80 h-80 bg-accent/20 rounded-full blur-3xl" />
+      <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+
+      <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+          <span className="text-white/80 text-sm font-medium">Available for new projects</span>
+        </div>
+
+        {/* Headline */}
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+          Ready to build something
+          <span className="block text-accent">elegant?</span>
         </h2>
-        <p className="text-lg text-gray-400 mb-10 leading-relaxed">
-          Let&apos;s discuss how we can help bring your vision to life with craftsmanship and care.
+
+        {/* Description */}
+        <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          Let&apos;s discuss how we can help bring your vision to life with craftsmanship,
+          care, and cutting-edge technology.
         </p>
-        <a
-          href="mailto:hello@tekzuri.com"
-          className="inline-block bg-burgundy text-white px-10 py-4 hover:bg-burgundy-light transition-colors font-medium text-sm tracking-wide uppercase rounded-md"
-        >
-          Get in Touch
-        </a>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            className="group inline-flex items-center justify-center gap-3 bg-white text-gray-900 px-8 py-4 text-base font-medium hover:bg-accent hover:text-white transition-all duration-300 rounded-full"
+          >
+            Get in Touch
+            <svg
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a
+            href="mailto:hello@tekzuri.com"
+            className="group inline-flex items-center justify-center gap-3 bg-transparent text-white px-8 py-4 text-base font-medium border border-white/20 hover:border-white/40 transition-all duration-300 rounded-full"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            hello@tekzuri.com
+          </a>
+        </div>
+
+        {/* Trust indicators */}
+        <div className="mt-16 pt-16 border-t border-white/10">
+          <p className="text-gray-500 text-sm mb-8">Trusted by businesses across industries</p>
+          <div className="flex flex-wrap justify-center gap-8 opacity-50">
+            <span className="text-white font-medium">Mulsons</span>
+            <span className="text-white/30">•</span>
+            <span className="text-white font-medium">SKL</span>
+            <span className="text-white/30">•</span>
+            <span className="text-white font-medium">Kova Collective</span>
+            <span className="text-white/30">•</span>
+            <span className="text-white font-medium">UFS</span>
+          </div>
+        </div>
       </div>
     </section>
   );

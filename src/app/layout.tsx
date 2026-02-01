@@ -40,9 +40,9 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <div className="min-h-screen bg-[#FEFBF6]">
+        <div className="min-h-screen bg-white flex flex-col">
           <Navbar />
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>

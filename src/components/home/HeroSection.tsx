@@ -1,42 +1,124 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useState } from "react";
+
+const words = ["Elegance", "Precision", "Excellence", "Mastery"];
 
 export function HeroSection() {
+  const [currentWord, setCurrentWord] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentWord((prev) => (prev + 1) % words.length);
+        setIsAnimating(false);
+      }, 500);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="px-8 py-24 max-w-7xl mx-auto">
-      <div className="flex flex-col lg:flex-row items-center gap-20">
-        <div className="flex-1 text-center lg:text-left">
-          <p className="text-burgundy uppercase tracking-[0.3em] text-sm mb-6">Work with Elegance</p>
-          <h1 className="text-5xl md:text-7xl font-light text-gray-900 leading-tight mb-8">
-            Technology
-            <span className="block font-semibold">Crafted with Care</span>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50" />
+
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* Decorative circle */}
+      <div className="absolute -right-64 top-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-accent/5 to-transparent blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32 w-full">
+        <div className="max-w-4xl">
+          {/* Tagline */}
+          <div className="animate-fade-in opacity-0 mb-6">
+            <span className="inline-flex items-center gap-2 text-accent font-medium text-sm tracking-wide">
+              <span className="w-8 h-px bg-accent" />
+              Technology Meets Craftsmanship
+            </span>
+          </div>
+
+          {/* Main headline */}
+          <h1 className="animate-fade-in-up opacity-0 animation-delay-100 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.1] mb-8">
+            Build with
+            <span className="block mt-2">
+              <span
+                className={`inline-block text-accent transition-all duration-500 ${
+                  isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+                }`}
+              >
+                {words[currentWord]}
+              </span>
+            </span>
           </h1>
-          <p className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed">
-            Inspired by the Japanese philosophy of monozukuri, we blend meticulous craftsmanship
-            with cutting-edge technology to build solutions that stand the test of time.
+
+          {/* Description */}
+          <p className="animate-fade-in-up opacity-0 animation-delay-200 text-lg sm:text-xl text-muted max-w-2xl leading-relaxed mb-12">
+            Inspired by the Japanese philosophy of <span className="text-foreground font-medium">monozukuri</span>,
+            we craft digital solutions with meticulous attention to detail and timeless quality.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
+          {/* CTA Buttons */}
+          <div className="animate-fade-in-up opacity-0 animation-delay-300 flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-3 bg-gray-900 text-white px-8 py-4 text-base font-medium hover:bg-accent transition-all duration-300 rounded-full"
+            >
+              Start Your Project
+              <svg
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
             <a
               href="#services"
-              className="bg-warm-900 text-white px-8 py-4 hover:bg-burgundy transition-colors font-medium text-sm tracking-wide uppercase rounded-md"
+              className="group inline-flex items-center justify-center gap-3 bg-white text-gray-900 px-8 py-4 text-base font-medium border border-gray-200 hover:border-gray-900 transition-all duration-300 rounded-full"
             >
               Explore Services
-            </a>
-            <a
-              href="#about"
-              className="border border-warm-900 text-warm-900 px-8 py-4 hover:bg-warm-900 hover:text-white transition-colors font-medium text-sm tracking-wide uppercase rounded-md"
-            >
-              Learn More
+              <svg
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
             </a>
           </div>
-        </div>
-        <div className="flex-1 flex justify-center">
-          <Image
-            src="/tekzuri-logo.webp"
-            alt="TekZuri"
-            width={420}
-            height={420}
-            className="w-full max-w-md"
-          />
+
+          {/* Stats */}
+          <div className="animate-fade-in-up opacity-0 animation-delay-400 mt-20 pt-12 border-t border-gray-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">50+</div>
+                <div className="text-sm text-muted mt-1">Projects Delivered</div>
+              </div>
+              <div>
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">6+</div>
+                <div className="text-sm text-muted mt-1">Happy Clients</div>
+              </div>
+              <div>
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">3+</div>
+                <div className="text-sm text-muted mt-1">Years Experience</div>
+              </div>
+              <div>
+                <div className="text-3xl sm:text-4xl font-bold text-foreground">100%</div>
+                <div className="text-sm text-muted mt-1">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
