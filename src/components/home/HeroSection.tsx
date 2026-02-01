@@ -17,13 +17,13 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="#services"
-              className="bg-gray-900 text-white px-8 py-4 hover:bg-burgundy transition-colors font-medium text-sm tracking-wide uppercase"
+              className="bg-warm-900 text-white px-8 py-4 hover:bg-burgundy transition-colors font-medium text-sm tracking-wide uppercase rounded-md"
             >
               Explore Services
             </a>
             <a
               href="#about"
-              className="border border-gray-900 text-gray-900 px-8 py-4 hover:bg-gray-900 hover:text-white transition-colors font-medium text-sm tracking-wide uppercase"
+              className="border border-warm-900 text-warm-900 px-8 py-4 hover:bg-warm-900 hover:text-white transition-colors font-medium text-sm tracking-wide uppercase rounded-md"
             >
               Learn More
             </a>
@@ -31,7 +31,7 @@ export function HeroSection() {
         </div>
         <div className="flex-1 flex justify-center">
           <Image
-            src="/TekZuri Logo - 1 - Edited.png"
+            src="/tekzuri-logo.webp"
             alt="TekZuri"
             width={420}
             height={420}

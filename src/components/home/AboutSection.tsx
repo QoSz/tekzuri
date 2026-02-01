@@ -4,7 +4,7 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           <div className="flex-1">
-            <div className="w-full aspect-square border border-gray-200 bg-[#FEFBF6] flex items-center justify-center">
+            <div className="w-full aspect-square border border-gray-200 bg-[#FEFBF6] flex items-center justify-center rounded-md">
               <div className="text-center p-12">
                 <span className="text-5xl md:text-6xl font-light text-burgundy tracking-tight">TekZuri</span>
                 <div className="w-16 h-px bg-burgundy mx-auto my-6"></div>

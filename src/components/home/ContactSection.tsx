@@ -1,6 +1,6 @@
 export function ContactSection() {
   return (
-    <section id="contact" className="px-8 py-24 bg-gray-900">
+    <section id="contact" className="px-8 py-24 bg-warm-900">
       <div className="max-w-3xl mx-auto text-center">
         <p className="text-burgundy-light uppercase tracking-[0.3em] text-sm mb-4">Contact</p>
         <h2 className="text-4xl md:text-5xl font-light text-[#FEFBF6] mb-6">
@@ -11,7 +11,7 @@ export function ContactSection() {
         </p>
         <a
           href="mailto:hello@tekzuri.com"
-          className="inline-block bg-burgundy text-white px-10 py-4 hover:bg-burgundy-light transition-colors font-medium text-sm tracking-wide uppercase"
+          className="inline-block bg-burgundy text-white px-10 py-4 hover:bg-burgundy-light transition-colors font-medium text-sm tracking-wide uppercase rounded-md"
         >
           Get in Touch
         </a>

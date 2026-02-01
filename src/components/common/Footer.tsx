@@ -7,7 +7,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4">
           <Image
-            src="/TekZuri Logo - 1 - Edited.png"
+            src="/tekzuri-logo.webp"
             alt="TekZuri Logo"
             width={36}
             height={36}

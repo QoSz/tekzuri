@@ -24,10 +24,10 @@ export function ServicesSection() {
           <p className="text-burgundy uppercase tracking-[0.3em] text-sm mb-4">What We Do</p>
           <h2 className="text-4xl md:text-5xl font-light text-gray-900">Our Services</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-px bg-gray-200">
+        <div className="grid md:grid-cols-3 gap-px bg-warm-200">
           {services.map((service) => (
-            <div key={service.title} className="bg-[#FEFBF6] p-12 hover:bg-gray-50 transition-colors group">
-              <div className="w-12 h-12 border border-burgundy flex items-center justify-center mb-8 group-hover:bg-burgundy transition-colors">
+            <div key={service.title} className="bg-[#FEFBF6] p-12 hover:bg-warm-50 transition-colors group rounded-md">
+              <div className="w-12 h-12 border border-burgundy flex items-center justify-center mb-8 group-hover:bg-burgundy transition-colors rounded-md">
                 <svg className="w-6 h-6 text-burgundy group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={service.icon} />
                 </svg>
