@@ -1,8 +1,39 @@
-import { HeroSection } from '@/components/home/HeroSection';
-import { ServicesSection } from '@/components/home/ServicesSection';
-import { PortfolioSection } from '@/components/home/PortfolioSection';
-import { AboutSection } from '@/components/home/AboutSection';
-import { ContactSection } from '@/components/home/ContactSection';
+import type { Metadata } from "next";
+import { HeroSection } from "@/components/home/HeroSection";
+import { ServicesSection } from "@/components/home/ServicesSection";
+import { PortfolioSection } from "@/components/home/PortfolioSection";
+import { AboutSection } from "@/components/home/AboutSection";
+import { ContactSection } from "@/components/home/ContactSection";
+
+export const metadata: Metadata = {
+  title: "TekZuri | Work with Elegance",
+  description:
+    "Technology crafted with elegance. Inspired by monozukuri, we build web applications, mobile solutions, and provide IT consulting with meticulous craftsmanship.",
+  openGraph: {
+    title: "TekZuri | Work with Elegance",
+    description:
+      "Technology crafted with elegance. Inspired by monozukuri, we build web applications, mobile solutions, and provide IT consulting with meticulous craftsmanship.",
+    url: "https://tekzuri.com",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TekZuri - Work with Elegance",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TekZuri | Work with Elegance",
+    description:
+      "Technology crafted with elegance. Inspired by monozukuri, we build web applications, mobile solutions, and provide IT consulting with meticulous craftsmanship.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://tekzuri.com",
+  },
+};
 
 export default function Home() {
   return (

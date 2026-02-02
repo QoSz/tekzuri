@@ -2,9 +2,33 @@ import type { Metadata } from "next";
 import { TeamSection } from "@/components/about/TeamSection";
 
 export const metadata: Metadata = {
-  title: "About Us | TekZuri",
+  title: "About Us",
   description:
     "Meet the team behind TekZuri. We bring the Japanese philosophy of monozukuri - the art of making things with craftsmanship and elegance - to digital experiences.",
+  openGraph: {
+    title: "About Us | TekZuri",
+    description:
+      "Meet the team behind TekZuri. We bring the Japanese philosophy of monozukuri - the art of making things with craftsmanship and elegance - to digital experiences.",
+    url: "https://tekzuri.com/about",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About TekZuri",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | TekZuri",
+    description:
+      "Meet the team behind TekZuri. We bring the Japanese philosophy of monozukuri - the art of making things with craftsmanship and elegance - to digital experiences.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://tekzuri.com/about",
+  },
 };
 
 export default function AboutPage() {

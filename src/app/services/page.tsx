@@ -3,9 +3,33 @@ import Link from "next/link";
 import { services } from "@/lib/data/services";
 
 export const metadata: Metadata = {
-  title: "Services | TekZuri",
+  title: "Services",
   description:
     "Web development, mobile solutions, and IT consulting. We combine technical expertise with creative thinking to deliver solutions that exceed expectations.",
+  openGraph: {
+    title: "Services | TekZuri",
+    description:
+      "Web development, mobile solutions, and IT consulting. We combine technical expertise with creative thinking to deliver solutions that exceed expectations.",
+    url: "https://tekzuri.com/services",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TekZuri Services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | TekZuri",
+    description:
+      "Web development, mobile solutions, and IT consulting. We combine technical expertise with creative thinking to deliver solutions that exceed expectations.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://tekzuri.com/services",
+  },
 };
 
 const serviceIcons: Record<(typeof services)[number]["id"], React.ReactNode> = {

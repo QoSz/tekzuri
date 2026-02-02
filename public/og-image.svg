@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B2346"/>
+      <stop offset="100%" style="stop-color:#6B1A36"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Subtle pattern -->
+  <g opacity="0.05">
+    <circle cx="100" cy="100" r="200" fill="white"/>
+    <circle cx="1100" cy="530" r="250" fill="white"/>
+  </g>
+
+  <!-- Logo mark (TS in circle) -->
+  <g transform="translate(600, 200)">
+    <circle cx="0" cy="0" r="80" fill="rgba(255,255,255,0.15)"/>
+    <text x="0" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">TS</text>
+  </g>
+
+  <!-- Main text -->
+  <text x="600" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">TEKZURI</text>
+
+  <!-- Tagline -->
+  <text x="600" y="430" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="rgba(255,255,255,0.9)" text-anchor="middle">Work with Elegance</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="480" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="300" fill="rgba(255,255,255,0.7)" text-anchor="middle">Technology crafted with the art of monozukuri</text>
+
+  <!-- Decorative line -->
+  <rect x="500" y="500" width="200" height="2" fill="rgba(255,255,255,0.3)" rx="1"/>
+
+  <!-- Website URL -->
+  <text x="600" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.6)" text-anchor="middle">tekzuri.com</text>
+</svg>

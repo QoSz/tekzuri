@@ -24,13 +24,38 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!member) {
     return {
-      title: "Team Member Not Found | TekZuri",
+      title: "Team Member Not Found",
     };
   }
 
+  const title = `${member.name} - ${member.title}`;
+  const description = member.description[0];
+
   return {
-    title: `${member.name} - ${member.title} | TekZuri`,
-    description: member.description[0],
+    title,
+    description,
+    openGraph: {
+      title: `${title} | TekZuri`,
+      description,
+      url: `https://tekzuri.com/about/team/${slug}`,
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${member.name} - TekZuri Team`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | TekZuri`,
+      description,
+      images: ["/og-image.png"],
+    },
+    alternates: {
+      canonical: `https://tekzuri.com/about/team/${slug}`,
+    },
   };
 }
 

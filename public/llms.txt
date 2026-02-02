@@ -1,0 +1,47 @@
+# TekZuri
+
+> TekZuri is a web development agency that crafts elegant, performant digital experiences using Next.js, React, and TypeScript. Inspired by the Japanese philosophy of monozukuri (ものづくり), we bring meticulous craftsmanship and attention to detail to every project we build.
+
+TekZuri combines technical expertise with creative thinking to deliver solutions that exceed expectations and stand the test of time. Based in Nairobi, Kenya with international reach, we serve clients seeking strategic digital presence through custom web applications, mobile solutions, and IT consulting.
+
+Our name derives from monozukuri, meaning "the art of making things" with precision and care. This philosophy guides everything we do, from architecture decisions to pixel-perfect interfaces.
+
+## Services
+
+- [Web Development](https://tekzuri.com/services#web-development): Custom websites and web applications built with React, Next.js, and TypeScript. We focus on performance, responsive design, and exceptional user experience.
+- [Mobile Solutions](https://tekzuri.com/services#mobile-solutions): Native and cross-platform mobile applications for iOS and Android using React Native and Flutter. Seamless experiences across all devices.
+- [IT Consulting](https://tekzuri.com/services#it-consulting): Strategic technology guidance including cloud solutions, digital transformation, and tech strategy to help businesses leverage technology effectively.
+
+## Main Pages
+
+- [Home](https://tekzuri.com/): Our main landing page showcasing services, portfolio, team, and contact information.
+- [Services](https://tekzuri.com/services): Detailed breakdown of our service offerings with features and capabilities.
+- [Our Work](https://tekzuri.com/our-work): Portfolio showcasing completed projects and case studies across manufacturing, retail, logistics, and other industries.
+- [About](https://tekzuri.com/about): Learn about our team, philosophy, and the monozukuri approach that drives our craftsmanship.
+- [Contact](https://tekzuri.com/contact): Get in touch with us through our contact form or direct contact details.
+
+## Technology Stack
+
+TekZuri builds modern web applications using industry-leading technologies:
+
+- Next.js 16 with App Router for server-side rendering and optimal performance
+- React 19 for component-based user interfaces
+- TypeScript for type-safe, maintainable code
+- Tailwind CSS for responsive, mobile-first styling
+- React Hook Form with Zod for robust form handling and validation
+
+## Contact Information
+
+- Primary Email: hello@tekzuri.com
+- Business Inquiries: business@tekzuri.com
+- Phone (Kenya): +254 788 871 946
+- Phone (UK): +44 7586 752 568
+- Location: Nairobi, Kenya
+- LinkedIn: https://linkedin.com/company/tekzuri
+- Instagram: https://instagram.com/tekzuri
+
+## Optional
+
+- [Team Members](https://tekzuri.com/about): Individual team member profiles available at /about/team/[member-slug]
+- [Sitemap](https://tekzuri.com/sitemap.xml): XML sitemap listing all pages on the website
+- [Robots](https://tekzuri.com/robots.txt): Search engine crawl directives

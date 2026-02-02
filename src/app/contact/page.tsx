@@ -3,8 +3,33 @@ import { ContactInfo } from "@/components/contact/ContactInfo";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | TekZuri",
-  description: "Get in touch with TekZuri. We'd love to hear about your project and how we can help.",
+  title: "Contact Us",
+  description:
+    "Get in touch with TekZuri. We'd love to hear about your project and how we can help.",
+  openGraph: {
+    title: "Contact Us | TekZuri",
+    description:
+      "Get in touch with TekZuri. We'd love to hear about your project and how we can help.",
+    url: "https://tekzuri.com/contact",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact TekZuri",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | TekZuri",
+    description:
+      "Get in touch with TekZuri. We'd love to hear about your project and how we can help.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://tekzuri.com/contact",
+  },
 };
 
 export default function ContactPage() {
