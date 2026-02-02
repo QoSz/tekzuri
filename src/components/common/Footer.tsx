@@ -115,10 +115,10 @@ export function Footer() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="mailto:hello@tekzuri.com"
+                    href="mailto:business@tekzuri.com"
                     className="text-muted hover:text-foreground transition-colors text-sm"
                   >
-                    hello@tekzuri.com
+                    business@tekzuri.com
                   </a>
                 </li>
                 <li className="pt-4">

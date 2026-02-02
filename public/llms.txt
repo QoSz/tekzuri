@@ -32,7 +32,7 @@ TekZuri builds modern web applications using industry-leading technologies:
 
 ## Contact Information
 
-- Primary Email: hello@tekzuri.com
+- Primary Email: business@tekzuri.com
 - Business Inquiries: business@tekzuri.com
 - Phone (Kenya): +254 788 871 946
 - Phone (UK): +44 7586 752 568

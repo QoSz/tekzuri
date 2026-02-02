@@ -11,8 +11,8 @@ const contactItems: ContactItem[] = [
     icon: Mail,
     title: "Email",
     content: (
-      <a href="mailto:hello@tekzuri.com" className="hover:text-accent transition-colors">
-        hello@tekzuri.com
+      <a href="mailto:business@tekzuri.com" className="hover:text-accent transition-colors">
+        business@tekzuri.com
       </a>
     ),
   },

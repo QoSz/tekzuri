@@ -41,7 +41,7 @@ import { Component } from '@/app/component'
 
 - Static marketing site with no backend/database
 - Single-page design with sections: Hero, Services, Portfolio, About, Contact
-- Contact via mailto: `hello@tekzuri.com`
+- Contact via mailto: `business@tekzuri.com`
 - No API routes or state management
 - No testing framework configured
 
