@@ -104,27 +104,12 @@ body {
   }
 }
 
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.5s ease-out forwards;
 }
 
 .animation-delay-100 {
@@ -143,14 +128,6 @@ body {
   animation-delay: 0.4s;
 }
 
-/* Text gradient utility */
-.text-gradient {
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* Hover lift effect */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -161,26 +138,6 @@ body {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* Image reveal effect */
-.image-reveal {
-  position: relative;
-  overflow: hidden;
-}
-
-.image-reveal::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--background);
-  transform: scaleX(1);
-  transform-origin: right;
-  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.image-reveal.revealed::after {
-  transform: scaleX(0);
-}
-
 /* Hide scrollbar utility */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -189,4 +146,29 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Matrix rain animation for TekZuri card */
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.matrix-column {
+  animation: matrix-rain linear infinite;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: "MS Gothic", "Hiragino Kaku Gothic Pro", monospace;
+  font-size: 14px;
+  letter-spacing: 0.6em;
+  line-height: 1.8;
+  color: var(--accent);
+  opacity: 0.12;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
 }

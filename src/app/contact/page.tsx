@@ -12,9 +12,13 @@ export default function ContactPage() {
     <section className="px-8 py-16 md:py-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-burgundy uppercase tracking-[0.3em] text-sm mb-4">Get in Touch</p>
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900">Contact Us</h1>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <span className="inline-flex items-center justify-center gap-2 text-accent font-medium text-sm tracking-wide mb-4">
+            <span className="w-8 h-px bg-accent" />
+            Get in Touch
+            <span className="w-8 h-px bg-accent" />
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">Contact Us</h1>
+          <p className="mt-4 text-muted max-w-2xl mx-auto">
             We&apos;d love to hear from you. Fill out the form or reach out directly.
           </p>
         </div>

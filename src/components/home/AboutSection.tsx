@@ -6,8 +6,46 @@ export function AboutSection() {
           {/* Left - Visual */}
           <div className="relative">
             {/* Main card */}
-            <div className="relative bg-gray-900 rounded-3xl p-12 lg:p-16">
-              <div className="text-center">
+            <div className="relative bg-gray-900 rounded-3xl p-12 lg:p-16 overflow-hidden">
+              {/* Matrix rain background - left side */}
+              <div className="absolute left-0 top-0 bottom-0 w-1/4 z-0 flex justify-around overflow-hidden" aria-hidden="true">
+                <span className="matrix-column" style={{ animationDuration: '35s', animationDelay: '0s' }}>
+                  技術革新創造未来設計品質工芸匠精神技術革新創造未来設計品質工芸匠精神
+                </span>
+                <span className="matrix-column" style={{ animationDuration: '42s', animationDelay: '-8s' }}>
+                  ものづくりコード開発システム構築技術ものづくりコード開発システム構築技術
+                </span>
+                <span className="matrix-column" style={{ animationDuration: '30s', animationDelay: '-15s' }}>
+                  卓越完璧追求最高品質卓越完璧追求最高品質卓越完璧追求最高品質
+                </span>
+                <span className="matrix-column" style={{ animationDuration: '48s', animationDelay: '-5s' }}>
+                  革新伝統融合芸術技術革新伝統融合芸術技術革新伝統融合芸術技術
+                </span>
+                <span className="matrix-column" style={{ animationDuration: '38s', animationDelay: '-12s' }}>
+                  匠精密正確優雅美匠精密正確優雅美匠精密正確優雅美匠精密正確優雅美
+                </span>
+              </div>
+
+              {/* Matrix rain background - right side */}
+              <div className="absolute right-0 top-0 bottom-0 w-1/4 z-0 flex justify-around overflow-hidden" aria-hidden="true">
+                <span className="matrix-column" style={{ animationDuration: '40s', animationDelay: '-20s' }}>
+                  創造設計開発構築革新創造設計開発構築革新創造設計開発構築革新
+                </span>
+                <span className="matrix-column" style={{ animationDuration: '45s', animationDelay: '-3s' }}>
+                  未来技術芸術品質未来技術芸術品質未来技術芸術品質未来技術芸術品質
+                </span>
+                <span className="matrix-column" style={{ animationDuration: '32s', animationDelay: '-18s' }}>
+                  設計構築開発革新設計構築開発革新設計構築開発革新設計構築開発革新
+                </span>
+                <span className="matrix-column" style={{ animationDuration: '50s', animationDelay: '-10s' }}>
+                  精神工芸伝統融合精神工芸伝統融合精神工芸伝統融合精神工芸伝統融合
+                </span>
+                <span className="matrix-column" style={{ animationDuration: '36s', animationDelay: '-25s' }}>
+                  コード技術システム創造コード技術システム創造コード技術システム創造
+                </span>
+              </div>
+
+              <div className="relative z-10 text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-accent/10 mb-8">
                   <span className="text-4xl font-bold text-accent">T</span>
                 </div>
@@ -24,10 +62,9 @@ export function AboutSection() {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute top-4 left-4 w-2 h-2 rounded-full bg-accent/50" />
-              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-accent/50" />
-              <div className="absolute bottom-4 left-4 w-2 h-2 rounded-full bg-accent/50" />
-              <div className="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-accent/50" />
+              <div className="absolute z-10 top-4 left-4 w-2 h-2 rounded-full bg-accent/50" />
+              <div className="absolute z-10 top-4 right-4 w-2 h-2 rounded-full bg-accent/50" />
+              <div className="absolute z-10 bottom-4 left-4 w-2 h-2 rounded-full bg-accent/50" />
             </div>
 
             {/* Floating badge */}

@@ -56,8 +56,8 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-warm-50 rounded-xl p-6 md:p-8 border border-warm-200">
-      <h2 className="text-2xl font-medium text-gray-900 mb-6">Send us a message</h2>
+    <div className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200">
+      <h2 className="text-2xl font-semibold text-foreground mb-6">Send us a message</h2>
 
       {submitStatus === "success" && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
@@ -125,7 +125,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-burgundy hover:bg-burgundy-dark text-white px-6 py-3 rounded-lg
+          className="w-full bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg
             font-medium transition-colors flex items-center justify-center gap-2
             disabled:opacity-50 disabled:cursor-not-allowed"
         >

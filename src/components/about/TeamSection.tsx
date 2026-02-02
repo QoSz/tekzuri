@@ -6,13 +6,15 @@ export function TeamSection() {
     <section className="px-8 py-16 md:py-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-burgundy uppercase tracking-[0.3em] text-sm mb-4">
+          <span className="inline-flex items-center justify-center gap-2 text-accent font-medium text-sm tracking-wide mb-4">
+            <span className="w-8 h-px bg-accent" />
             Our Team
-          </p>
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900">
+            <span className="w-8 h-px bg-accent" />
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Meet the People Behind TekZuri
           </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-muted max-w-2xl mx-auto">
             We are a passionate team dedicated to bringing your digital visions
             to life with craftsmanship and care.
           </p>

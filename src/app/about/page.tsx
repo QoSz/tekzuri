@@ -12,15 +12,17 @@ export default function AboutPage() {
     <>
       <section className="px-8 py-16 md:py-24">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-burgundy uppercase tracking-[0.3em] text-sm mb-4">
+          <span className="inline-flex items-center justify-center gap-2 text-accent font-medium text-sm tracking-wide mb-4">
+            <span className="w-8 h-px bg-accent" />
             About Us
-          </p>
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+            <span className="w-8 h-px bg-accent" />
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
             Crafting Digital Excellence
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-muted max-w-3xl mx-auto text-lg leading-relaxed">
             TekZuri draws inspiration from{" "}
-            <span className="text-burgundy font-medium">monozukuri</span> (ものづくり) — the
+            <span className="text-accent font-medium">monozukuri</span> (ものづくり) — the
             Japanese art of making things with meticulous craftsmanship and
             attention to detail. We apply this philosophy to every digital
             experience we create.
@@ -29,7 +31,7 @@ export default function AboutPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-8">
-        <hr className="border-warm-200" />
+        <hr className="border-gray-200" />
       </div>
 
       <TeamSection />

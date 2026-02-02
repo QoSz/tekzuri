@@ -1,35 +1,22 @@
-const services = [
-  {
-    title: "Web Development",
-    description: "Custom websites and web applications built with modern technologies, optimized for performance and user experience.",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
-    features: ["React & Next.js", "TypeScript", "Responsive Design"],
-  },
-  {
-    title: "Mobile Solutions",
-    description: "Native and cross-platform mobile applications that deliver seamless experiences across all devices.",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
-    features: ["iOS & Android", "React Native", "Flutter"],
-  },
-  {
-    title: "IT Consulting",
-    description: "Strategic guidance to help your business leverage technology effectively and stay ahead of the curve.",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    features: ["Tech Strategy", "Cloud Solutions", "Digital Transformation"],
-  },
-];
+import { services } from "@/lib/data/services";
+
+const serviceIcons: Record<(typeof services)[number]["id"], React.ReactNode> = {
+  "web-development": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+    </svg>
+  ),
+  "mobile-solutions": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+    </svg>
+  ),
+  "it-consulting": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  ),
+};
 
 export function ServicesSection() {
   return (
@@ -54,13 +41,13 @@ export function ServicesSection() {
         <div className="grid lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
-              key={service.title}
+              key={service.id}
               className="group relative bg-gray-50 rounded-2xl p-8 lg:p-10 hover:bg-gray-900 transition-all duration-500 hover-lift"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white text-gray-900 group-hover:bg-accent group-hover:text-white transition-all duration-500 mb-8 shadow-sm">
-                {service.icon}
+                {serviceIcons[service.id]}
               </div>
 
               {/* Content */}

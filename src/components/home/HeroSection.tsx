@@ -1,25 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { WordCarousel } from "./WordCarousel";
 
 const words = ["Elegance", "Precision", "Excellence", "Mastery"];
 
 export function HeroSection() {
-  const [currentWord, setCurrentWord] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentWord((prev) => (prev + 1) % words.length);
-        setIsAnimating(false);
-      }, 500);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background gradient */}
@@ -50,13 +33,7 @@ export function HeroSection() {
           <h1 className="animate-fade-in-up opacity-0 animation-delay-100 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.1] mb-8">
             Build with
             <span className="block mt-2">
-              <span
-                className={`inline-block text-accent transition-all duration-500 ${
-                  isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-                }`}
-              >
-                {words[currentWord]}
-              </span>
+              <WordCarousel words={words} />
             </span>
           </h1>
 
