@@ -39,21 +39,22 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100">
+    <footer className="bg-white">
+      <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main footer */}
         <div className="py-16 lg:py-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-8">
             {/* Brand column */}
             <div className="col-span-2 md:col-span-1">
-              <Link href="/" className="flex items-center gap-3 mb-6">
+              <Link href="/" className="inline-block mb-6">
                 <Image
                   src="/tekzuri-logo.webp"
                   alt="TekZuri"
-                  width={40}
-                  height={40}
+                  width={200}
+                  height={200}
+                  className="transition-transform duration-300 hover:scale-105"
                 />
-                <span className="text-lg font-semibold tracking-tight">TekZuri</span>
               </Link>
               <p className="text-muted text-sm leading-relaxed mb-6">
                 Technology crafted with elegance. Inspired by the Japanese philosophy of monozukuri.
@@ -77,7 +78,7 @@ export function Footer() {
 
             {/* Quick links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Quick links</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-4">Quick links</h4>
               <ul className="space-y-3">
                 {footerLinks.quickLinks.map((link) => (
                   <li key={link.label}>
@@ -94,7 +95,7 @@ export function Footer() {
 
             {/* Services links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Services</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-4">Services</h4>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.label}>
@@ -111,7 +112,7 @@ export function Footer() {
 
             {/* Contact column */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Get in Touch</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-4">Get in Touch</h4>
               <ul className="space-y-3">
                 <li>
                   <a
@@ -128,7 +129,7 @@ export function Footer() {
                   >
                     Start a project
                     <svg
-                      className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                      className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-2"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

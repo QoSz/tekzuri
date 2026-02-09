@@ -6,7 +6,7 @@ export function AboutSection() {
           {/* Left - Visual */}
           <div className="relative">
             {/* Main card */}
-            <div className="relative bg-gray-900 rounded-3xl p-12 lg:p-16 overflow-hidden">
+            <div className="relative bg-gray-900 rounded-3xl p-8 lg:p-16 overflow-hidden">
               {/* Matrix rain background - left side */}
               <div className="absolute left-0 top-0 bottom-0 w-1/4 z-0 flex justify-around overflow-hidden" aria-hidden="true">
                 <span className="matrix-column" style={{ animationDuration: '35s', animationDelay: '0s' }}>
@@ -68,7 +68,7 @@ export function AboutSection() {
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+            <div className="relative -mt-6 mx-auto w-fit lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0 lg:mx-0 lg:w-auto bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-gray-100">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                   <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -110,7 +110,7 @@ export function AboutSection() {
             </div>
 
             {/* Values */}
-            <div className="mt-12 grid grid-cols-2 gap-6">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
                   <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">

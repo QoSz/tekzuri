@@ -1,38 +1,181 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8B2346"/>
-      <stop offset="100%" style="stop-color:#6B1A36"/>
+    <!-- Main background gradient (135deg: top-left to bottom-right) -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9B2850"/>
+      <stop offset="40%" stop-color="#8B2346"/>
+      <stop offset="80%" stop-color="#6B1A36"/>
+      <stop offset="100%" stop-color="#4E1228"/>
     </linearGradient>
+
+    <!-- Noise overlay: subtle light ellipse at 30% 20% -->
+    <radialGradient id="noise-light" cx="30%" cy="20%" r="60%" fx="30%" fy="20%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Noise overlay: dark ellipse at 80% 80% -->
+    <radialGradient id="noise-dark" cx="80%" cy="80%" r="60%" fx="80%" fy="80%">
+      <stop offset="0%" stop-color="black" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="black" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Geometric accent - top right radial glow -->
+    <radialGradient id="geo-tr" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.06"/>
+      <stop offset="70%" stop-color="white" stop-opacity="0.01"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Geometric accent - bottom left radial glow -->
+    <radialGradient id="geo-bl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.04"/>
+      <stop offset="70%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Left accent bar gradient (vertical, top to bottom) -->
+    <linearGradient id="left-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.03"/>
+    </linearGradient>
+
+    <!-- Separator line gradient (horizontal, fades on both sides) -->
+    <linearGradient id="sep-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Bottom bar gradient (horizontal, fades on both sides) -->
+    <linearGradient id="bottom-bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Grid pattern: 60px spacing, white lines -->
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
+    </pattern>
+
+    <!-- Clip path for viewport -->
+    <clipPath id="viewport">
+      <rect width="1200" height="630"/>
+    </clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  <g clip-path="url(#viewport)">
 
-  <!-- Subtle pattern -->
-  <g opacity="0.05">
-    <circle cx="100" cy="100" r="200" fill="white"/>
-    <circle cx="1100" cy="530" r="250" fill="white"/>
+    <!-- ===== BACKGROUND ===== -->
+    <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+
+    <!-- Noise texture overlays -->
+    <rect width="1200" height="630" fill="url(#noise-light)"/>
+    <rect width="1200" height="630" fill="url(#noise-dark)"/>
+
+    <!-- Geometric accent - top right -->
+    <!-- HTML: top:-80px right:-60px 360x360 circle -->
+    <!-- Left edge = 1200 - 360 + 60 = 900, cx = 900 + 180 = 1080 -->
+    <!-- Top edge = -80, cy = -80 + 180 = 100 -->
+    <circle cx="1080" cy="100" r="180" fill="url(#geo-tr)"/>
+
+    <!-- Geometric accent - bottom left -->
+    <!-- HTML: bottom:-120px left:-80px 400x400 circle -->
+    <!-- Left edge = -80, cx = -80 + 200 = 120 -->
+    <!-- Top edge = 630 + 120 - 400 = 350, cy = 350 + 200 = 550 -->
+    <circle cx="120" cy="550" r="200" fill="url(#geo-bl)"/>
+
+    <!-- Subtle grid lines (60px spacing, opacity 0.025) -->
+    <rect width="1200" height="630" fill="url(#grid)" opacity="0.025"/>
+
+    <!-- Left accent bar (5px wide, full height) -->
+    <rect x="0" y="0" width="5" height="630" fill="url(#left-bar)"/>
+
+    <!-- Diagonal decorative lines - top right corner -->
+    <!-- HTML: from top-right, rotated 45deg, 420px long -->
+    <!-- Line 1: starts at (1200, 0), goes 45deg down-left -->
+    <line x1="1200" y1="0" x2="903" y2="297" stroke="white" stroke-opacity="0.03" stroke-width="1"/>
+    <!-- Line 2: starts at (1200, 40), goes 45deg down-left -->
+    <line x1="1200" y1="40" x2="903" y2="337" stroke="white" stroke-opacity="0.03" stroke-width="1"/>
+
+    <!-- Bottom accent bar (6px tall, full width) -->
+    <rect x="0" y="624" width="1200" height="6" fill="url(#bottom-bar)"/>
+
+
+    <!-- ===== CONTENT (vertically and horizontally centered) ===== -->
+    <!--
+      Content block vertical layout (top to bottom):
+        Logo mark:    120px height
+        Gap:          28px  (margin-bottom on logo-mark)
+        Company name: ~58px (font-size line height)
+        Gap:          20px  (margin-bottom)
+        Separator:    2px
+        Gap:          22px  (margin-bottom)
+        Tagline:      ~22px
+        Gap:          14px  (margin-bottom)
+        Subtitle:     ~15px
+        Gap:          50px  (margin-bottom)
+        URL row:      ~14px
+
+      Total approx: 120 + 28 + 58 + 20 + 2 + 22 + 22 + 14 + 15 + 50 + 14 = 365px
+      Top offset for centering: (630 - 365) / 2 = 132.5
+    -->
+
+    <!-- Logo mark: outer ring (120px diameter, 1.5px border, 15% white) -->
+    <!-- Center: (600, 132.5 + 60) = (600, 192.5) -->
+    <circle cx="600" cy="192" r="59.25" fill="none" stroke="white" stroke-opacity="0.15" stroke-width="1.5"/>
+
+    <!-- Logo mark: inner circle (104px diameter = inset 8px, white fill at 8%) -->
+    <circle cx="600" cy="192" r="52" fill="white" fill-opacity="0.08"/>
+
+    <!-- Logo mark: "TZ" text (44px, weight 800, white, letter-spacing 4px) -->
+    <text x="602" y="192"
+          text-anchor="middle" dominant-baseline="central"
+          font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+          font-size="44" font-weight="800" fill="white"
+          letter-spacing="4">TZ</text>
+
+    <!-- Company name: TEKZURI (58px, weight 800, letter-spacing 14px) -->
+    <!-- Y position: 192 + 60 + 28 = 280, center of text ~280 + 29 = 309 -->
+    <!-- text-indent:14px offsets for letter-spacing balance; shift x by ~7 -->
+    <text x="607" y="288"
+          text-anchor="middle" dominant-baseline="central"
+          font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+          font-size="58" font-weight="800" fill="white"
+          letter-spacing="14">TEKZURI</text>
+
+    <!-- Separator line (80px wide, 2px tall, gradient fading on both sides) -->
+    <!-- Y position: 288 + 29 + 20 = 337 -->
+    <rect x="560" y="338" width="80" height="2" rx="1" fill="url(#sep-grad)"/>
+
+    <!-- Tagline: "WORK WITH ELEGANCE" (22px, weight 500, 88% white, letter-spacing 5px, uppercase) -->
+    <!-- Y position: 338 + 2 + 22 = 362, center ~362 + 11 = 373 -->
+    <text x="602" y="374"
+          text-anchor="middle" dominant-baseline="central"
+          font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+          font-size="22" font-weight="500" fill="white" fill-opacity="0.88"
+          letter-spacing="5">WORK WITH ELEGANCE</text>
+
+    <!-- Subtitle (15px, weight 300, 50% white, letter-spacing 2px) -->
+    <!-- Y position: 374 + 11 + 14 = 399, center ~399 + 7.5 = 406 -->
+    <text x="601" y="406"
+          text-anchor="middle" dominant-baseline="central"
+          font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+          font-size="15" font-weight="300" fill="white" fill-opacity="0.5"
+          letter-spacing="2">Technology crafted with the art of monozukuri</text>
+
+    <!-- URL row: dot + "tekzuri.com" + dot -->
+    <!-- Y position: 406 + 7.5 + 50 = 463, center ~463 + 7 = 470 -->
+    <!-- Left dot (4px diameter = 2px radius) -->
+    <circle cx="536" cy="470" r="2" fill="white" fill-opacity="0.25"/>
+    <!-- URL text (14px, weight 400, 40% white, letter-spacing 3px) -->
+    <text x="601" y="470"
+          text-anchor="middle" dominant-baseline="central"
+          font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+          font-size="14" font-weight="400" fill="white" fill-opacity="0.4"
+          letter-spacing="3">tekzuri.com</text>
+    <!-- Right dot -->
+    <circle cx="666" cy="470" r="2" fill="white" fill-opacity="0.25"/>
+
   </g>
-
-  <!-- Logo mark (TS in circle) -->
-  <g transform="translate(600, 200)">
-    <circle cx="0" cy="0" r="80" fill="rgba(255,255,255,0.15)"/>
-    <text x="0" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">TS</text>
-  </g>
-
-  <!-- Main text -->
-  <text x="600" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">TEKZURI</text>
-
-  <!-- Tagline -->
-  <text x="600" y="430" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="rgba(255,255,255,0.9)" text-anchor="middle">Work with Elegance</text>
-
-  <!-- Subtitle -->
-  <text x="600" y="480" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="300" fill="rgba(255,255,255,0.7)" text-anchor="middle">Technology crafted with the art of monozukuri</text>
-
-  <!-- Decorative line -->
-  <rect x="500" y="500" width="200" height="2" fill="rgba(255,255,255,0.3)" rx="1"/>
-
-  <!-- Website URL -->
-  <text x="600" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.6)" text-anchor="middle">tekzuri.com</text>
 </svg>
