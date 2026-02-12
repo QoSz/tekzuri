@@ -56,20 +56,20 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200">
+    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
       <h2 className="text-2xl font-semibold text-foreground mb-6">Send us a message</h2>
 
       {submitStatus === "success" && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
-          <CheckCircle className="h-5 w-5 text-green-600 mr-3 shrink-0" />
-          <p className="text-green-700">Thank you! Your message has been sent successfully.</p>
+        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center">
+          <CheckCircle className="h-5 w-5 text-green-400 mr-3 shrink-0" />
+          <p className="text-green-300">Thank you! Your message has been sent successfully.</p>
         </div>
       )}
 
       {submitStatus === "error" && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">
-          <AlertCircle className="h-5 w-5 text-red-600 mr-3 shrink-0" />
-          <p className="text-red-700">Something went wrong. Please try again.</p>
+        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center">
+          <AlertCircle className="h-5 w-5 text-red-400 mr-3 shrink-0" />
+          <p className="text-red-300">Something went wrong. Please try again.</p>
         </div>
       )}
 

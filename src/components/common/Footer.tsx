@@ -39,7 +39,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-background/40 backdrop-blur-sm relative">
       <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main footer */}
@@ -53,7 +53,7 @@ export function Footer() {
                   alt="TekZuri"
                   width={200}
                   height={200}
-                  className="transition-transform duration-300 hover:scale-105"
+                  className="transition-transform duration-300 hover:scale-105 brightness-0 invert"
                 />
               </Link>
               <p className="text-muted text-sm leading-relaxed mb-6">
@@ -67,7 +67,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-muted hover:bg-accent hover:text-white transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-gray-100/10 flex items-center justify-center text-muted hover:bg-accent hover:text-white transition-all duration-300"
                     aria-label={social.label}
                   >
                     {social.icon}
@@ -144,7 +144,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="py-6 border-t border-gray-100/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-muted text-sm">
             © <CurrentYear /> TekZuri. All rights reserved.
           </p>

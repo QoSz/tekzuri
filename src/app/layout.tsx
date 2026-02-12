@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/common/Navbar";
 import { Footer } from "@/components/common/Footer";
+import { BackgroundAnimation } from "@/components/common/BackgroundAnimation";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -150,7 +151,8 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <div className="min-h-screen bg-white flex flex-col">
+        <BackgroundAnimation />
+        <div className="min-h-screen flex flex-col relative">
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

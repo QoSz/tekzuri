@@ -12,7 +12,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-gray-50 hover-lift animate-fade-in-up"
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-accent/50 hover-lift animate-fade-in-up"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Image */}
@@ -23,7 +23,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-gray-50 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#05050a] to-transparent" />
       </div>
 
       {/* Content */}

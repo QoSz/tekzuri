@@ -80,7 +80,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
             <Link
               href="/contact"
               onClick={closeMobileMenu}
-              className="mt-4 mx-4 text-center bg-gray-900 text-white px-6 py-3 text-sm font-medium hover:bg-accent transition-colors rounded-full"
+              className="mt-4 mx-4 text-center bg-accent text-white px-6 py-3 text-sm font-medium hover:bg-accent-light transition-colors rounded-full"
             >
               Get Started
             </Link>

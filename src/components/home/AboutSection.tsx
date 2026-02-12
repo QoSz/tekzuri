@@ -1,6 +1,6 @@
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-white">
+    <section id="about" className="py-24 lg:py-32 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left - Visual */}
@@ -68,16 +68,16 @@ export function AboutSection() {
             </div>
 
             {/* Floating badge */}
-            <div className="relative -mt-6 mx-auto w-fit lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0 lg:mx-0 lg:w-auto bg-white rounded-2xl shadow-xl p-4 lg:p-6 border border-gray-100">
+            <div className="relative -mt-6 mx-auto w-fit lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0 lg:mx-0 lg:w-auto bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-4 lg:p-6 border border-white/20">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
                   <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold">100%</div>
-                  <div className="text-sm text-muted">Client Satisfaction</div>
+                  <div className="text-2xl font-bold text-white">100%</div>
+                  <div className="text-sm text-muted-light">Client Satisfaction</div>
                 </div>
               </div>
             </div>

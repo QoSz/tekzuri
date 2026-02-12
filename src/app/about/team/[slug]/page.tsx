@@ -70,11 +70,11 @@ export default async function TeamMemberPage({ params }: PageProps) {
   const otherMembers = getOtherTeamMembers(slug);
 
   return (
-    <main className="min-h-screen bg-warm-50 pt-24 pb-16">
+    <main className="min-h-screen pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6 md:px-8">
         <Link
           href="/about"
-          className="inline-flex items-center gap-2 text-gray-600 hover:text-burgundy transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to About

@@ -55,7 +55,7 @@ export default function AboutPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-8">
-        <hr className="border-gray-200" />
+        <hr className="border-white/10" />
       </div>
 
       <TeamSection />

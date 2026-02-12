@@ -44,7 +44,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden md:inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-2.5 text-sm font-medium hover:bg-accent transition-colors duration-300 rounded-full"
+              className="hidden md:inline-flex items-center gap-2 bg-accent text-white px-6 py-2.5 text-sm font-medium hover:bg-accent-light transition-colors duration-300 rounded-full"
             >
               Get Started
               <svg

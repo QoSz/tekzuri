@@ -31,7 +31,7 @@ const serviceIcons: Record<(typeof services)[number]["id"], React.ReactNode> = {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-white">
+    <section id="services" className="py-24 lg:py-32 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16 lg:mb-24">
@@ -53,11 +53,11 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={service.id}
-              className="group relative bg-gray-50 rounded-2xl p-8 lg:p-10 hover:bg-gray-900 transition-all duration-500 hover-lift"
+              className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 lg:p-10 hover:bg-white/10 border border-white/10 hover:border-accent/50 transition-all duration-500 hover-lift"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white text-gray-900 group-hover:bg-accent group-hover:text-white transition-all duration-500 mb-8 shadow-sm">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 mb-8">
                 {serviceIcons[service.id]}
               </div>
 
@@ -74,7 +74,7 @@ export function ServicesSection() {
                 {service.features.map((feature) => (
                   <span
                     key={feature}
-                    className="inline-flex text-xs font-medium px-3 py-1.5 rounded-full bg-white text-gray-600 group-hover:bg-gray-800 group-hover:text-gray-300 transition-all duration-500"
+                    className="inline-flex text-xs font-medium px-3 py-1.5 rounded-full bg-white/10 text-muted-light group-hover:bg-accent/20 group-hover:text-white transition-all duration-500"
                   >
                     {feature}
                   </span>

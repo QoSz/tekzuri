@@ -22,21 +22,21 @@ export function FormField({
   register,
   error,
 }: FormFieldProps) {
-  const baseClasses = `w-full px-4 py-3 bg-warm-50 border rounded-lg
+  const baseClasses = `w-full px-4 py-3 bg-white/5 backdrop-blur-sm border rounded-lg
     focus:ring-2 focus:outline-none transition-colors
-    placeholder:text-gray-400
-    text-gray-900`;
+    placeholder:text-muted
+    text-foreground`;
 
   const stateClasses = error
-    ? "border-red-400 focus:ring-red-200 focus:border-red-400"
-    : "border-warm-200 focus:ring-burgundy/20 focus:border-burgundy";
+    ? "border-red-400/50 focus:ring-red-500/20 focus:border-red-400"
+    : "border-white/10 focus:ring-accent/20 focus:border-accent";
 
   const inputClasses = `${baseClasses} ${stateClasses}`;
 
   return (
     <div>
-      <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-2">
-        {label} {required && <span className="text-burgundy">*</span>}
+      <label htmlFor={id} className="block text-sm font-medium text-muted-light mb-2">
+        {label} {required && <span className="text-accent">*</span>}
       </label>
       {type === "textarea" ? (
         <textarea
@@ -60,7 +60,7 @@ export function FormField({
         />
       )}
       {error && (
-        <p id={`${id}-error`} className="mt-1.5 text-sm text-red-600 flex items-center">
+        <p id={`${id}-error`} className="mt-1.5 text-sm text-red-400 flex items-center">
           <AlertCircle className="h-3.5 w-3.5 mr-1 shrink-0" />
           {error.message}
         </p>

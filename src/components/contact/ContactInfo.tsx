@@ -54,7 +54,7 @@ export function ContactInfo() {
   return (
     <div className="space-y-6">
       {contactItems.map(({ icon: Icon, title, content }) => (
-        <div key={title} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <div key={title} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
           <div className="flex items-start">
             <div className="p-3 rounded-lg bg-accent/10 shrink-0">
               <Icon className="h-5 w-5 text-accent" />
@@ -67,7 +67,7 @@ export function ContactInfo() {
         </div>
       ))}
 
-      <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+      <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
         <h3 className="text-lg font-medium text-foreground mb-4">Follow Us</h3>
         <div className="flex gap-3">
           {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -76,7 +76,7 @@ export function ContactInfo() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-lg bg-accent/10 hover:bg-accent/20 transition-colors"
+              className="p-3 rounded-lg bg-accent/20 hover:bg-accent/30 transition-colors"
               aria-label={label}
             >
               <Icon className="h-5 w-5 text-accent" />

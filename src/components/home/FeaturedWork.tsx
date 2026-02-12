@@ -86,7 +86,7 @@ export function FeaturedWork() {
   const featured = getFeaturedProjects();
 
   return (
-    <section id="our-work" className="py-24 lg:py-32 bg-gray-50">
+    <section id="our-work" className="py-24 lg:py-32 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header row */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 lg:mb-16">
