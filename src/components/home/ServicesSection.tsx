@@ -6,14 +6,25 @@ const serviceIcons: Record<(typeof services)[number]["id"], React.ReactNode> = {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
     </svg>
   ),
-  "mobile-solutions": (
+  "ai-automation": (
     <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8V4H8" />
+      <rect width="16" height="12" x="4" y="8" rx="2" strokeWidth={1.5} />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 14h2M20 14h2M15 13v2M9 13v2" />
+    </svg>
+  ),
+  "digital-marketing": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <circle cx="18" cy="5" r="3" strokeWidth={1.5} />
+      <circle cx="6" cy="12" r="3" strokeWidth={1.5} />
+      <circle cx="18" cy="19" r="3" strokeWidth={1.5} />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" />
     </svg>
   ),
   "it-consulting": (
     <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 20V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+      <rect width="20" height="14" x="2" y="6" rx="2" strokeWidth={1.5} />
     </svg>
   ),
 };

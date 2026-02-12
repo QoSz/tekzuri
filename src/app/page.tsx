@@ -8,11 +8,11 @@ import { ContactSection } from "@/components/home/ContactSection";
 export const metadata: Metadata = {
   title: "TekZuri | Work with Elegance",
   description:
-    "Technology crafted with elegance. Inspired by monozukuri, we build web applications, mobile solutions, and provide IT consulting with meticulous craftsmanship.",
+    "Technology crafted with elegance. Inspired by monozukuri, we specialize in web development, AI automation, digital marketing, and IT consulting with meticulous craftsmanship.",
   openGraph: {
     title: "TekZuri | Work with Elegance",
     description:
-      "Technology crafted with elegance. Inspired by monozukuri, we build web applications, mobile solutions, and provide IT consulting with meticulous craftsmanship.",
+      "Technology crafted with elegance. Inspired by monozukuri, we specialize in web development, AI automation, digital marketing, and IT consulting with meticulous craftsmanship.",
     url: "https://tekzuri.com",
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TekZuri | Work with Elegance",
     description:
-      "Technology crafted with elegance. Inspired by monozukuri, we build web applications, mobile solutions, and provide IT consulting with meticulous craftsmanship.",
+      "Technology crafted with elegance. Inspired by monozukuri, we specialize in web development, AI automation, digital marketing, and IT consulting with meticulous craftsmanship.",
     images: ["/og-image.png"],
   },
   alternates: {
