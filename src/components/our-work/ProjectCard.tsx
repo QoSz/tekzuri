@@ -23,7 +23,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#05050a] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
       </div>
 
       {/* Content */}

@@ -6,7 +6,7 @@ export function AboutSection() {
           {/* Left - Visual */}
           <div className="relative">
             {/* Main card */}
-            <div className="relative bg-gray-900 rounded-3xl p-8 lg:p-16 overflow-hidden">
+            <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-16 overflow-hidden">
               {/* Matrix rain background - left side */}
               <div className="absolute left-0 top-0 bottom-0 w-1/4 z-0 flex justify-around overflow-hidden" aria-hidden="true">
                 <span className="matrix-column" style={{ animationDuration: '35s', animationDelay: '0s' }}>
@@ -53,10 +53,10 @@ export function AboutSection() {
                   TekZuri
                 </h3>
                 <div className="w-16 h-px bg-accent mx-auto mb-6" />
-                <p className="text-gray-400 text-lg tracking-wide">
+                <p className="text-muted text-lg tracking-wide">
                   Tech + Monozukuri
                 </p>
-                <p className="text-gray-500 text-sm mt-2">
+                <p className="text-muted/70 text-sm mt-2">
                   ものづくり
                 </p>
               </div>

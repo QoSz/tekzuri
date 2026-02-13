@@ -1,10 +1,6 @@
 export function ContactSection() {
   return (
     <section id="contact" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Gradient orbs */}
-      <div className="absolute -top-40 -left-40 w-80 h-80 bg-accent/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
-
       <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
@@ -28,7 +24,7 @@ export function ContactSection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="/contact"
-            className="group inline-flex items-center justify-center gap-3 bg-white text-gray-900 px-8 py-4 text-base font-medium hover:bg-accent hover:text-white transition-all duration-300 rounded-full"
+            className="group inline-flex items-center justify-center gap-3 bg-accent text-white px-8 py-4 text-base font-medium hover:bg-accent-light transition-all duration-300 rounded-full shadow-lg shadow-accent/20 hover:shadow-accent/40"
           >
             Get in Touch
             <svg
@@ -42,7 +38,7 @@ export function ContactSection() {
           </a>
           <a
             href="mailto:business@tekzuri.com"
-            className="group inline-flex items-center justify-center gap-3 bg-transparent text-white px-8 py-4 text-base font-medium border border-white/20 hover:border-white/40 transition-all duration-300 rounded-full"
+            className="group inline-flex items-center justify-center gap-3 bg-transparent text-white px-8 py-4 text-base font-medium border border-white/20 hover:border-white/40 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 rounded-full"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

@@ -1,40 +1,46 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 interface WordCarouselProps {
   words: string[];
   interval?: number;
-  transitionDuration?: number;
 }
 
-export function WordCarousel({
-  words,
-  interval = 3000,
-  transitionDuration = 500,
-}: WordCarouselProps) {
-  const [currentWord, setCurrentWord] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+export function WordCarousel({ words, interval = 3000 }: WordCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentWord((prev) => (prev + 1) % words.length);
-        setIsAnimating(false);
-      }, transitionDuration);
+      setCurrentIndex((prev) => (prev + 1) % words.length);
     }, interval);
 
     return () => clearInterval(timer);
-  }, [words.length, interval, transitionDuration]);
+  }, [words.length, interval]);
+
+  if (prefersReducedMotion) {
+    return <span className="inline-block text-accent">{words[currentIndex]}</span>;
+  }
 
   return (
-    <span
-      className={`inline-block text-accent transition-all duration-500 ${
-        isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-      }`}
-    >
-      {words[currentWord]}
-    </span>
+    <AnimatePresence mode="wait">
+      <motion.span
+        key={words[currentIndex]}
+        className="inline-block text-accent"
+        initial={{ opacity: 0, y: 20, filter: "blur(8px)", scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
+        exit={{ opacity: 0, y: -20, filter: "blur(8px)", scale: 0.95 }}
+        transition={{
+          type: "spring",
+          damping: 22,
+          stiffness: 150,
+          mass: 0.6,
+        }}
+      >
+        {words[currentIndex]}
+      </motion.span>
+    </AnimatePresence>
   );
 }
