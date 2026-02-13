@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { User } from "lucide-react";
-import type { TeamMember } from "@/lib/data/team";
+import type { TeamMemberPreview } from "@/lib/data/team";
 
 interface OtherTeamMembersProps {
-  members: TeamMember[];
+  members: TeamMemberPreview[];
 }
 
 export function OtherTeamMembers({ members }: OtherTeamMembersProps) {

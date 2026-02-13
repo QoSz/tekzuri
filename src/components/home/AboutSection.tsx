@@ -67,20 +67,6 @@ export function AboutSection() {
               <div className="absolute z-10 bottom-4 left-4 w-2 h-2 rounded-full bg-accent/50" />
             </div>
 
-            {/* Floating badge */}
-            <div className="relative -mt-6 mx-auto w-fit lg:absolute lg:-bottom-6 lg:-right-6 lg:mt-0 lg:mx-0 lg:w-auto bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-4 lg:p-6 border border-white/20">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-white">100%</div>
-                  <div className="text-sm text-muted-light">Client Satisfaction</div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right - Content */}
@@ -104,7 +90,7 @@ export function AboutSection() {
                 every design decision, every solution is crafted with intention and care.
               </p>
               <p>
-                We believe in building solutions that are not only functional but elegant—
+                We believe in building solutions that are not only functional but elegant,
                 technology that stands the test of time and brings value for years to come.
               </p>
             </div>

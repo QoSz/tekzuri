@@ -1,14 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 import { FormField } from "@/components/ui/FormField";
+import { submitContactForm } from "@/app/actions";
 
 export function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
 
   const {
     register,
@@ -24,29 +32,13 @@ export function ContactForm() {
     setSubmitStatus("idle");
 
     try {
-      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
-      if (!accessKey) {
-        throw new Error("Web3Forms access key is not configured");
-      }
+      const result = await submitContactForm(data);
 
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: accessKey,
-          name: `${data.firstName} ${data.lastName}`.trim(),
-          email: data.email,
-          subject: data.subject || "Contact Form Submission",
-          message: data.message,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (result?.success) {
+      if (result.success) {
         setSubmitStatus("success");
         reset();
-        setTimeout(() => setSubmitStatus("idle"), 5000);
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => setSubmitStatus("idle"), 5000);
       } else {
         setSubmitStatus("error");
       }
@@ -73,7 +65,7 @@ export function ContactForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+      <form onSubmit={(e) => handleSubmit(onSubmit)(e)} className="space-y-5" noValidate>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <FormField
             id="firstName"

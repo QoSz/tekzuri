@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
@@ -39,10 +40,18 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <ServicesSection />
-      <FeaturedWork />
-      <AboutSection />
-      <ContactSection />
+      <Suspense fallback={<div className="py-24 lg:py-32" />}>
+        <ServicesSection />
+      </Suspense>
+      <Suspense fallback={<div className="py-24 lg:py-32" />}>
+        <FeaturedWork />
+      </Suspense>
+      <Suspense fallback={<div className="py-24 lg:py-32" />}>
+        <AboutSection />
+      </Suspense>
+      <Suspense fallback={<div className="py-24 lg:py-32" />}>
+        <ContactSection />
+      </Suspense>
     </>
   );
 }

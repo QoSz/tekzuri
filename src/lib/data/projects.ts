@@ -71,8 +71,16 @@ export const projects: Project[] = [
   },
 ];
 
+export type ProjectPreview = Pick<Project, "id" | "name" | "image" | "url">;
+
 export function getFeaturedProjects(): Project[] {
   return projects.filter((p) => p.featured);
+}
+
+export function getFeaturedProjectPreviews(): ProjectPreview[] {
+  return projects
+    .filter((p) => p.featured)
+    .map(({ id, name, image, url }) => ({ id, name, image, url }));
 }
 
 export function getAllProjects(): Project[] {

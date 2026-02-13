@@ -67,3 +67,7 @@ Root layout includes JSON-LD structured data (Organization + WebSite schemas). S
 - Accent color is burgundy: `--accent: #8B2346` (available as Tailwind `accent`, `accent-dark`, `accent-light`)
 - Custom CSS animations in `globals.css`: `animate-fade-in`, `animate-fade-in-up`, `animate-blob`, `matrix-column`
 - Mobile-first responsive design using Tailwind breakpoints (`md:`, `lg:`)
+
+## Workflow
+
+When carrying out a task always use sub-agents to Explore, Plan and Implement, then use a verification agent to make sure the implementation has been done according to plan and nothing else has broken. Allow the agents to communicate with each other.

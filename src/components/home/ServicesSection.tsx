@@ -1,7 +1,11 @@
+import dynamic from "next/dynamic";
 import { services } from "@/lib/data/services";
-import { ServiceCard3D } from "./ServiceCard3D";
 import { ScrollReveal } from "./ScrollReveal";
-import { ServicesBackground3D } from "./ServicesBackground3D";
+
+const ServiceCard3D = dynamic(
+  () => import("./ServiceCard3D").then((m) => ({ default: m.ServiceCard3D })),
+  { ssr: true, loading: () => <div className="bg-white/5 rounded-2xl p-8 lg:p-10 border border-white/10 min-h-[300px]" /> }
+);
 
 const serviceIcons: Record<(typeof services)[number]["id"], React.ReactNode> = {
   "web-development": (
@@ -35,8 +39,6 @@ const serviceIcons: Record<(typeof services)[number]["id"], React.ReactNode> = {
 export function ServicesSection() {
   return (
     <section id="services" className="py-24 lg:py-32 relative overflow-hidden">
-      <ServicesBackground3D />
-
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <ScrollReveal>

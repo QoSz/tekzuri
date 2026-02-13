@@ -57,7 +57,7 @@ export function ContactSection() {
             <span className="text-white/30">•</span>
             <span className="text-white font-medium">Kova Collective</span>
             <span className="text-white/30">•</span>
-            <span className="text-white font-medium">UFS</span>
+            <span className="text-white font-medium">Criss Cross</span>
           </div>
         </div>
       </div>

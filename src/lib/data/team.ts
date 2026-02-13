@@ -53,8 +53,16 @@ export function getTeamMemberBySlug(slug: string): TeamMember | undefined {
   return teamMembers.find((member) => member.slug === slug);
 }
 
+export type TeamMemberPreview = Pick<TeamMember, "id" | "name" | "slug" | "title">;
+
 export function getOtherTeamMembers(currentSlug: string): TeamMember[] {
   return teamMembers.filter((member) => member.slug !== currentSlug);
+}
+
+export function getOtherTeamMemberPreviews(currentSlug: string): TeamMemberPreview[] {
+  return teamMembers
+    .filter((member) => member.slug !== currentSlug)
+    .map(({ id, name, slug, title }) => ({ id, name, slug, title }));
 }
 
 export function getAllTeamSlugs(): string[] {

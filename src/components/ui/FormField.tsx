@@ -36,7 +36,7 @@ export function FormField({
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-muted-light mb-2">
-        {label} {required && <span className="text-accent">*</span>}
+        {label} {required ? <span className="text-accent">*</span> : null}
       </label>
       {type === "textarea" ? (
         <textarea

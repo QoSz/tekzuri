@@ -1,13 +1,17 @@
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import {
   getTeamMemberBySlug,
-  getOtherTeamMembers,
+  getOtherTeamMemberPreviews,
   getAllTeamSlugs,
 } from "@/lib/data/team";
+
 import { TeamMemberBio } from "@/components/about/TeamMemberBio";
 import { OtherTeamMembers } from "@/components/about/OtherTeamMembers";
+
+const getCachedTeamMember = cache(getTeamMemberBySlug);
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,7 +24,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const member = getTeamMemberBySlug(slug);
+  const member = getCachedTeamMember(slug);
 
   if (!member) {
     return {
@@ -61,13 +65,14 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function TeamMemberPage({ params }: PageProps) {
   const { slug } = await params;
-  const member = getTeamMemberBySlug(slug);
+  const [member, otherMembers] = await Promise.all([
+    Promise.resolve(getCachedTeamMember(slug)),
+    Promise.resolve(getOtherTeamMemberPreviews(slug)),
+  ]);
 
   if (!member) {
     notFound();
   }
-
-  const otherMembers = getOtherTeamMembers(slug);
 
   return (
     <main className="min-h-screen pt-24 pb-16">

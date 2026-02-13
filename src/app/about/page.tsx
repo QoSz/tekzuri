@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { TeamSection } from "@/components/about/TeamSection";
 
@@ -58,7 +59,9 @@ export default function AboutPage() {
         <hr className="border-white/10" />
       </div>
 
-      <TeamSection />
+      <Suspense fallback={<div className="px-8 py-16 md:py-24" />}>
+        <TeamSection />
+      </Suspense>
     </>
   );
 }

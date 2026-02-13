@@ -33,7 +33,12 @@ const contactItems: ContactItem[] = [
   {
     icon: MapPin,
     title: "Address",
-    content: "Nairobi, Kenya",
+    content: (
+      <div className="space-y-1">
+        <p>London, United Kingdom</p>
+        <p>Nairobi, Kenya</p>
+      </div>
+    ),
   },
 ];
 

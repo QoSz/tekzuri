@@ -122,6 +122,22 @@ export function Footer() {
                     business@tekzuri.com
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="tel:+254788871946"
+                    className="text-muted hover:text-foreground transition-colors text-sm"
+                  >
+                    +254 788 871 946
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:+447586752568"
+                    className="text-muted hover:text-foreground transition-colors text-sm"
+                  >
+                    +44 7586 752 568
+                  </a>
+                </li>
                 <li className="pt-4">
                   <a
                     href="/contact"
