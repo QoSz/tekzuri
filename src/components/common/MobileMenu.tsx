@@ -34,7 +34,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
       <button
         type="button"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden p-2 text-gray-600 hover:text-black transition-colors rounded-lg"
+        className="md:hidden p-2 text-muted-light hover:text-foreground transition-colors rounded-lg"
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMobileMenuOpen}
       >
@@ -60,7 +60,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
       {/* Mobile Menu panel */}
       <div
         id="mobile-menu"
-        className={`md:hidden absolute left-0 right-0 top-full z-50 bg-white border-b border-gray-100 shadow-lg transition-all duration-300 ease-out ${
+        className={`md:hidden absolute left-0 right-0 top-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10 shadow-lg transition-all duration-300 ease-out ${
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         }`}
         aria-hidden={!isMobileMenuOpen}
@@ -72,7 +72,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
                 key={link.href}
                 href={link.href}
                 onClick={closeMobileMenu}
-                className="px-4 py-3 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-50 transition-colors rounded-lg"
+                className="px-4 py-3 text-base font-medium text-muted-light hover:text-foreground hover:bg-white/5 transition-colors rounded-lg"
               >
                 {link.label}
               </Link>

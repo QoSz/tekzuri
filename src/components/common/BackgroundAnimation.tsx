@@ -2,13 +2,13 @@ export function BackgroundAnimation() {
   return (
     <>
       {/* Gradient mesh background */}
-      <div className="fixed inset-0 -z-20 bg-[#05050a]" />
+      <div className="fixed inset-0 -z-20 bg-[#0a0a12]" />
       
       {/* Animated gradient orbs - smooth and elegant */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-[#8B2346] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob" />
-        <div className="absolute top-0 -right-1/4 w-1/2 h-1/2 bg-[#6B1A36] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-1/4 left-1/3 w-1/2 h-1/2 bg-[#A83058] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob animation-delay-4000" />
+        <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-[#A4294F] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob" />
+        <div className="absolute top-0 -right-1/4 w-1/2 h-1/2 bg-[#8B2346] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob animation-delay-2000" />
+        <div className="absolute -bottom-1/4 left-1/3 w-1/2 h-1/2 bg-[#C43868] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob animation-delay-4000" />
       </div>
 
       {/* Subtle grain texture overlay */}
