@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Code, Palette, Smartphone, Zap, Check, Package, Briefcase, ShoppingCart, Building, Search, TrendingUp, FileText, BarChart } from 'lucide-react';
+import { Code, Palette, Smartphone, Zap, Check, Package, Briefcase, ShoppingCart, Building, Search, TrendingUp, BarChart } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Web Development - TekZuri',
