@@ -7,9 +7,9 @@ import {
   useReducedMotion,
 } from "framer-motion";
 
-const hidden = { opacity: 0, y: 30, filter: "blur(10px)" } as const;
+const hidden = { opacity: 0, y: 20, filter: "blur(6px)" } as const;
 const visible = { opacity: 1, y: 0, filter: "blur(0px)" } as const;
-const transitionConfig = { type: "spring", damping: 25, stiffness: 120, mass: 0.8 } as const;
+const transitionConfig = { type: "spring", damping: 30, stiffness: 100, mass: 0.8 } as const;
 
 interface ScrollRevealProps {
   children: ReactNode;

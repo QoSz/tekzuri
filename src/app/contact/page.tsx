@@ -34,15 +34,11 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="px-8 py-16 md:py-24">
+    <section className="px-6 lg:px-8 pt-16 lg:pt-20 pb-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <span className="inline-flex items-center justify-center gap-2 text-accent font-medium text-sm tracking-wide mb-4">
-            <span className="w-8 h-px bg-accent" />
-            Get in Touch
-            <span className="w-8 h-px bg-accent" />
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">Contact Us</h1>
+
+          <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>Contact Us</h1>
           <p className="mt-4 text-muted max-w-2xl mx-auto">
             We&apos;d love to hear from you. Fill out the form or reach out directly.
           </p>

@@ -35,13 +35,10 @@ export default function OurWorkPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="px-6 lg:px-8 pt-32 lg:pt-40 pb-16 lg:pb-20">
+      <section className="px-6 lg:px-8 pt-16 lg:pt-20 pb-16">
         <div className="max-w-7xl mx-auto">
-          <span className="inline-flex items-center gap-2 text-accent font-medium text-sm tracking-wide mb-4">
-            <span className="w-8 h-px bg-accent" />
-            Our Work
-          </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             Projects we&apos;re proud of
           </h1>
           <p className="max-w-2xl text-lg text-muted leading-relaxed">
@@ -56,12 +53,12 @@ export default function OurWorkPage() {
       <ProjectGrid />
 
       {/* Bottom CTA */}
-      <section className="px-6 lg:px-8 pb-24 lg:pb-32">
+      <section className="px-6 lg:px-8 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-muted mb-6">Have a project in mind?</p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 text-foreground font-medium hover:text-accent transition-colors group"
+            className="cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-[#f0f0f2] transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
           >
             Let&apos;s discuss your project
             <svg

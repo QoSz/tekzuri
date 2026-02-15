@@ -3,15 +3,10 @@ import { teamMembers } from "@/lib/data/team";
 
 export function TeamSection() {
   return (
-    <section className="px-8 py-16 md:py-24">
+    <section className="px-6 lg:px-8 py-16 lg:py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <span className="inline-flex items-center justify-center gap-2 text-accent font-medium text-sm tracking-wide mb-4">
-            <span className="w-8 h-px bg-accent" />
-            Our Team
-            <span className="w-8 h-px bg-accent" />
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground font-heading">
             Meet the People Behind TekZuri
           </h2>
           <p className="mt-4 text-muted max-w-2xl mx-auto">

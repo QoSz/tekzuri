@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Briefcase, Lightbulb, Settings, TrendingUp, Check, Gift, UserCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'IT Consulting - TekZuri',
@@ -9,22 +8,22 @@ export const metadata: Metadata = {
 
 const features = [
   {
-    icon: Briefcase,
+    number: '01',
     title: 'Strategic IT Planning',
     description: 'Developing tailored IT roadmaps aligned with your business objectives for sustainable growth and success.',
   },
   {
-    icon: Lightbulb,
+    number: '02',
     title: 'Technology Advisory',
     description: 'Expert guidance on technology adoption, infrastructure optimization, and digital transformation initiatives.',
   },
   {
-    icon: Settings,
+    number: '03',
     title: 'Process Improvement',
     description: 'Analyzing and optimizing your IT processes for increased efficiency, productivity, and operational excellence.',
   },
   {
-    icon: TrendingUp,
+    number: '04',
     title: 'Growth & Scalability',
     description: 'Leveraging technology to scale your operations and gain a competitive edge in an evolving marketplace.',
   },
@@ -33,7 +32,7 @@ const features = [
 const packages = [
   {
     name: 'Discovery Session',
-    icon: Gift,
+    number: '01',
     price: 'Free',
     currency: '',
     description: 'Get started with a comprehensive assessment',
@@ -58,7 +57,7 @@ const packages = [
   },
   {
     name: 'Strategic Partnership',
-    icon: UserCheck,
+    number: '02',
     price: '150',
     currency: 'USD/session',
     description: 'Ongoing guidance for technology success',
@@ -86,20 +85,11 @@ const packages = [
 export default function ITConsultingPage() {
   return (
     <div className="relative min-h-screen">
-      {/* Background gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-blob" />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-accent-light/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-      </div>
-
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 px-6 lg:px-8">
+      <section className="relative pt-16 lg:pt-20 pb-16 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 text-accent font-medium text-sm tracking-wide mb-6">
-            <span className="w-8 h-px bg-accent" />
-            IT Consulting
-          </span>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 bg-gradient-to-r from-foreground via-accent-light to-foreground bg-clip-text text-transparent">
+
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-medium tracking-tight mb-6 text-[#f0f0f2]" style={{ fontFamily: 'var(--font-heading)' }}>
             Strategic IT Guidance
           </h1>
           <p className="text-lg lg:text-xl text-muted max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -108,7 +98,8 @@ export default function ITConsultingPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-light text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20"
+            className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#101013] font-medium rounded-md transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+            style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)' }}
           >
             Get Expert Advice
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -121,17 +112,17 @@ export default function ITConsultingPage() {
       {/* Features Section */}
       <section className="relative py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-semibold text-center mb-16">Our Consulting Expertise</h2>
+          <h2 className="text-3xl lg:text-4xl font-medium text-center mb-16 text-[#f0f0f2]" style={{ fontFamily: 'var(--font-heading)' }}>Our Consulting Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 lg:p-8 rounded-2xl hover:bg-white/10 hover:border-accent/50 transition-all duration-500 group"
+                className="card-3d bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] p-6 lg:p-8 rounded-xl hover:border-[rgba(255,255,255,0.16)] group"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500 mb-6">
-                  <feature.icon className="w-6 h-6" strokeWidth={1.5} />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#161619] text-[#8a8a95] transition-all duration-500 mb-6">
+                  <span className="text-sm font-mono font-medium">{feature.number}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-white transition-colors duration-500">
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-[#f0f0f2] transition-colors duration-500">
                   {feature.title}
                 </h3>
                 <p className="text-muted group-hover:text-gray-300 transition-colors duration-500 leading-relaxed">
@@ -147,7 +138,7 @@ export default function ITConsultingPage() {
       <section className="relative py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-semibold mb-4">IT Consulting Packages</h2>
+            <h2 className="text-3xl lg:text-4xl font-medium mb-4 text-[#f0f0f2]" style={{ fontFamily: 'var(--font-heading)' }}>IT Consulting Packages</h2>
             <p className="text-lg text-muted max-w-3xl mx-auto">
               Start with a free consultation to understand your needs, then continue with ongoing strategic guidance.
             </p>
@@ -157,21 +148,22 @@ export default function ITConsultingPage() {
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`relative bg-white/5 backdrop-blur-sm border ${
-                  pkg.popular ? 'border-accent ring-2 ring-accent/50' : 'border-white/10'
-                } p-8 lg:p-10 rounded-2xl hover:bg-white/10 transition-all duration-500 flex flex-col`}
+                className={`relative bg-[#1c1c20] border ${
+                  pkg.popular ? 'border-[rgba(255,255,255,0.24)]' : 'border-[rgba(255,255,255,0.06)]'
+                } p-8 lg:p-10 rounded-xl transition-all duration-500 flex flex-col`}
+                style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-white text-[#101013] px-4 py-1 rounded text-xs font-medium">
                       Start Here
                     </span>
                   </div>
                 )}
 
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-accent/10 text-accent">
-                    <pkg.icon className="w-8 h-8" strokeWidth={1.5} />
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[#161619] text-[#8a8a95]">
+                    <span className="text-lg font-mono font-medium">{pkg.number}</span>
                   </div>
                   <div>
                     <h3 className="text-2xl font-semibold">{pkg.name}</h3>
@@ -191,7 +183,7 @@ export default function ITConsultingPage() {
                   <ul className="space-y-3 mb-8">
                     {pkg.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start gap-2 text-sm">
-                        <Check className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" strokeWidth={2} />
+                        <span className="text-[#6b6b75] text-sm">—</span>
                         <span className="text-muted">{feature}</span>
                       </li>
                     ))}
@@ -201,7 +193,7 @@ export default function ITConsultingPage() {
                   <ul className="space-y-3">
                     {pkg.benefits.map((benefit, benefitIndex) => (
                       <li key={benefitIndex} className="flex items-start gap-2 text-sm">
-                        <TrendingUp className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" strokeWidth={2} />
+                        <span className="text-[#6b6b75] text-sm">—</span>
                         <span className="text-muted">{benefit}</span>
                       </li>
                     ))}
@@ -210,11 +202,12 @@ export default function ITConsultingPage() {
 
                 <Link
                   href="/contact"
-                  className={`w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg font-medium transition-all duration-300 ${
+                  className={`w-full cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-4 rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] ${
                     pkg.popular
-                      ? 'bg-accent hover:bg-accent-light text-white hover:scale-105 hover:shadow-lg hover:shadow-accent/20'
-                      : 'bg-white/10 hover:bg-white/20 text-foreground border border-white/10'
+                      ? 'bg-white text-[#101013] active:scale-[0.98]'
+                      : 'bg-[#161619] hover:bg-[rgba(255,255,255,0.04)] text-foreground border border-[rgba(255,255,255,0.06)]'
                   }`}
+                  style={pkg.popular ? { boxShadow: '0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)' } : undefined}
                 >
                   {pkg.ctaText}
                 </Link>
@@ -223,9 +216,9 @@ export default function ITConsultingPage() {
           </div>
 
           {/* Value Proposition */}
-          <div className="mt-16 bg-gradient-to-br from-accent/10 to-accent-dark/10 backdrop-blur-sm border border-accent/20 rounded-2xl p-8 lg:p-12">
+          <div className="mt-16 bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-8 lg:p-12" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
             <div className="text-center mb-8">
-              <h3 className="text-2xl lg:text-3xl font-semibold mb-4">Why Choose Our IT Consulting?</h3>
+              <h3 className="text-2xl lg:text-3xl font-medium mb-4 text-[#f0f0f2]" style={{ fontFamily: 'var(--font-heading)' }}>Why Choose Our IT Consulting?</h3>
               <p className="text-muted max-w-3xl mx-auto">
                 Our consulting approach focuses on practical, actionable solutions that drive real business results.
                 We understand the unique challenges facing modern businesses and provide technology guidance that works.
@@ -234,22 +227,22 @@ export default function ITConsultingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent mb-4">
-                  <Briefcase className="w-6 h-6" strokeWidth={1.5} />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#161619] text-[#8a8a95] mb-4">
+                  <span className="text-sm font-mono font-medium">01</span>
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Market Understanding</h4>
                 <p className="text-sm text-muted">Deep understanding of diverse business environments and technology landscapes</p>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent mb-4">
-                  <Lightbulb className="w-6 h-6" strokeWidth={1.5} />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#161619] text-[#8a8a95] mb-4">
+                  <span className="text-sm font-mono font-medium">02</span>
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Practical Solutions</h4>
                 <p className="text-sm text-muted">Technology recommendations that are realistic, cost-effective, and implementable</p>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent mb-4">
-                  <TrendingUp className="w-6 h-6" strokeWidth={1.5} />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#161619] text-[#8a8a95] mb-4">
+                  <span className="text-sm font-mono font-medium">03</span>
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Growth Focused</h4>
                 <p className="text-sm text-muted">Strategic guidance that positions your business for sustainable growth and success</p>
@@ -262,8 +255,8 @@ export default function ITConsultingPage() {
       {/* CTA Section */}
       <section className="relative py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-accent/10 to-accent-dark/10 backdrop-blur-sm border border-accent/20 rounded-2xl p-8 lg:p-12">
-            <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
+          <div className="bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-8 lg:p-12" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+            <h2 className="text-3xl lg:text-4xl font-medium mb-4 text-[#f0f0f2]" style={{ fontFamily: 'var(--font-heading)' }}>
               Ready to Unlock Your Tech Potential?
             </h2>
             <p className="text-lg text-muted mb-8 max-w-2xl mx-auto">
@@ -272,7 +265,8 @@ export default function ITConsultingPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-light text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20"
+              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#101013] font-medium rounded-md transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+              style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)' }}
             >
               Book a Consultation
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -3,7 +3,7 @@
 import { type ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
-const spring = { type: "spring" as const, damping: 25, stiffness: 120, mass: 0.8 };
+const spring = { type: "spring" as const, damping: 30, stiffness: 100, mass: 0.8 };
 
 const containerVariants = {
   hidden: {},
@@ -13,7 +13,7 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
   visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: spring },
 };
 
@@ -50,5 +50,5 @@ export function RevealItem({ children, className }: { children: ReactNode; class
 }
 
 export function AccentLine() {
-  return <motion.span className="h-px bg-accent w-8" variants={lineVariants} />;
+  return <motion.span className="h-px bg-[rgba(255,255,255,0.16)] w-8" variants={lineVariants} />;
 }

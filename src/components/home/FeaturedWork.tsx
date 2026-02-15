@@ -11,19 +11,16 @@ export function FeaturedWork() {
   const featured = getFeaturedProjectPreviews();
 
   return (
-    <section id="our-work" className="py-24 lg:py-32 relative">
+    <section id="our-work" className="py-16 lg:py-20 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header row */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 lg:mb-16">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 text-accent font-medium text-sm tracking-wide mb-4">
-              <span className="w-8 h-px bg-accent" />
-              Our Work
-            </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Selected projects
+
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+              Featured work
             </h2>
-            <p className="text-lg text-muted leading-relaxed">
+            <p className="text-lg text-[#a0a0a8] leading-relaxed">
               A curated look at recent work that reflects our commitment to
               craft.
             </p>
@@ -32,7 +29,7 @@ export function FeaturedWork() {
           {/* CTA */}
           <Link
             href="/our-work"
-            className="group inline-flex items-center gap-2 text-foreground font-medium hover:text-accent transition-colors shrink-0"
+            className="group inline-flex items-center gap-2 text-foreground font-medium hover:text-[#f0f0f2] transition-colors duration-200 shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
           >
             View all projects
             <svg

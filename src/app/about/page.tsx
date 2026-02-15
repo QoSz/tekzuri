@@ -35,19 +35,15 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="px-8 py-16 md:py-24">
+      <section className="px-6 lg:px-8 pt-16 lg:pt-20 pb-16">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="inline-flex items-center justify-center gap-2 text-accent font-medium text-sm tracking-wide mb-4">
-            <span className="w-8 h-px bg-accent" />
-            About Us
-            <span className="w-8 h-px bg-accent" />
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
+
+          <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             Crafting Digital Excellence
           </h1>
           <p className="text-muted max-w-3xl mx-auto text-lg leading-relaxed">
             TekZuri draws inspiration from{" "}
-            <span className="text-accent font-medium">monozukuri</span> (ものづくり) — the
+            <span className="text-[#f0f0f2] font-medium">monozukuri</span> (ものづくり) — the
             Japanese art of making things with meticulous craftsmanship and
             attention to detail. We apply this philosophy to every digital
             experience we create.
@@ -55,11 +51,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-8">
-        <hr className="border-white/10" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <hr className="border-[rgba(255,255,255,0.06)]" />
       </div>
 
-      <Suspense fallback={<div className="px-8 py-16 md:py-24" />}>
+      <Suspense fallback={<div className="px-6 lg:px-8 py-16" />}>
         <TeamSection />
       </Suspense>
     </>

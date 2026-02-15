@@ -1,7 +1,6 @@
 import { cache } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import {
   getTeamMemberBySlug,
   getOtherTeamMemberPreviews,
@@ -75,13 +74,15 @@ export default async function TeamMemberPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6 md:px-8">
+    <div className="min-h-screen pt-16 lg:pt-20 pb-16">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <Link
           href="/about"
-          className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-muted hover:text-[#f0f0f2] transition-colors duration-200 mb-8 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
           Back to About
         </Link>
 
@@ -89,6 +90,6 @@ export default async function TeamMemberPage({ params }: PageProps) {
 
         <OtherTeamMembers members={otherMembers} />
       </div>
-    </main>
+    </div>
   );
 }

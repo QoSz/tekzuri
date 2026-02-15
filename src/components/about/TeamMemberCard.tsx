@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { User } from "lucide-react";
 import type { TeamMember } from "@/lib/data/team";
 
 interface TeamMemberCardProps {
@@ -9,10 +8,12 @@ interface TeamMemberCardProps {
 export function TeamMemberCard({ member }: TeamMemberCardProps) {
   return (
     <div className="w-full sm:w-80 aspect-square">
-      <div className="relative w-full h-full bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent/50 transition-all duration-300">
+      <div className="card-3d relative w-full h-full bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl hover:border-[rgba(255,255,255,0.16)]">
         <div className="w-full h-full flex flex-col items-center justify-center p-8">
-          <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-6">
-            <User className="w-8 h-8 text-accent" />
+          <div className="w-16 h-16 rounded-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)] flex items-center justify-center mb-6">
+            <span className="text-lg font-medium text-[#a0a0a8]" style={{ fontFamily: 'var(--font-heading)' }}>
+              {member.name.split(' ').map((n: string) => n[0]).join('')}
+            </span>
           </div>
 
           <div className="text-center mb-6">
@@ -22,11 +23,11 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
             <p className="text-sm text-muted">{member.title}</p>
           </div>
 
-          <div className="w-16 h-px bg-accent/30 mb-8" />
+          <div className="w-16 h-px bg-[rgba(255,255,255,0.06)] mb-8" />
 
           <Link
             href={`/about/team/${member.slug}`}
-            className="px-5 py-2 text-sm font-medium text-accent border border-accent/50 rounded-full hover:bg-accent hover:text-white transition-all duration-300"
+            className="px-5 py-2 cursor-pointer text-sm font-medium text-[#f0f0f2] border border-[rgba(255,255,255,0.10)] rounded-md hover:bg-white hover:text-[#101013] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
           >
             View Bio
           </Link>

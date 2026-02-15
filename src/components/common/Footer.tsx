@@ -39,15 +39,15 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-background/40 backdrop-blur-sm relative">
-      <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+    <footer className="bg-[#101013]/60 backdrop-blur-sm relative">
+      <div className="h-px" style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 60%, transparent 100%)' }} />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main footer */}
         <div className="py-16 lg:py-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-8">
             {/* Brand column */}
             <div className="col-span-2 md:col-span-1">
-              <Link href="/" className="inline-block mb-6">
+              <Link href="/" className="inline-block mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm">
                 <Image
                   src="/tekzuri-logo.webp"
                   alt="TekZuri"
@@ -60,17 +60,17 @@ export function Footer() {
                 Technology crafted with elegance. Inspired by the Japanese philosophy of monozukuri.
               </p>
               {/* Social links */}
-              <div className="flex gap-3">
+              <div className="flex gap-4">
                 {footerLinks.social.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-100/10 flex items-center justify-center text-muted hover:bg-accent hover:text-white transition-all duration-300"
-                    aria-label={social.label}
+                    aria-label={`${social.label} (opens in new tab)`}
+                    className="inline-block py-1 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
                   >
-                    {social.icon}
+                    {social.label}
                   </a>
                 ))}
               </div>
@@ -78,13 +78,13 @@ export function Footer() {
 
             {/* Quick links */}
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-4">Quick links</h4>
-              <ul className="space-y-3">
+              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#6b6b75] mb-5">Quick links</h4>
+              <ul className="space-y-1">
                 {footerLinks.quickLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-muted hover:text-foreground transition-colors text-sm"
+                      className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
                     >
                       {link.label}
                     </Link>
@@ -95,13 +95,13 @@ export function Footer() {
 
             {/* Services links */}
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-4">Services</h4>
-              <ul className="space-y-3">
+              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#6b6b75] mb-5">Services</h4>
+              <ul className="space-y-1">
                 {footerLinks.services.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-muted hover:text-foreground transition-colors text-sm"
+                      className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
                     >
                       {link.label}
                     </Link>
@@ -112,12 +112,12 @@ export function Footer() {
 
             {/* Contact column */}
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground mb-4">Get in Touch</h4>
-              <ul className="space-y-3">
+              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#6b6b75] mb-5">Get in Touch</h4>
+              <ul className="space-y-1">
                 <li>
                   <a
                     href="mailto:business@tekzuri.com"
-                    className="text-muted hover:text-foreground transition-colors text-sm"
+                    className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
                   >
                     business@tekzuri.com
                   </a>
@@ -125,7 +125,7 @@ export function Footer() {
                 <li>
                   <a
                     href="tel:+254788871946"
-                    className="text-muted hover:text-foreground transition-colors text-sm"
+                    className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
                   >
                     +254 788 871 946
                   </a>
@@ -133,7 +133,7 @@ export function Footer() {
                 <li>
                   <a
                     href="tel:+447586752568"
-                    className="text-muted hover:text-foreground transition-colors text-sm"
+                    className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
                   >
                     +44 7586 752 568
                   </a>
@@ -141,7 +141,7 @@ export function Footer() {
                 <li className="pt-4">
                   <a
                     href="/contact"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors group"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-[#f0f0f2] transition-colors duration-200 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
                   >
                     Start a project
                     <svg
@@ -160,11 +160,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-gray-100/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="py-6 border-t border-[rgba(255,255,255,0.06)] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-muted text-sm">
             © <CurrentYear /> TekZuri. All rights reserved.
           </p>
-          <p className="text-muted-light text-sm">
+          <p className="text-[#6b6b75] text-sm">
             Work with Elegance
           </p>
         </div>

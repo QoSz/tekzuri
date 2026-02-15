@@ -21,22 +21,22 @@ export function WordCarousel({ words, interval = 3000 }: WordCarouselProps) {
   }, [words.length, interval]);
 
   if (prefersReducedMotion) {
-    return <span className="inline-block text-accent">{words[currentIndex]}</span>;
+    return <span className="inline-block text-foreground">{words[currentIndex]}</span>;
   }
 
   return (
     <AnimatePresence mode="wait">
       <motion.span
         key={words[currentIndex]}
-        className="inline-block text-accent"
+        className="inline-block text-foreground"
         initial={{ opacity: 0, y: 20, filter: "blur(8px)", scale: 0.95 }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
         exit={{ opacity: 0, y: -20, filter: "blur(8px)", scale: 0.95 }}
         transition={{
           type: "spring",
-          damping: 22,
-          stiffness: 150,
-          mass: 0.6,
+          damping: 30,
+          stiffness: 100,
+          mass: 0.8,
         }}
       >
         {words[currentIndex]}

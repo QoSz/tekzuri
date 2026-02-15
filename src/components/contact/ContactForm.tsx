@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 import { FormField } from "@/components/ui/FormField";
 import { submitContactForm } from "@/app/actions";
@@ -48,19 +47,19 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
+    <div className="bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-6 md:p-8" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
       <h2 className="text-2xl font-semibold text-foreground mb-6">Send us a message</h2>
 
       {submitStatus === "success" && (
         <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center">
-          <CheckCircle className="h-5 w-5 text-green-400 mr-3 shrink-0" />
+          <span className="text-green-400 font-bold text-lg mr-3 shrink-0">✓</span>
           <p className="text-green-300">Thank you! Your message has been sent successfully.</p>
         </div>
       )}
 
       {submitStatus === "error" && (
         <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center">
-          <AlertCircle className="h-5 w-5 text-red-400 mr-3 shrink-0" />
+          <span className="text-red-400 font-bold text-lg mr-3 shrink-0">!</span>
           <p className="text-red-300">Something went wrong. Please try again.</p>
         </div>
       )}
@@ -117,19 +116,22 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg
-            font-medium transition-colors flex items-center justify-center gap-2
-            disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full cursor-pointer bg-white text-[#101013] hover:bg-white/90 px-6 py-3 rounded-md
+            font-medium transition-all duration-200 flex items-center justify-center gap-2
+            disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+          style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)' }}
         >
           {isSubmitting ? (
             <>
-              <span className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />
+              <span className="animate-spin rounded-full h-5 w-5 border-2 border-[#101013] border-t-transparent" />
               Sending...
             </>
           ) : (
             <>
-              <Send className="h-5 w-5" />
               Send Message
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </>
           )}
         </button>

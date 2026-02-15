@@ -1,28 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  /* Core palette - Warm dark theme */
-  --background: #121212;
-  --foreground: #ffffff;
-  --muted: #a0a0a0;
-  --muted-light: #d4d4d4;
+  /* Backgrounds */
+  --bg-deep: #101013;
+  --bg-base: #161619;
+  --bg-elevated: #1c1c20;
+  --bg-elevated-2: #222228;
+  --bg-surface: #2a2a31;
 
-  /* Accent - vibrant red-orange */
-  --accent: #ff3d00;
-  --accent-dark: #cc3100;
-  --accent-light: #ff6433;
+  /* Foreground */
+  --foreground: #f0f0f2;
+  --fg-secondary: #a0a0a8;
+  --fg-tertiary: #6b6b75;
+  --fg-quaternary: #44444d;
 
-  /* Dark neutrals - warm */
-  --gray-50: #1e1e1e;
-  --gray-100: #2a2a2a;
-  --gray-200: #3a3a3a;
-  --gray-300: #4f4f4f;
-  --gray-800: #e5e5e5;
-  --gray-900: #f5f5f5;
+  /* Legacy compat aliases */
+  --background: #101013;
+  --muted: #a0a0a8;
+  --muted-light: #f0f0f2;
+  --accent: #ffffff;
+  --accent-dark: #e0e0e0;
+  --accent-light: #ffffff;
 
-  /* Dark background variants */
-  --dark-bg: #0e0e0e;
-  --dark-bg-light: #181818;
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-hover: rgba(255, 255, 255, 0.24);
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
+  --shadow-card-hover: 0 2px 4px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.25), 0 16px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+  --shadow-button: 0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
+
+  /* Neutrals */
+  --gray-50: #1c1c20;
+  --gray-100: #222228;
+  --gray-200: #2a2a31;
+  --gray-300: #44444d;
+  --gray-800: #a0a0a8;
+  --gray-900: #f0f0f2;
+
+  --dark-bg: #101013;
+  --dark-bg-light: #161619;
 }
 
 @theme inline {
@@ -41,7 +61,16 @@
   --color-gray-900: var(--gray-900);
   --color-dark-bg: var(--dark-bg);
   --color-dark-bg-light: var(--dark-bg-light);
+  --color-bg-deep: var(--bg-deep);
+  --color-bg-base: var(--bg-base);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-elevated-2: var(--bg-elevated-2);
+  --color-bg-surface: var(--bg-surface);
+  --color-fg-secondary: var(--fg-secondary);
+  --color-fg-tertiary: var(--fg-tertiary);
+  --color-fg-quaternary: var(--fg-quaternary);
   --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
   --font-mono: var(--font-mono);
 }
 
@@ -50,42 +79,45 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: var(--bg-deep);
   color: var(--foreground);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 0.9375rem;
+  line-height: 1.65;
 }
 
-/* Selection styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), 'Space Grotesk', sans-serif;
+}
+
 ::selection {
-  background: var(--accent);
-  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--gray-100);
+  background: var(--bg-deep);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gray-300);
-  border-radius: 4px;
+  background: var(--fg-quaternary);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+  background: var(--fg-tertiary);
 }
 
-/* Animation utilities */
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -94,77 +126,116 @@ body {
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+  animation: fade-in-up 0.6s ease-out forwards;
 }
 
-/* Blob animation for gradient orbs */
-@keyframes blob {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(20px, -50px) scale(1.1);
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  75% {
-    transform: translate(50px, 50px) scale(1.05);
-  }
-}
+.animate-blob { animation: none; }
+.animation-delay-2000 { animation-delay: 0s; }
+.animation-delay-4000 { animation-delay: 0s; }
 
-.animate-blob {
-  animation: blob 20s ease-in-out infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-/* Hover lift effect */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-}
-
-/* Matrix rain animation for TekZuri card */
-@keyframes matrix-rain {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
+  transform: translateY(-4px) scale(1.005);
 }
 
 .matrix-column {
-  animation: matrix-rain linear infinite;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-family: "MS Gothic", "Hiragino Kaku Gothic Pro", monospace;
-  font-size: 14px;
-  letter-spacing: 0.6em;
-  line-height: 1.8;
-  color: var(--accent);
-  opacity: 0.12;
-  white-space: nowrap;
-  user-select: none;
-  pointer-events: none;
+  display: none;
 }
 
-/* Text shadow utilities for overlay readability */
+.swiss-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-tertiary);
+}
+
+.hr-asymmetric {
+  height: 1px;
+  background: linear-gradient(to right, var(--border-default) 0%, var(--border-subtle) 60%, transparent 100%);
+  border: none;
+}
+
 .text-shadow-sm {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .text-shadow {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--fg-quaternary);
+  z-index: 9999;
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.card-3d {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.card-3d:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 12px 24px rgba(0,0,0,0.25), 0 24px 48px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Enso circle slow rotation */
+@keyframes enso-drift {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-enso-drift {
+  animation: enso-drift 120s linear infinite;
+}
+
+/* Subtle glow pulse for ambient light effect */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.08; }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hover-lift:hover {
+    transform: none;
+  }
+
+  .card-3d {
+    transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-3d:hover {
+    transform: none;
+  }
+
+  .animate-enso-drift {
+    animation: none;
+  }
+
+  .animate-glow-pulse {
+    animation: none;
+    opacity: 0.06;
+  }
 }

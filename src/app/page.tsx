@@ -5,6 +5,7 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { FeaturedWork } from "@/components/home/FeaturedWork";
 import { AboutSection } from "@/components/home/AboutSection";
 import { ContactSection } from "@/components/home/ContactSection";
+import { SectionDivider } from "@/components/common/SectionDivider";
 
 export const metadata: Metadata = {
   title: "TekZuri | Work with Elegance",
@@ -40,16 +41,20 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <Suspense fallback={<div className="py-24 lg:py-32" />}>
+      <SectionDivider />
+      <Suspense fallback={<div className="py-16 lg:py-20" />}>
         <ServicesSection />
       </Suspense>
-      <Suspense fallback={<div className="py-24 lg:py-32" />}>
+      <SectionDivider />
+      <Suspense fallback={<div className="py-16 lg:py-20" />}>
         <FeaturedWork />
       </Suspense>
-      <Suspense fallback={<div className="py-24 lg:py-32" />}>
+      <SectionDivider />
+      <Suspense fallback={<div className="py-16 lg:py-20" />}>
         <AboutSection />
       </Suspense>
-      <Suspense fallback={<div className="py-24 lg:py-32" />}>
+      <SectionDivider />
+      <Suspense fallback={<div className="py-16 lg:py-20" />}>
         <ContactSection />
       </Suspense>
     </>
