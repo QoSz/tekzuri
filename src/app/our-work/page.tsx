@@ -58,7 +58,7 @@ export default function OurWorkPage() {
           <p className="text-muted mb-6">Have a project in mind?</p>
           <a
             href="/contact"
-            className="cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-[#f0f0f2] transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+            className="cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-[#e8e8ed] transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
           >
             Let&apos;s discuss your project
             <svg

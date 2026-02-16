@@ -59,8 +59,8 @@ export function ServiceCard3D({ children, className }: ServiceCard3DProps) {
   if (prefersReducedMotion) {
     return (
       <div
-        className={`group relative bg-[#1c1c20] rounded-xl p-8 lg:p-10 border border-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.16)] transition-all duration-500 ${className ?? ""}`}
-        style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}
+        className={`group relative bg-[#111116] rounded-2xl p-8 lg:p-10 border border-[rgba(255,255,255,0.07)] hover:border-[rgba(255,255,255,0.18)] transition-all duration-500 ${className ?? ""}`}
+        style={{ boxShadow: 'var(--shadow-card)' }}
       >
         {children}
       </div>
@@ -77,22 +77,22 @@ export function ServiceCard3D({ children, className }: ServiceCard3DProps) {
           rotateX,
           rotateY,
           transformStyle: "preserve-3d",
-          boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)'
+          boxShadow: 'var(--shadow-card)'
         }}
-        className={`group relative bg-[#1c1c20] rounded-xl p-8 lg:p-10 border border-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.16)] transition-[border-color,background-color] duration-500 hover:bg-[#222228] ${className ?? ""}`}
+        className={`group relative bg-[#111116] rounded-2xl p-8 lg:p-10 border border-[rgba(255,255,255,0.07)] hover:border-[rgba(255,255,255,0.18)] transition-[border-color,background-color] duration-500 hover:bg-[#18181f] ${className ?? ""}`}
       >
         {/* Glare overlay */}
         <motion.div
-          className="pointer-events-none absolute inset-0 rounded-xl"
+          className="pointer-events-none absolute inset-0 rounded-2xl"
           style={{ background: glareBackground }}
           aria-hidden="true"
         />
 
         {/* Inner ambient glow */}
         <motion.div
-          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           style={{
-            background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%)',
+            background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.05) 0%, transparent 60%)',
           }}
         />
 

@@ -43,7 +43,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-muted max-w-3xl mx-auto text-lg leading-relaxed">
             TekZuri draws inspiration from{" "}
-            <span className="text-[#f0f0f2] font-medium">monozukuri</span> (ものづくり) — the
+            <span className="text-[#e8e8ed] font-medium">monozukuri</span> (ものづくり) — the
             Japanese art of making things with meticulous craftsmanship and
             attention to detail. We apply this philosophy to every digital
             experience we create.

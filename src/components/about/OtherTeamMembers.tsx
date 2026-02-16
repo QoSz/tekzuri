@@ -18,12 +18,12 @@ export function OtherTeamMembers({ members }: OtherTeamMembersProps) {
           <Link
             key={member.id}
             href={`/about/team/${member.slug}`}
-            className="group cursor-pointer w-full sm:w-64 p-6 bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl hover:border-[rgba(255,255,255,0.16)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+            className="group cursor-pointer w-full sm:w-64 p-6 bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-xl hover:border-[rgba(255,255,255,0.16)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
             style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-14 h-14 rounded-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)] flex items-center justify-center mb-4">
-                <span className="text-base font-medium text-[#a0a0a8]" style={{ fontFamily: 'var(--font-heading)' }}>
+                <span className="text-base font-medium text-[#94949e]" style={{ fontFamily: 'var(--font-heading)' }}>
                   {member.name.split(' ').map((n: string) => n[0]).join('')}
                 </span>
               </div>

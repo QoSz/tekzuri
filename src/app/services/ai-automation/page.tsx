@@ -107,7 +107,7 @@ export default function AIAutomationPage() {
       <section className="relative pt-16 lg:pt-20 pb-16 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-[#f0f0f2]">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-[#e8e8ed]">
             AI That Actually Works
           </h1>
           <p className="text-lg lg:text-xl text-muted max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -116,8 +116,8 @@ export default function AIAutomationPage() {
           </p>
           <Link
             href="/contact"
-            className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#101013] font-medium rounded-md transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
-            style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)' }}
+            className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#050508] font-medium rounded-full transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+            style={{ boxShadow: 'var(--shadow-button)' }}
           >
             Start Automating
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,19 +128,19 @@ export default function AIAutomationPage() {
       </section>
 
       {/* Features Section */}
-      <section className="relative py-16 lg:py-24 px-6 lg:px-8 bg-[#161619]">
+      <section className="relative py-16 lg:py-24 px-6 lg:px-8 bg-[#0a0a0f]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-semibold text-center mb-16 text-[#f0f0f2]">What We Build</h2>
+          <h2 className="text-3xl lg:text-4xl font-semibold text-center mb-16 text-[#e8e8ed]">What We Build</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="card-3d bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] p-6 lg:p-8 rounded-xl hover:border-[rgba(255,255,255,0.16)] group"
+                className="card-3d bg-[#111116] border border-[rgba(255,255,255,0.06)] p-6 lg:p-8 rounded-2xl hover:border-[rgba(255,255,255,0.16)] group"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] text-[#8a8a95] mb-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#111116] border border-[rgba(255,255,255,0.06)] text-[#8a8a95] mb-6">
                   <span className="text-xl font-bold">{String(index + 1).padStart(2, '0')}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-[#f0f0f2] transition-colors duration-500">
+                <h3 className="text-xl font-semibold mb-3 text-[#e8e8ed] transition-colors duration-500">
                   {feature.title}
                 </h3>
                 <p className="text-muted transition-colors duration-500 leading-relaxed">
@@ -156,7 +156,7 @@ export default function AIAutomationPage() {
       <section className="relative py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-semibold mb-4 text-[#f0f0f2]">AI Automation Packages</h2>
+            <h2 className="text-3xl lg:text-4xl font-semibold mb-4 text-[#e8e8ed]">AI Automation Packages</h2>
             <p className="text-lg text-muted max-w-3xl mx-auto">
               Choose the AI solution that fits your business needs and start automating your workflows today.
             </p>
@@ -166,26 +166,26 @@ export default function AIAutomationPage() {
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`card-3d relative bg-[#1c1c20] border ${
+                className={`card-3d relative bg-[#111116] border ${
                   pkg.popular ? 'border-[rgba(255,255,255,0.24)]' : 'border-[rgba(255,255,255,0.06)]'
-                } p-6 lg:p-8 rounded-xl hover:border-[rgba(255,255,255,0.16)] flex flex-col`}
+                } p-6 lg:p-8 rounded-2xl hover:border-[rgba(255,255,255,0.16)] flex flex-col`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-white text-[#101013] px-4 py-1 rounded text-xs font-medium">
+                    <span className="bg-white text-[#050508] px-4 py-1 rounded-full text-xs font-medium">
                       Most Popular
                     </span>
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-1 text-[#f0f0f2]">{pkg.name}</h3>
+                  <h3 className="text-xl font-semibold mb-1 text-[#e8e8ed]">{pkg.name}</h3>
                   <p className="text-sm text-muted">{pkg.description}</p>
                 </div>
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-[#f0f0f2]">{pkg.price}</span>
+                    <span className="text-4xl font-bold text-[#e8e8ed]">{pkg.price}</span>
                     {pkg.currency !== 'Pricing' && <span className="text-muted text-sm">{pkg.currency}</span>}
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function AIAutomationPage() {
                 <ul className="space-y-3 mb-8 flex-grow">
                   {pkg.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-2 text-sm">
-                      <span className="text-[#6b6b75] text-sm">—</span>
+                      <span className="text-[#5c5c68] text-sm">—</span>
                       <span className="text-muted">{feature}</span>
                     </li>
                   ))}
@@ -201,12 +201,12 @@ export default function AIAutomationPage() {
 
                 <Link
                   href="/contact"
-                  className={`w-full cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] ${
+                  className={`w-full cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] ${
                     pkg.popular
-                      ? 'bg-white text-[#101013] active:scale-[0.98]'
-                      : 'bg-[#1c1c20] hover:bg-[#202024] text-foreground border border-[rgba(255,255,255,0.06)]'
+                      ? 'bg-white text-[#050508] active:scale-[0.98]'
+                      : 'bg-[#111116] hover:bg-[#18181f] text-foreground border border-[rgba(255,255,255,0.06)]'
                   }`}
-                  style={pkg.popular ? { boxShadow: '0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)' } : undefined}
+                  style={pkg.popular ? { boxShadow: 'var(--shadow-button)' } : undefined}
                 >
                   {pkg.ctaText}
                 </Link>
@@ -215,11 +215,11 @@ export default function AIAutomationPage() {
           </div>
 
           {/* Transparency Note */}
-          <div className="mt-16 bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-8 lg:p-12"
-            style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}
+          <div className="mt-16 bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-8 lg:p-12"
+            style={{ boxShadow: 'var(--shadow-card)' }}
           >
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold mb-4 text-[#f0f0f2]">Transparent Usage Billing</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-[#e8e8ed]">Transparent Usage Billing</h3>
               <p className="text-muted max-w-3xl mx-auto">
                 Our AI services use usage-based billing to ensure you only pay for what you use. All packages include
                 generous usage allowances, and any overage is transparently billed in the next cycle.
@@ -227,25 +227,25 @@ export default function AIAutomationPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] text-[#8a8a95] mx-auto mb-4">
+              <div className="text-center bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#111116] border border-[rgba(255,255,255,0.06)] text-[#8a8a95] mx-auto mb-4">
                   <span className="text-lg font-bold">01</span>
                 </div>
-                <h4 className="font-semibold mb-2 text-[#f0f0f2]">Real-time Monitoring</h4>
+                <h4 className="font-semibold mb-2 text-[#e8e8ed]">Real-time Monitoring</h4>
                 <p className="text-sm text-muted">Track your AI usage with detailed analytics</p>
               </div>
-              <div className="text-center bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] text-[#8a8a95] mx-auto mb-4">
+              <div className="text-center bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#111116] border border-[rgba(255,255,255,0.06)] text-[#8a8a95] mx-auto mb-4">
                   <span className="text-lg font-bold">02</span>
                 </div>
-                <h4 className="font-semibold mb-2 text-[#f0f0f2]">Flexible Scaling</h4>
+                <h4 className="font-semibold mb-2 text-[#e8e8ed]">Flexible Scaling</h4>
                 <p className="text-sm text-muted">Automatically scales with your needs</p>
               </div>
-              <div className="text-center bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-6">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] text-[#8a8a95] mx-auto mb-4">
+              <div className="text-center bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#111116] border border-[rgba(255,255,255,0.06)] text-[#8a8a95] mx-auto mb-4">
                   <span className="text-lg font-bold">03</span>
                 </div>
-                <h4 className="font-semibold mb-2 text-[#f0f0f2]">No Hidden Costs</h4>
+                <h4 className="font-semibold mb-2 text-[#e8e8ed]">No Hidden Costs</h4>
                 <p className="text-sm text-muted">Clear, transparent pricing always</p>
               </div>
             </div>
@@ -254,12 +254,12 @@ export default function AIAutomationPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-16 lg:py-24 px-6 lg:px-8 bg-[#161619]">
+      <section className="relative py-16 lg:py-24 px-6 lg:px-8 bg-[#0a0a0f]">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-8 lg:p-12"
-            style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}
+          <div className="bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-8 lg:p-12"
+            style={{ boxShadow: 'var(--shadow-card)' }}
           >
-            <h2 className="text-3xl lg:text-4xl font-semibold mb-4 text-[#f0f0f2]">
+            <h2 className="text-3xl lg:text-4xl font-semibold mb-4 text-[#e8e8ed]">
               Ready to Embrace AI?
             </h2>
             <p className="text-lg text-muted mb-8 max-w-2xl mx-auto">
@@ -268,8 +268,8 @@ export default function AIAutomationPage() {
             </p>
             <Link
               href="/contact"
-              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#101013] font-medium rounded-md transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
-              style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)' }}
+              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#050508] font-medium rounded-full transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+              style={{ boxShadow: 'var(--shadow-button)' }}
             >
               Discuss Your AI Strategy
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

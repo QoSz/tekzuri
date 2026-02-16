@@ -42,7 +42,7 @@ export default function ServicesPage() {
           <div className="swiss-label mb-4">
             ものづくり - Monozukuri
           </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-[#f0f0f2]">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-[#e8e8ed]">
             Our Services
           </h1>
           <p className="text-lg lg:text-xl text-muted max-w-3xl mx-auto leading-relaxed">
@@ -57,10 +57,10 @@ export default function ServicesPage() {
             <Link
               href={service.href}
               key={service.id}
-              className="group cursor-pointer relative bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-8 lg:p-10 hover:bg-[#222228] hover:border-[rgba(255,255,255,0.16)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+              className="group cursor-pointer relative bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-8 lg:p-10 hover:bg-[#18181f] hover:border-[rgba(255,255,255,0.16)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
               style={{
                 animationDelay: `${index * 100}ms`,
-                boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)'
+                boxShadow: 'var(--shadow-card)'
               }}
             >
               {/* Number indicator */}
@@ -69,7 +69,7 @@ export default function ServicesPage() {
               </span>
 
               {/* Content */}
-              <h3 className="relative text-2xl font-semibold mb-4 group-hover:text-[#f0f0f2] transition-colors duration-200">
+              <h3 className="relative text-2xl font-semibold mb-4 group-hover:text-[#e8e8ed] transition-colors duration-200">
                 {service.name}
               </h3>
               <p className="relative text-muted group-hover:text-gray-300 transition-colors duration-200 leading-relaxed">
@@ -77,7 +77,7 @@ export default function ServicesPage() {
               </p>
 
               {/* Arrow indicator */}
-              <div className="relative mt-6 inline-flex items-center gap-2 text-muted group-hover:text-[#f0f0f2] transition-all duration-200">
+              <div className="relative mt-6 inline-flex items-center gap-2 text-muted group-hover:text-[#e8e8ed] transition-all duration-200">
                 <span className="text-sm font-medium">Explore service</span>
                 <svg
                   className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
@@ -94,9 +94,9 @@ export default function ServicesPage() {
 
         {/* Bottom CTA */}
         <div className="mt-16 lg:mt-24 text-center">
-          <div className="inline-flex flex-col items-center gap-6 p-8 lg:p-12 rounded-xl bg-[#1c1c20] border border-[rgba(255,255,255,0.06)]"
+          <div className="inline-flex flex-col items-center gap-6 p-8 lg:p-12 rounded-2xl bg-[#111116] border border-[rgba(255,255,255,0.06)]"
             style={{
-              boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)'
+              boxShadow: 'var(--shadow-card)'
             }}
           >
             <h2 className="text-2xl lg:text-3xl font-semibold">Not sure which service you need?</h2>
@@ -105,9 +105,9 @@ export default function ServicesPage() {
             </p>
             <a
               href="/contact"
-              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#101013] rounded-md font-medium hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#050508] rounded-full font-medium hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
               style={{
-                boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2)'
+                boxShadow: 'var(--shadow-button)'
               }}
             >
               Start a conversation

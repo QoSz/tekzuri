@@ -167,7 +167,7 @@ export default function WebDevelopmentPage() {
       <section className="relative pt-16 lg:pt-20 pb-16 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-[#f0f0f2]">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-[#e8e8ed]">
             Websites Built to Impress
           </h1>
           <p className="text-lg lg:text-xl text-muted max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -176,9 +176,9 @@ export default function WebDevelopmentPage() {
           </p>
           <Link
             href="/contact"
-            className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#101013] rounded-md font-medium hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+            className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#050508] rounded-full font-medium hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
             style={{
-              boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2)'
+              boxShadow: 'var(--shadow-button)'
             }}
           >
             Start Your Project
@@ -197,12 +197,12 @@ export default function WebDevelopmentPage() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="card-3d bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] p-6 lg:p-8 rounded-xl hover:bg-[#222228] hover:border-[rgba(255,255,255,0.16)] group"
+                className="card-3d bg-[#111116] border border-[rgba(255,255,255,0.06)] p-6 lg:p-8 rounded-2xl hover:bg-[#18181f] hover:border-[rgba(255,255,255,0.16)] group"
               >
                 <span className="text-[2rem] font-light text-white/20 mb-6 block" style={{ fontFamily: 'var(--font-heading)' }}>
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-[#f0f0f2] transition-colors duration-200">
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-[#e8e8ed] transition-colors duration-200">
                   {feature.title}
                 </h3>
                 <p className="text-muted group-hover:text-gray-300 transition-colors duration-200 leading-relaxed">
@@ -215,7 +215,7 @@ export default function WebDevelopmentPage() {
       </section>
 
       {/* SEO Services Section */}
-      <section className="relative py-16 lg:py-24 px-6 lg:px-8 bg-[#161619]">
+      <section className="relative py-16 lg:py-24 px-6 lg:px-8 bg-[#0a0a0f]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
 
@@ -230,13 +230,13 @@ export default function WebDevelopmentPage() {
             {seoPackages.map((pkg, index) => (
               <div
                 key={index}
-                className={`card-3d relative bg-[#1c1c20] border ${
+                className={`card-3d relative bg-[#111116] border ${
                   pkg.popular ? 'border-[rgba(255,255,255,0.24)]' : 'border-[rgba(255,255,255,0.06)]'
-                } p-6 lg:p-8 rounded-xl hover:bg-[#222228] hover:border-[rgba(255,255,255,0.16)] flex flex-col`}
+                } p-6 lg:p-8 rounded-2xl hover:bg-[#18181f] hover:border-[rgba(255,255,255,0.16)] flex flex-col`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-white text-[#101013] px-3 py-1 rounded text-xs font-medium">
+                    <span className="bg-white text-[#050508] px-3 py-1 rounded-full text-xs font-medium">
                       Most Popular
                     </span>
                   </div>
@@ -260,7 +260,7 @@ export default function WebDevelopmentPage() {
                 <ul className="space-y-3 mb-8 flex-grow">
                   {pkg.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-2 text-sm">
-                      <span className="text-[#6b6b75] text-sm">—</span>
+                      <span className="text-[#5c5c68] text-sm">—</span>
                       <span className="text-muted">{feature}</span>
                     </li>
                   ))}
@@ -268,13 +268,13 @@ export default function WebDevelopmentPage() {
 
                 <Link
                   href="/contact"
-                  className={`w-full cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] ${
+                  className={`w-full cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] ${
                     pkg.popular
-                      ? 'bg-white text-[#101013] hover:bg-white/90 active:scale-[0.98]'
+                      ? 'bg-white text-[#050508] hover:bg-white/90 active:scale-[0.98]'
                       : 'bg-white/10 hover:bg-white/20 text-foreground border border-white/10'
                   }`}
                   style={pkg.popular ? {
-                    boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2)'
+                    boxShadow: 'var(--shadow-button)'
                   } : {}}
                 >
                   {pkg.ctaText}
@@ -306,13 +306,13 @@ export default function WebDevelopmentPage() {
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`card-3d relative bg-[#1c1c20] border ${
+                className={`card-3d relative bg-[#111116] border ${
                   pkg.popular ? 'border-[rgba(255,255,255,0.24)]' : 'border-[rgba(255,255,255,0.06)]'
-                } p-6 lg:p-8 rounded-xl hover:bg-[#222228] hover:border-[rgba(255,255,255,0.16)] flex flex-col`}
+                } p-6 lg:p-8 rounded-2xl hover:bg-[#18181f] hover:border-[rgba(255,255,255,0.16)] flex flex-col`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-white text-[#101013] px-3 py-1 rounded text-xs font-medium">
+                    <span className="bg-white text-[#050508] px-3 py-1 rounded-full text-xs font-medium">
                       Most Popular
                     </span>
                   </div>
@@ -338,7 +338,7 @@ export default function WebDevelopmentPage() {
                 <ul className="space-y-3 mb-8 flex-grow">
                   {pkg.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-2 text-sm">
-                      <span className="text-[#6b6b75] text-sm">—</span>
+                      <span className="text-[#5c5c68] text-sm">—</span>
                       <span className="text-muted">{feature}</span>
                     </li>
                   ))}
@@ -346,13 +346,13 @@ export default function WebDevelopmentPage() {
 
                 <Link
                   href="/contact"
-                  className={`w-full cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] ${
+                  className={`w-full cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] ${
                     pkg.popular
-                      ? 'bg-white text-[#101013] hover:bg-white/90 active:scale-[0.98]'
+                      ? 'bg-white text-[#050508] hover:bg-white/90 active:scale-[0.98]'
                       : 'bg-white/10 hover:bg-white/20 text-foreground border border-white/10'
                   }`}
                   style={pkg.popular ? {
-                    boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2)'
+                    boxShadow: 'var(--shadow-button)'
                   } : {}}
                 >
                   {pkg.ctaText}
@@ -366,9 +366,9 @@ export default function WebDevelopmentPage() {
       {/* CTA Section */}
       <section className="relative py-16 lg:py-24 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-8 lg:p-12"
+          <div className="bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-8 lg:p-12"
             style={{
-              boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)'
+              boxShadow: 'var(--shadow-card)'
             }}
           >
             <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
@@ -380,9 +380,9 @@ export default function WebDevelopmentPage() {
             </p>
             <Link
               href="/contact"
-              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#101013] rounded-md font-medium hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#050508] rounded-full font-medium hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
               style={{
-                boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2)'
+                boxShadow: 'var(--shadow-button)'
               }}
             >
               Request a Consultation

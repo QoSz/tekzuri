@@ -47,7 +47,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl p-6 md:p-8" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+    <div className="bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8" style={{ boxShadow: 'var(--shadow-card)' }}>
       <h2 className="text-2xl font-semibold text-foreground mb-6">Send us a message</h2>
 
       {submitStatus === "success" && (
@@ -116,14 +116,14 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full cursor-pointer bg-white text-[#101013] hover:bg-white/90 px-6 py-3 rounded-md
+          className="w-full cursor-pointer bg-white text-[#050508] hover:bg-white/90 px-6 py-3 rounded-full
             font-medium transition-all duration-200 flex items-center justify-center gap-2
-            disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
-          style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)' }}
+            disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+          style={{ boxShadow: 'var(--shadow-button)' }}
         >
           {isSubmitting ? (
             <>
-              <span className="animate-spin rounded-full h-5 w-5 border-2 border-[#101013] border-t-transparent" />
+              <span className="animate-spin rounded-full h-5 w-5 border-2 border-[#050508] border-t-transparent" />
               Sending...
             </>
           ) : (

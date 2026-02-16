@@ -39,15 +39,15 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-[#101013]/60 backdrop-blur-sm relative">
+    <footer className="bg-[#050508]/60 backdrop-blur-sm relative">
       <div className="h-px" style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 60%, transparent 100%)' }} />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Main footer */}
-        <div className="py-16 lg:py-20">
+        <div className="py-20 lg:py-28">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-8">
             {/* Brand column */}
             <div className="col-span-2 md:col-span-1">
-              <Link href="/" className="inline-block mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm">
+              <Link href="/" className="inline-block mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm">
                 <Image
                   src="/tekzuri-logo.webp"
                   alt="TekZuri"
@@ -68,7 +68,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${social.label} (opens in new tab)`}
-                    className="inline-block py-1 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+                    className="inline-block py-1 text-[#5c5c68] hover:text-[#e8e8ed] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
                   >
                     {social.label}
                   </a>
@@ -78,13 +78,13 @@ export function Footer() {
 
             {/* Quick links */}
             <div>
-              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#6b6b75] mb-5">Quick links</h4>
+              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#5c5c68] mb-5">Quick links</h4>
               <ul className="space-y-1">
                 {footerLinks.quickLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+                      className="inline-block py-1.5 text-[#5c5c68] hover:text-[#e8e8ed] transition-colors duration-200 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
                     >
                       {link.label}
                     </Link>
@@ -95,13 +95,13 @@ export function Footer() {
 
             {/* Services links */}
             <div>
-              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#6b6b75] mb-5">Services</h4>
+              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#5c5c68] mb-5">Services</h4>
               <ul className="space-y-1">
                 {footerLinks.services.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+                      className="inline-block py-1.5 text-[#5c5c68] hover:text-[#e8e8ed] transition-colors duration-200 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
                     >
                       {link.label}
                     </Link>
@@ -112,12 +112,12 @@ export function Footer() {
 
             {/* Contact column */}
             <div>
-              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#6b6b75] mb-5">Get in Touch</h4>
+              <h4 className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-[#5c5c68] mb-5">Get in Touch</h4>
               <ul className="space-y-1">
                 <li>
                   <a
                     href="mailto:business@tekzuri.com"
-                    className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+                    className="inline-block py-1.5 text-[#5c5c68] hover:text-[#e8e8ed] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
                   >
                     business@tekzuri.com
                   </a>
@@ -125,7 +125,7 @@ export function Footer() {
                 <li>
                   <a
                     href="tel:+254788871946"
-                    className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+                    className="inline-block py-1.5 text-[#5c5c68] hover:text-[#e8e8ed] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
                   >
                     +254 788 871 946
                   </a>
@@ -133,7 +133,7 @@ export function Footer() {
                 <li>
                   <a
                     href="tel:+447586752568"
-                    className="inline-block py-1.5 text-[#6b6b75] hover:text-[#f0f0f2] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+                    className="inline-block py-1.5 text-[#5c5c68] hover:text-[#e8e8ed] transition-colors duration-200 text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
                   >
                     +44 7586 752 568
                   </a>
@@ -141,7 +141,7 @@ export function Footer() {
                 <li className="pt-4">
                   <a
                     href="/contact"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-[#f0f0f2] transition-colors duration-200 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-[#e8e8ed] transition-colors duration-200 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
                   >
                     Start a project
                     <svg
@@ -164,7 +164,7 @@ export function Footer() {
           <p className="text-muted text-sm">
             © <CurrentYear /> TekZuri. All rights reserved.
           </p>
-          <p className="text-[#6b6b75] text-sm">
+          <p className="text-[#5c5c68] text-sm">
             Work with Elegance
           </p>
         </div>

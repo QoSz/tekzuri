@@ -2,47 +2,47 @@
 
 :root {
   /* Backgrounds */
-  --bg-deep: #101013;
-  --bg-base: #161619;
-  --bg-elevated: #1c1c20;
-  --bg-elevated-2: #222228;
-  --bg-surface: #2a2a31;
+  --bg-deep: #050508;
+  --bg-base: #0a0a0f;
+  --bg-elevated: #111116;
+  --bg-elevated-2: #18181f;
+  --bg-surface: #1f1f28;
 
   /* Foreground */
-  --foreground: #f0f0f2;
-  --fg-secondary: #a0a0a8;
-  --fg-tertiary: #6b6b75;
-  --fg-quaternary: #44444d;
+  --foreground: #e8e8ed;
+  --fg-secondary: #94949e;
+  --fg-tertiary: #5c5c68;
+  --fg-quaternary: #3a3a44;
 
   /* Legacy compat aliases */
-  --background: #101013;
-  --muted: #a0a0a8;
-  --muted-light: #f0f0f2;
+  --background: #050508;
+  --muted: #94949e;
+  --muted-light: #e8e8ed;
   --accent: #ffffff;
   --accent-dark: #e0e0e0;
   --accent-light: #ffffff;
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-default: rgba(255, 255, 255, 0.10);
-  --border-strong: rgba(255, 255, 255, 0.16);
-  --border-hover: rgba(255, 255, 255, 0.24);
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-default: rgba(255, 255, 255, 0.11);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-hover: rgba(255, 255, 255, 0.28);
 
   /* Shadows */
-  --shadow-card: 0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
-  --shadow-card-hover: 0 2px 4px rgba(0,0,0,0.3), 0 8px 16px rgba(0,0,0,0.25), 0 16px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
-  --shadow-button: 0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
+  --shadow-card: 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.06), 0 4px 16px rgba(0,0,0,0.4), 0 8px 32px rgba(0,0,0,0.25);
+  --shadow-card-hover: 0 0 0 1px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 24px rgba(0,0,0,0.5), 0 16px 48px rgba(0,0,0,0.3);
+  --shadow-button: 0 0 0 1px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 8px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
 
   /* Neutrals */
-  --gray-50: #1c1c20;
-  --gray-100: #222228;
-  --gray-200: #2a2a31;
-  --gray-300: #44444d;
-  --gray-800: #a0a0a8;
-  --gray-900: #f0f0f2;
+  --gray-50: #111116;
+  --gray-100: #18181f;
+  --gray-200: #1f1f28;
+  --gray-300: #3a3a44;
+  --gray-800: #94949e;
+  --gray-900: #e8e8ed;
 
-  --dark-bg: #101013;
-  --dark-bg-light: #161619;
+  --dark-bg: #050508;
+  --dark-bg-light: #0a0a0f;
 }
 
 @theme inline {
@@ -84,8 +84,8 @@ body {
   font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 0.9375rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -180,12 +180,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-3d {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
+  box-shadow: var(--shadow-card);
 }
 
 .card-3d:hover {
   transform: translateY(-4px) scale(1.005);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 12px 24px rgba(0,0,0,0.25), 0 24px 48px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06);
+  box-shadow: var(--shadow-card-hover);
 }
 
 /* Enso circle slow rotation */
@@ -206,6 +206,35 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-glow-pulse {
   animation: glow-pulse 8s ease-in-out infinite;
+}
+
+@keyframes orbit-rotate {
+  from { transform: rotateX(70deg) rotateZ(0deg); }
+  to { transform: rotateX(70deg) rotateZ(360deg); }
+}
+
+@keyframes orbit-rotate-reverse {
+  from { transform: rotateX(70deg) rotateZ(360deg); }
+  to { transform: rotateX(70deg) rotateZ(0deg); }
+}
+
+@keyframes center-glow-pulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -237,5 +266,9 @@ h1, h2, h3, h4, h5, h6 {
   .animate-glow-pulse {
     animation: none;
     opacity: 0.06;
+  }
+
+  .hero-orbital * {
+    animation: none !important;
   }
 }

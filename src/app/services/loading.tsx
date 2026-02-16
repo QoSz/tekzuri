@@ -15,7 +15,7 @@ export default function ServicesLoading() {
           {[1, 2, 3, 4].map((i) => (
             <div
               key={i}
-              className="bg-[#1c1c20] rounded-xl p-8 lg:p-10 border border-[rgba(255,255,255,0.06)]"
+              className="bg-[#111116] rounded-xl p-8 lg:p-10 border border-[rgba(255,255,255,0.06)]"
             >
               {/* Icon Skeleton */}
               <div className="w-16 h-16 bg-[rgba(255,255,255,0.04)] rounded-xl mb-6 animate-pulse" />

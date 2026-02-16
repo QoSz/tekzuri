@@ -12,7 +12,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="card-3d cursor-pointer group relative flex flex-col overflow-hidden rounded-xl bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.16)] animate-fade-in-up focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013]"
+      className="card-3d cursor-pointer group relative flex flex-col overflow-hidden rounded-2xl bg-[#111116] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.16)] animate-fade-in-up focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
       style={{
         animationDelay: `${index * 100}ms`,
       }}
@@ -26,16 +26,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#101013] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050508] to-transparent" />
       </div>
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-6 lg:p-8">
-        <span className="text-[#6b6b75] text-xs font-medium uppercase tracking-wider mb-2">
+        <span className="text-[#5c5c68] text-xs font-medium uppercase tracking-wider mb-2">
           {project.subtitle}
         </span>
 
-        <h3 className="text-xl font-semibold text-foreground group-hover:text-[#f0f0f2] transition-colors duration-300 mb-3">
+        <h3 className="text-xl font-semibold text-foreground group-hover:text-[#e8e8ed] transition-colors duration-300 mb-3">
           {project.name}
         </h3>
 

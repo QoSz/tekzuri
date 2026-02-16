@@ -1,15 +1,14 @@
 export function AboutSection() {
   return (
-    <section id="about" className="py-16 lg:py-20 relative">
+    <section id="about" className="py-20 lg:py-28 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left - Visual */}
           <div className="relative">
             <div
-              className="group relative bg-[#1c1c20] border border-[rgba(255,255,255,0.06)] rounded-xl overflow-hidden hover:border-[rgba(255,255,255,0.10)] transition-all duration-700"
+              className="group relative bg-[#111116] border border-[rgba(255,255,255,0.07)] rounded-2xl overflow-hidden hover:border-[rgba(255,255,255,0.10)] transition-all duration-700"
               style={{
-                boxShadow:
-                  '0 1px 2px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04)',
+                boxShadow: 'var(--shadow-card)',
               }}
             >
               <div className="relative min-h-[360px] lg:min-h-[460px] flex flex-col items-center justify-center p-10 lg:p-14">
@@ -30,19 +29,28 @@ export function AboutSection() {
                   }}
                 />
 
-                {/* Large decorative "T" */}
-                <span
-                  className="text-[8rem] lg:text-[10rem] font-bold leading-none text-white/[0.04] select-none pointer-events-none"
+                {/* Enso circle */}
+                <svg
+                  className="w-48 h-48 lg:w-56 lg:h-56 animate-enso-drift"
+                  viewBox="0 0 200 200"
+                  fill="none"
                   aria-hidden="true"
-                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  T
-                </span>
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r="80"
+                    stroke="rgba(255,255,255,0.08)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeDasharray="440 60"
+                  />
+                </svg>
 
                 {/* Text block */}
                 <div className="relative z-10 text-center -mt-4">
                   <h3
-                    className="text-3xl lg:text-4xl font-light text-[#f0f0f2] tracking-tight mb-3"
+                    className="text-3xl lg:text-4xl font-light text-[#e8e8ed] tracking-tight mb-3"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     TekZuri
@@ -50,10 +58,10 @@ export function AboutSection() {
 
                   <div className="w-10 h-px bg-[rgba(255,255,255,0.10)] mx-auto mb-3" />
 
-                  <p className="text-[#a0a0a8] text-sm tracking-[0.04em]">
+                  <p className="text-[#94949e] text-sm tracking-[0.04em]">
                     Tech + Monozukuri
                   </p>
-                  <p className="text-[#6b6b75] text-base mt-1">
+                  <p className="text-[#5c5c68] text-base mt-1">
                     ものづくり
                   </p>
                 </div>
@@ -65,13 +73,13 @@ export function AboutSection() {
           {/* Right - Content */}
           <div>
 
-            <h2 className="text-4xl sm:text-5xl font-light tracking-tight mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
+            <h2 className="text-4xl sm:text-5xl font-normal tracking-[-0.02em] mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
               The art of making things
             </h2>
 
-            <div className="space-y-6 text-lg text-[#a0a0a8] leading-relaxed">
+            <div className="space-y-6 text-lg text-[#94949e] leading-relaxed">
               <p>
-                <strong className="text-[#f0f0f2] font-medium">Monozukuri</strong> (ものづくり) is a Japanese concept
+                <strong className="text-[#e8e8ed] font-medium">Monozukuri</strong> (ものづくり) is a Japanese concept
                 that encompasses not just making things, but the spirit and mindset behind creating
                 products with dedication and craftsmanship.
               </p>
@@ -98,8 +106,8 @@ export function AboutSection() {
                     {value.num}
                   </span>
                   <div>
-                    <h4 className="text-sm font-medium mb-1 text-[#f0f0f2]">{value.title}</h4>
-                    <p className="text-xs text-[#a0a0a8] leading-relaxed">{value.desc}</p>
+                    <h4 className="text-sm font-medium mb-1 text-[#e8e8ed]">{value.title}</h4>
+                    <p className="text-xs text-[#94949e] leading-relaxed">{value.desc}</p>
                   </div>
                 </div>
               ))}
@@ -109,7 +117,7 @@ export function AboutSection() {
             <div className="mt-12">
               <a
                 href="/about"
-                className="group cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-[#f0f0f2] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#101013] rounded-sm"
+                className="group cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-[#e8e8ed] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
               >
                 Learn more about us
                 <svg

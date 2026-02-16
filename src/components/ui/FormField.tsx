@@ -21,7 +21,7 @@ export function FormField({
   register,
   error,
 }: FormFieldProps) {
-  const baseClasses = `w-full px-4 py-3 bg-[#161619] border rounded-md
+  const baseClasses = `w-full px-4 py-3 bg-[#0a0a0f] border rounded-xl
     focus-visible:ring-2 focus-visible:outline-none transition-colors duration-200
     placeholder:text-muted
     text-foreground`;
@@ -34,8 +34,8 @@ export function FormField({
 
   return (
     <div>
-      <label htmlFor={id} className="block text-sm font-medium text-[#a0a0a8] mb-2">
-        {label} {required ? <span className="text-[#f0f0f2]">*</span> : null}
+      <label htmlFor={id} className="block text-sm font-medium text-[#94949e] mb-2">
+        {label} {required ? <span className="text-[#e8e8ed]">*</span> : null}
       </label>
       {type === "textarea" ? (
         <textarea
