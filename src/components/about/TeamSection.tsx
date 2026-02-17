@@ -9,7 +9,7 @@ export function TeamSection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground font-heading">
             Meet the People Behind TekZuri
           </h2>
-          <p className="mt-4 text-muted max-w-2xl mx-auto">
+          <p className="mt-4 text-fg-secondary max-w-2xl mx-auto">
             We are a passionate team dedicated to bringing your digital visions
             to life with craftsmanship and care.
           </p>

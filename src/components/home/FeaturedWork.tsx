@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { getFeaturedProjectPreviews } from "@/lib/data/projects";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 
 const FeaturedWorkGrid = dynamic(
   () => import("./FeaturedWorkGrid").then((m) => ({ default: m.FeaturedWorkGrid })),
@@ -20,7 +21,7 @@ export function FeaturedWork() {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-[-0.02em] mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
               Featured work
             </h2>
-            <p className="text-lg text-[#94949e] leading-relaxed">
+            <p className="text-lg text-fg-secondary leading-relaxed">
               A curated look at recent work that reflects our commitment to
               craft.
             </p>
@@ -29,22 +30,10 @@ export function FeaturedWork() {
           {/* CTA */}
           <Link
             href="/our-work"
-            className="group inline-flex items-center gap-2 text-foreground font-medium hover:text-[#e8e8ed] transition-colors duration-200 shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
+            className="group inline-flex items-center gap-2 text-foreground font-medium hover:text-foreground transition-colors duration-200 shrink-0 cursor-pointer focus-ring rounded-sm"
           >
             View all projects
-            <svg
-              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+            <ArrowIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
 

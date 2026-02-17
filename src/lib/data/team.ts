@@ -29,9 +29,9 @@ export const teamMembers: TeamMember[] = [
     slug: "nirav-challa",
     title: "Co-Founder",
     description: [
-      "I'm Nirav, the co-founder of Interconnect and a Computer Science graduate with expertise in AI generation, website development, and Python. I thrive on versatility, creativity, and relentless problem solving constantly looking for innovative ways to tackle challenges, even before they appear.",
-      "After finishing university, I asked myself a simple question: What if I could help great businesses that go unnoticed finally get the recognition they deserve? That question became the foundation of Interconnect a company built to empower talented businesses by giving them the digital presence, visibility, and clients they deserve.",
-      "At Interconnect, we don't just create websites; we build futuristic digital experiences that elevate brands, connect them with audiences, and make an impact. Together, we can shape your online presence into something that doesn't just stand out it shakes the ground.",
+      "I'm Nirav, the co-founder of TekZuri and a Computer Science graduate with expertise in AI generation, website development, and Python. I thrive on versatility, creativity, and relentless problem solving constantly looking for innovative ways to tackle challenges, even before they appear.",
+      "After finishing university, I asked myself a simple question: What if I could help great businesses that go unnoticed finally get the recognition they deserve? That question became the foundation of TekZuri a company built to empower talented businesses by giving them the digital presence, visibility, and clients they deserve.",
+      "At TekZuri, we don't just create websites; we build futuristic digital experiences that elevate brands, connect them with audiences, and make an impact. Together, we can shape your online presence into something that doesn't just stand out it shakes the ground.",
       "Outside of work, I live a life rooted in discipline and peace. I love training calisthenics, going for long runs, lifting weights, and fueling my body with the right foods. I believe that when you treat your body right, everything else starts to fall into place you begin to enjoy the small things and appreciate what truly matters. To me, being in good shape reflects determination, focus, and hard work qualities that define how I approach both life and business.",
     ],
     linkedin: "https://www.linkedin.com/in/niravchalla/",
@@ -42,8 +42,8 @@ export const teamMembers: TeamMember[] = [
     slug: "dhruv-patel",
     title: "Technical Director",
     description: [
-      "Dhruv is a skilled web developer and technology lead who guides Interconnect's technical direction. With deep expertise in scalable architectures, cloud systems, and modern web technologies, Dhruv ensures every project is efficient, secure, and built for performance. He's passionate about building user-centered digital experiences that blend functionality with creativity, driving real-world results for clients.",
-      "Beyond work, Dhruv enjoys unwinding with good movies, competitive gaming sessions, and playing soccer. These interests fuel his creativity, teamwork, and strategic thinking qualities that reflect in how he approaches both technology and leadership at Interconnect.",
+      "Dhruv is a skilled web developer and technology lead who guides TekZuri's technical direction. With deep expertise in scalable architectures, cloud systems, and modern web technologies, Dhruv ensures every project is efficient, secure, and built for performance. He's passionate about building user-centered digital experiences that blend functionality with creativity, driving real-world results for clients.",
+      "Beyond work, Dhruv enjoys unwinding with good movies, competitive gaming sessions, and playing soccer. These interests fuel his creativity, teamwork, and strategic thinking qualities that reflect in how he approaches both technology and leadership at TekZuri.",
     ],
     linkedin: "https://www.linkedin.com/in/dhruv-patel-a40ba5222/",
   },

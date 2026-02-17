@@ -21,21 +21,21 @@ export function FormField({
   register,
   error,
 }: FormFieldProps) {
-  const baseClasses = `w-full px-4 py-3 bg-[#0a0a0f] border rounded-xl
+  const baseClasses = `w-full px-4 py-3 bg-bg-base border rounded-xl
     focus-visible:ring-2 focus-visible:outline-none transition-colors duration-200
-    placeholder:text-muted
+    placeholder:text-fg-secondary
     text-foreground`;
 
   const stateClasses = error
     ? "border-red-400/50 focus-visible:ring-red-500/20 focus-visible:border-red-400"
-    : "border-[rgba(255,255,255,0.06)] focus-visible:ring-white/10 focus-visible:border-[rgba(255,255,255,0.24)]";
+    : "border-border-card focus-visible:ring-white/10 focus-visible:border-border-hover";
 
   const inputClasses = `${baseClasses} ${stateClasses}`;
 
   return (
     <div>
-      <label htmlFor={id} className="block text-sm font-medium text-[#94949e] mb-2">
-        {label} {required ? <span className="text-[#e8e8ed]">*</span> : null}
+      <label htmlFor={id} className="block text-sm font-medium text-fg-secondary mb-2">
+        {label} {required ? <span className="text-foreground">*</span> : null}
       </label>
       {type === "textarea" ? (
         <textarea

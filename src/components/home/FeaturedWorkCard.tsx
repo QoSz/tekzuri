@@ -16,7 +16,7 @@ export function FeaturedWorkCard({ project }: { project: ProjectPreview }) {
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative block cursor-pointer aspect-video rounded-2xl overflow-hidden bg-[#111116] border border-[rgba(255,255,255,0.07)] group-hover:border-[rgba(255,255,255,0.18)] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+        className="relative block cursor-pointer aspect-video rounded-2xl overflow-hidden bg-bg-elevated border border-border-card group-hover:border-border-strong transition-colors duration-300 focus-ring"
         style={{ boxShadow: 'var(--shadow-card)' }}
         whileHover={prefersReducedMotion ? undefined : hoverScale}
         transition={springTransition}
@@ -30,7 +30,7 @@ export function FeaturedWorkCard({ project }: { project: ProjectPreview }) {
         />
 
         {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/90 via-[#050508]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-deep/90 via-bg-deep/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
           <div className="text-white">
             <p className="text-sm font-medium mb-1">View Project</p>
             <p className="text-xs text-white/60">Click to explore</p>
@@ -38,7 +38,7 @@ export function FeaturedWorkCard({ project }: { project: ProjectPreview }) {
         </div>
       </motion.a>
 
-      <h3 className="mt-3 text-lg font-semibold text-foreground group-hover:text-[#e8e8ed] transition-colors duration-300">
+      <h3 className="mt-3 text-lg font-semibold text-foreground group-hover:text-foreground transition-colors duration-300">
         {project.name}
       </h3>
     </div>

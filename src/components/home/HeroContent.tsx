@@ -50,5 +50,5 @@ export function RevealItem({ children, className }: { children: ReactNode; class
 }
 
 export function AccentLine() {
-  return <motion.span className="h-px bg-[rgba(255,255,255,0.16)] w-8" variants={lineVariants} />;
+  return <motion.span className="h-px bg-border-strong w-8" variants={lineVariants} />;
 }

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 import { FormField } from "@/components/ui/FormField";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 import { submitContactForm } from "@/app/actions";
 
 export function ContactForm() {
@@ -47,12 +48,12 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-6 md:p-8" style={{ boxShadow: 'var(--shadow-card)' }}>
+    <div className="bg-bg-elevated border border-border-card rounded-2xl p-6 md:p-8" style={{ boxShadow: 'var(--shadow-card)' }}>
       <h2 className="text-2xl font-semibold text-foreground mb-6">Send us a message</h2>
 
       {submitStatus === "success" && (
         <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center">
-          <span className="text-green-400 font-bold text-lg mr-3 shrink-0">✓</span>
+          <span className="text-green-400 font-bold text-lg mr-3 shrink-0">&#10003;</span>
           <p className="text-green-300">Thank you! Your message has been sent successfully.</p>
         </div>
       )}
@@ -116,22 +117,20 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full cursor-pointer bg-white text-[#050508] hover:bg-white/90 px-6 py-3 rounded-full
+          className="w-full cursor-pointer bg-white text-bg-deep hover:bg-white/90 px-6 py-3 rounded-full
             font-medium transition-all duration-200 flex items-center justify-center gap-2
-            disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+            disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] focus-ring"
           style={{ boxShadow: 'var(--shadow-button)' }}
         >
           {isSubmitting ? (
             <>
-              <span className="animate-spin rounded-full h-5 w-5 border-2 border-[#050508] border-t-transparent" />
+              <span className="animate-spin rounded-full h-5 w-5 border-2 border-bg-deep border-t-transparent" />
               Sending...
             </>
           ) : (
             <>
               Send Message
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowIcon className="w-4 h-4" />
             </>
           )}
         </button>

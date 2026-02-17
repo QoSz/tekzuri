@@ -1,0 +1,413 @@
+{
+  "$schema": "Design tokens for TekZuri — single source of truth",
+  "$version": "1.0.0",
+
+  "colors": {
+    "background": {
+      "deep": "#050508",
+      "base": "#0a0a0f",
+      "elevated": "#111116",
+      "elevated2": "#18181f",
+      "surface": "#1f1f28"
+    },
+    "foreground": {
+      "primary": "#e8e8ed",
+      "secondary": "#94949e",
+      "tertiary": "#5c5c68",
+      "quaternary": "#3a3a44"
+    },
+    "accent": {
+      "default": "#ffffff",
+      "dark": "#e0e0e0",
+      "light": "#ffffff"
+    },
+    "border": {
+      "subtle": "rgba(255, 255, 255, 0.07)",
+      "default": "rgba(255, 255, 255, 0.11)",
+      "strong": "rgba(255, 255, 255, 0.18)",
+      "hover": "rgba(255, 255, 255, 0.28)",
+      "popularCard": "rgba(255, 255, 255, 0.24)",
+      "cardDefault": "rgba(255, 255, 255, 0.06)",
+      "cardHover": "rgba(255, 255, 255, 0.16)",
+      "input": "rgba(255, 255, 255, 0.10)"
+    },
+    "overlay": {
+      "2": "rgba(255, 255, 255, 0.02)",
+      "4": "rgba(255, 255, 255, 0.04)",
+      "6": "rgba(255, 255, 255, 0.06)",
+      "7": "rgba(255, 255, 255, 0.07)",
+      "8": "rgba(255, 255, 255, 0.08)",
+      "10": "rgba(255, 255, 255, 0.10)",
+      "15": "rgba(255, 255, 255, 0.15)",
+      "20": "rgba(255, 255, 255, 0.20)",
+      "25": "rgba(255, 255, 255, 0.25)",
+      "35": "rgba(255, 255, 255, 0.35)"
+    },
+    "shadows": {
+      "card": "0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.06), 0 4px 16px rgba(0,0,0,0.4), 0 8px 32px rgba(0,0,0,0.25)",
+      "cardHover": "0 0 0 1px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 24px rgba(0,0,0,0.5), 0 16px 48px rgba(0,0,0,0.3)",
+      "button": "0 0 0 1px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 8px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2)"
+    },
+    "semantic": {
+      "available": {
+        "dot": "rgba(52, 211, 153, 0.8)",
+        "pulse": "rgba(52, 211, 153, 0.4)"
+      },
+      "success": "#34d399",
+      "error": "#ef4444",
+      "focusRing": "rgba(255, 255, 255, 0.20)"
+    },
+    "featureNumber": "#8a8a95",
+    "neutrals": {
+      "50": "#111116",
+      "100": "#18181f",
+      "200": "#1f1f28",
+      "300": "#3a3a44",
+      "800": "#94949e",
+      "900": "#e8e8ed"
+    }
+  },
+
+  "typography": {
+    "fonts": {
+      "heading": {
+        "family": "Space Grotesk",
+        "variable": "--font-heading",
+        "weights": [300, 400, 500, 600, 700],
+        "fallback": "'Space Grotesk', sans-serif"
+      },
+      "body": {
+        "family": "Inter",
+        "variable": "--font-sans",
+        "weights": [300, 400, 500, 600],
+        "fallback": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      },
+      "mono": {
+        "family": "JetBrains Mono",
+        "variable": "--font-mono",
+        "weights": [400],
+        "fallback": "'JetBrains Mono', monospace"
+      }
+    },
+    "scale": {
+      "hero": {
+        "mobile": "2.5rem",
+        "sm": "3rem",
+        "md": "3.25rem",
+        "lg": "4rem",
+        "xl": "4.5rem",
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.03em",
+        "fontWeight": 400,
+        "fontFamily": "heading"
+      },
+      "servicePageH1": {
+        "mobile": "3rem",
+        "sm": "3.75rem",
+        "lg": "4.5rem",
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.025em",
+        "fontWeight": 700,
+        "fontFamily": "heading"
+      },
+      "sectionH2": {
+        "mobile": "2.25rem",
+        "sm": "3rem",
+        "lg": "3.75rem",
+        "lineHeight": 1.15,
+        "letterSpacing": "-0.02em",
+        "fontWeight": 400,
+        "fontFamily": "heading"
+      },
+      "subsectionH2": {
+        "mobile": "1.875rem",
+        "lg": "2.25rem",
+        "lineHeight": 1.2,
+        "letterSpacing": "normal",
+        "fontWeight": 600,
+        "fontFamily": "heading"
+      },
+      "sectionInnerH2": {
+        "mobile": "1.75rem",
+        "sm": "2rem",
+        "lg": "2.25rem",
+        "lineHeight": 1.25,
+        "letterSpacing": "-0.02em",
+        "fontWeight": 400,
+        "fontFamily": "heading"
+      },
+      "cardH3": {
+        "size": "1.25rem",
+        "lineHeight": 1.4,
+        "fontWeight": 500,
+        "fontFamily": "heading"
+      },
+      "cardH3Large": {
+        "size": "1.5rem",
+        "lineHeight": 1.35,
+        "fontWeight": 600,
+        "fontFamily": "heading"
+      },
+      "body": {
+        "size": "1rem",
+        "lineHeight": 1.7,
+        "fontWeight": 400,
+        "fontFamily": "body"
+      },
+      "bodyLarge": {
+        "size": "1.125rem",
+        "lineHeight": 1.7,
+        "fontWeight": 400,
+        "fontFamily": "body"
+      },
+      "bodySm": {
+        "size": "0.875rem",
+        "lineHeight": 1.5,
+        "fontWeight": 400,
+        "fontFamily": "body"
+      },
+      "bodyXs": {
+        "size": "0.75rem",
+        "lineHeight": 1.4,
+        "fontWeight": 400,
+        "fontFamily": "body"
+      },
+      "navLink": {
+        "size": "0.8125rem",
+        "lineHeight": 1.5,
+        "fontWeight": 500,
+        "letterSpacing": "0.02em",
+        "fontFamily": "body"
+      },
+      "swissLabel": {
+        "size": "0.75rem",
+        "lineHeight": 1.4,
+        "fontWeight": 500,
+        "letterSpacing": "0.12em",
+        "textTransform": "uppercase",
+        "fontFamily": "body"
+      },
+      "decorativeNumber": {
+        "size": "2rem",
+        "lineHeight": 1.2,
+        "fontWeight": 300,
+        "fontFamily": "heading"
+      }
+    },
+    "tracking": {
+      "tightest": "-0.03em",
+      "tighter": "-0.02em",
+      "tight": "-0.025em",
+      "normal": "0",
+      "wide": "0.02em",
+      "wider": "0.04em",
+      "widest": "0.12em"
+    },
+    "lineHeights": {
+      "none": 1,
+      "tight": 1.1,
+      "snug": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.7,
+      "loose": 2
+    },
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    }
+  },
+
+  "spacing": {
+    "section": {
+      "paddingY": {
+        "mobile": "5rem",
+        "desktop": "7rem"
+      },
+      "paddingX": {
+        "mobile": "1.5rem",
+        "desktop": "2rem"
+      }
+    },
+    "container": {
+      "maxWidth": "80rem"
+    },
+    "card": {
+      "padding": {
+        "mobile": "1.5rem",
+        "desktop": "2rem"
+      },
+      "paddingLarge": {
+        "mobile": "2rem",
+        "desktop": "2.5rem"
+      }
+    },
+    "gap": {
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "2xl": "3rem",
+      "3xl": "4rem",
+      "4xl": "6rem"
+    },
+    "navHeight": "4rem",
+    "scrollMarginTop": "5rem"
+  },
+
+  "motion": {
+    "durations": {
+      "instant": "100ms",
+      "fast": "200ms",
+      "normal": "300ms",
+      "slow": "500ms",
+      "slower": "700ms",
+      "decorative": "120s"
+    },
+    "easings": {
+      "default": "ease",
+      "out": "ease-out",
+      "inOut": "ease-in-out",
+      "spring": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "linear": "linear"
+    },
+    "springs": {
+      "default": {
+        "type": "spring",
+        "damping": 30,
+        "stiffness": 100,
+        "mass": 0.8
+      },
+      "snappy": {
+        "type": "spring",
+        "damping": 30,
+        "stiffness": 300
+      },
+      "gentle": {
+        "type": "spring",
+        "damping": 30,
+        "stiffness": 100
+      }
+    },
+    "framerMotion": {
+      "scrollReveal": {
+        "hidden": { "opacity": 0, "y": 20, "filter": "blur(6px)" },
+        "visible": { "opacity": 1, "y": 0, "filter": "blur(0px)" }
+      },
+      "staggerChildren": 0.15,
+      "delayChildren": 0.1,
+      "wordCarouselInterval": 3000,
+      "wordCarouselBlur": "8px",
+      "hoverScale": 1.03,
+      "activeScale": 0.98,
+      "3dTiltMaxDeg": 5
+    },
+    "cssAnimations": {
+      "fadeInUp": {
+        "duration": "0.6s",
+        "easing": "ease-out",
+        "translateY": "20px"
+      },
+      "ensoDrift": {
+        "duration": "120s",
+        "easing": "linear",
+        "iteration": "infinite"
+      },
+      "glowPulse": {
+        "duration": "8s",
+        "easing": "ease-in-out",
+        "iteration": "infinite",
+        "opacityRange": [0.04, 0.08]
+      },
+      "orbitRotate": {
+        "ring1Duration": "20s",
+        "ring2Duration": "35s",
+        "ring3Duration": "55s",
+        "tiltAngle": "70deg"
+      },
+      "centerGlowPulse": {
+        "duration": "4s",
+        "easing": "ease-in-out",
+        "scaleRange": [1, 1.15],
+        "opacityRange": [0.6, 1]
+      },
+      "pulseDot": {
+        "duration": "2s",
+        "easing": "ease-in-out",
+        "scaleRange": [1, 1.5]
+      },
+      "hoverLift": {
+        "translateY": "-4px",
+        "scale": 1.005,
+        "duration": "0.3s"
+      }
+    }
+  },
+
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+
+  "radii": {
+    "none": "0",
+    "sm": "0.125rem",
+    "md": "0.375rem",
+    "lg": "0.5rem",
+    "xl": "0.75rem",
+    "2xl": "1rem",
+    "full": "9999px"
+  },
+
+  "patterns": {
+    "dotGrid": {
+      "size": "24px",
+      "dotColor": "rgba(255,255,255,0.07)",
+      "dotSize": "1px"
+    },
+    "noise": {
+      "opacity": 0.035,
+      "type": "feTurbulence",
+      "baseFrequency": "0.65",
+      "numOctaves": "4"
+    },
+    "vignette": {
+      "background": "radial-gradient(ellipse at center, transparent 0%, rgba(5,5,8,0.3) 70%, rgba(5,5,8,0.8) 100%)"
+    },
+    "ambientGlow": {
+      "primary": "radial-gradient(circle at 50% 20%, rgba(255,255,255,0.03) 0%, transparent 60%)",
+      "secondary": "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.015) 0%, transparent 70%)"
+    }
+  },
+
+  "focus": {
+    "ring": "2px",
+    "ringColor": "rgba(255, 255, 255, 0.20)",
+    "ringOffset": "2px",
+    "ringOffsetColor": "#050508"
+  },
+
+  "textShadows": {
+    "sm": "0 1px 2px rgba(0, 0, 0, 0.5)",
+    "default": "0 1px 3px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.4)"
+  },
+
+  "selection": {
+    "background": "rgba(255, 255, 255, 0.2)",
+    "color": "#ffffff"
+  },
+
+  "scrollbar": {
+    "width": "6px",
+    "trackColor": "#050508",
+    "thumbColor": "#3a3a44",
+    "thumbHoverColor": "#5c5c68",
+    "thumbRadius": "3px"
+  }
+}

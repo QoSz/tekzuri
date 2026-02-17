@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProjectGrid } from "@/components/our-work/ProjectGrid";
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
 
 export const metadata: Metadata = {
   title: "Our Work",
@@ -41,7 +42,7 @@ export default function OurWorkPage() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             Projects we&apos;re proud of
           </h1>
-          <p className="max-w-2xl text-lg text-muted leading-relaxed">
+          <p className="max-w-2xl text-lg text-fg-secondary leading-relaxed">
             Every project is an opportunity to apply our philosophy of
             monozukuri &mdash; meticulous craftsmanship meeting modern
             technology.
@@ -55,25 +56,13 @@ export default function OurWorkPage() {
       {/* Bottom CTA */}
       <section className="px-6 lg:px-8 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-muted mb-6">Have a project in mind?</p>
+          <p className="text-fg-secondary mb-6">Have a project in mind?</p>
           <a
             href="/contact"
-            className="cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-[#e8e8ed] transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
+            className="cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-foreground transition-colors duration-200 group focus-ring rounded-sm"
           >
             Let&apos;s discuss your project
-            <svg
-              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+            <ArrowIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>
       </section>

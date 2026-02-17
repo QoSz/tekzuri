@@ -34,11 +34,11 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
       <button
         type="button"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden p-2 cursor-pointer text-[#94949e] hover:text-[#e8e8ed] transition-colors duration-200 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+        className="md:hidden p-2 cursor-pointer text-fg-secondary hover:text-foreground transition-colors duration-200 rounded-lg focus-ring"
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMobileMenuOpen}
       >
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           {isMobileMenuOpen ? (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
           ) : (
@@ -60,7 +60,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
       {/* Mobile Menu panel */}
       <div
         id="mobile-menu"
-        className={`md:hidden absolute left-0 right-0 top-full z-50 bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-[rgba(255,255,255,0.06)] shadow-lg transition-all duration-300 ease-out ${
+        className={`md:hidden absolute left-0 right-0 top-full z-50 bg-bg-base/95 backdrop-blur-xl border-b border-border-card shadow-lg transition-all duration-300 ease-out ${
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         }`}
         aria-hidden={!isMobileMenuOpen}
@@ -72,7 +72,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
                 key={link.href}
                 href={link.href}
                 onClick={closeMobileMenu}
-                className="px-4 py-3 text-base font-medium text-[#94949e] hover:text-[#e8e8ed] hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-200 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+                className="px-4 py-3 text-base font-medium text-fg-secondary hover:text-foreground hover:bg-white/[0.04] transition-colors duration-200 rounded-lg focus-ring"
               >
                 {link.label}
               </Link>
@@ -80,7 +80,7 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
             <Link
               href="/contact"
               onClick={closeMobileMenu}
-              className="mt-4 mx-4 text-center cursor-pointer bg-white text-[#050508] px-6 py-3 text-sm font-medium rounded-full hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+              className="mt-4 mx-4 text-center cursor-pointer bg-white text-bg-deep px-6 py-3 text-sm font-medium rounded-full hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-ring"
             >
               Get Started
             </Link>

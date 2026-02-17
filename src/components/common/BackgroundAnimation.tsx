@@ -2,7 +2,7 @@ export function BackgroundAnimation() {
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
       {/* Layer 1: True-black base */}
-      <div className="absolute inset-0 bg-[#050508]" />
+      <div className="absolute inset-0 bg-bg-deep" />
 
       {/* Layer 2: Subtle ambient glow (top-center) */}
       <div

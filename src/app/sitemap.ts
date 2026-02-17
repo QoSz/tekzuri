@@ -39,6 +39,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const servicePages: MetadataRoute.Sitemap = [
+    'web-development',
+    'ai-automation',
+    'digital-marketing',
+    'it-consulting',
+  ].map((slug) => ({
+    url: `${SITE_URL}/services/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   const teamPages: MetadataRoute.Sitemap = getAllTeamSlugs().map((slug) => ({
     url: `${SITE_URL}/about/team/${slug}`,
     lastModified: currentDate,
@@ -46,5 +58,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...teamPages];
+  return [...staticPages, ...servicePages, ...teamPages];
 }

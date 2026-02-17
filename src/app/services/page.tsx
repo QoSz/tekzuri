@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowIcon } from '@/components/ui/ArrowIcon';
 
 export const metadata: Metadata = {
-  title: 'Services - TekZuri',
+  title: 'Services',
   description: 'Explore TekZuri\'s comprehensive digital services: Web Development, AI Automation, Digital Marketing, and IT Consulting. Crafted with precision and elegance.',
 };
 
@@ -42,10 +43,10 @@ export default function ServicesPage() {
           <div className="swiss-label mb-4">
             ものづくり - Monozukuri
           </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-[#e8e8ed]">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-foreground">
             Our Services
           </h1>
-          <p className="text-lg lg:text-xl text-muted max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg lg:text-xl text-fg-secondary max-w-3xl mx-auto leading-relaxed">
             We provide a comprehensive suite of digital solutions designed with craftsmanship and elegance.
             Each service is tailored to elevate your business and deliver exceptional results.
           </p>
@@ -57,7 +58,7 @@ export default function ServicesPage() {
             <Link
               href={service.href}
               key={service.id}
-              className="group cursor-pointer relative bg-[#111116] border border-[rgba(255,255,255,0.06)] rounded-2xl p-8 lg:p-10 hover:bg-[#18181f] hover:border-[rgba(255,255,255,0.16)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+              className="group cursor-pointer relative bg-bg-elevated border border-border-card rounded-2xl p-8 lg:p-10 hover:bg-bg-elevated-2 hover:border-border-strong transition-all duration-300 focus-ring"
               style={{
                 animationDelay: `${index * 100}ms`,
                 boxShadow: 'var(--shadow-card)'
@@ -69,24 +70,17 @@ export default function ServicesPage() {
               </span>
 
               {/* Content */}
-              <h3 className="relative text-2xl font-semibold mb-4 group-hover:text-[#e8e8ed] transition-colors duration-200">
+              <h3 className="relative text-2xl font-semibold mb-4 group-hover:text-foreground transition-colors duration-200">
                 {service.name}
               </h3>
-              <p className="relative text-muted group-hover:text-gray-300 transition-colors duration-200 leading-relaxed">
+              <p className="relative text-fg-secondary group-hover:text-gray-300 transition-colors duration-200 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Arrow indicator */}
-              <div className="relative mt-6 inline-flex items-center gap-2 text-muted group-hover:text-[#e8e8ed] transition-all duration-200">
+              <div className="relative mt-6 inline-flex items-center gap-2 text-fg-secondary group-hover:text-foreground transition-all duration-200">
                 <span className="text-sm font-medium">Explore service</span>
-                <svg
-                  className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                <ArrowIcon className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
               </div>
             </Link>
           ))}
@@ -94,26 +88,24 @@ export default function ServicesPage() {
 
         {/* Bottom CTA */}
         <div className="mt-16 lg:mt-24 text-center">
-          <div className="inline-flex flex-col items-center gap-6 p-8 lg:p-12 rounded-2xl bg-[#111116] border border-[rgba(255,255,255,0.06)]"
+          <div className="inline-flex flex-col items-center gap-6 p-8 lg:p-12 rounded-2xl bg-bg-elevated border border-border-card"
             style={{
               boxShadow: 'var(--shadow-card)'
             }}
           >
             <h2 className="text-2xl lg:text-3xl font-semibold">Not sure which service you need?</h2>
-            <p className="text-muted max-w-2xl">
+            <p className="text-fg-secondary max-w-2xl">
               Let&apos;s discuss your project and find the perfect solution tailored to your business goals.
             </p>
             <a
               href="/contact"
-              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-[#050508] rounded-full font-medium hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508]"
+              className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 bg-white text-bg-deep rounded-full font-medium hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-ring"
               style={{
                 boxShadow: 'var(--shadow-button)'
               }}
             >
               Start a conversation
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowIcon className="w-5 h-5" />
             </a>
           </div>
         </div>

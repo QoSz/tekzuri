@@ -1,3 +1,5 @@
+import { ArrowIcon } from "@/components/ui/ArrowIcon";
+
 export function AboutSection() {
   return (
     <section id="about" className="py-20 lg:py-28 relative">
@@ -6,7 +8,7 @@ export function AboutSection() {
           {/* Left - Visual */}
           <div className="relative">
             <div
-              className="group relative bg-[#111116] border border-[rgba(255,255,255,0.07)] rounded-2xl overflow-hidden hover:border-[rgba(255,255,255,0.10)] transition-all duration-700"
+              className="group relative bg-bg-elevated border border-border-card rounded-2xl overflow-hidden hover:border-border-default transition-all duration-700"
               style={{
                 boxShadow: 'var(--shadow-card)',
               }}
@@ -50,18 +52,18 @@ export function AboutSection() {
                 {/* Text block */}
                 <div className="relative z-10 text-center -mt-4">
                   <h3
-                    className="text-3xl lg:text-4xl font-light text-[#e8e8ed] tracking-tight mb-3"
+                    className="text-3xl lg:text-4xl font-light text-foreground tracking-tight mb-3"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     TekZuri
                   </h3>
 
-                  <div className="w-10 h-px bg-[rgba(255,255,255,0.10)] mx-auto mb-3" />
+                  <div className="w-10 h-px bg-border-default mx-auto mb-3" />
 
-                  <p className="text-[#94949e] text-sm tracking-[0.04em]">
+                  <p className="text-fg-secondary text-sm tracking-[0.04em]">
                     Tech + Monozukuri
                   </p>
-                  <p className="text-[#5c5c68] text-base mt-1">
+                  <p className="text-fg-tertiary text-base mt-1">
                     ものづくり
                   </p>
                 </div>
@@ -77,9 +79,9 @@ export function AboutSection() {
               The art of making things
             </h2>
 
-            <div className="space-y-6 text-lg text-[#94949e] leading-relaxed">
+            <div className="space-y-6 text-lg text-fg-secondary leading-relaxed">
               <p>
-                <strong className="text-[#e8e8ed] font-medium">Monozukuri</strong> (ものづくり) is a Japanese concept
+                <strong className="text-foreground font-medium">Monozukuri</strong> (ものづくり) is a Japanese concept
                 that encompasses not just making things, but the spirit and mindset behind creating
                 products with dedication and craftsmanship.
               </p>
@@ -106,8 +108,8 @@ export function AboutSection() {
                     {value.num}
                   </span>
                   <div>
-                    <h4 className="text-sm font-medium mb-1 text-[#e8e8ed]">{value.title}</h4>
-                    <p className="text-xs text-[#94949e] leading-relaxed">{value.desc}</p>
+                    <h4 className="text-sm font-medium mb-1 text-foreground">{value.title}</h4>
+                    <p className="text-xs text-fg-secondary leading-relaxed">{value.desc}</p>
                   </div>
                 </div>
               ))}
@@ -117,17 +119,10 @@ export function AboutSection() {
             <div className="mt-12">
               <a
                 href="/about"
-                className="group cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-[#e8e8ed] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050508] rounded-sm"
+                className="group cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-foreground transition-colors duration-200 focus-ring rounded-sm"
               >
                 Learn more about us
-                <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                <ArrowIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
           </div>

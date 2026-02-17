@@ -59,7 +59,7 @@ export function ServiceCard3D({ children, className }: ServiceCard3DProps) {
   if (prefersReducedMotion) {
     return (
       <div
-        className={`group relative bg-[#111116] rounded-2xl p-8 lg:p-10 border border-[rgba(255,255,255,0.07)] hover:border-[rgba(255,255,255,0.18)] transition-all duration-500 ${className ?? ""}`}
+        className={`group relative bg-bg-elevated rounded-2xl p-8 lg:p-10 border border-border-card hover:border-border-strong transition-all duration-500 ${className ?? ""}`}
         style={{ boxShadow: 'var(--shadow-card)' }}
       >
         {children}
@@ -79,7 +79,7 @@ export function ServiceCard3D({ children, className }: ServiceCard3DProps) {
           transformStyle: "preserve-3d",
           boxShadow: 'var(--shadow-card)'
         }}
-        className={`group relative bg-[#111116] rounded-2xl p-8 lg:p-10 border border-[rgba(255,255,255,0.07)] hover:border-[rgba(255,255,255,0.18)] transition-[border-color,background-color] duration-500 hover:bg-[#18181f] ${className ?? ""}`}
+        className={`group relative bg-bg-elevated rounded-2xl p-8 lg:p-10 border border-border-card hover:border-border-strong transition-[border-color,background-color] duration-500 hover:bg-bg-elevated-2 ${className ?? ""}`}
       >
         {/* Glare overlay */}
         <motion.div

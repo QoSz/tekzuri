@@ -41,9 +41,9 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             Crafting Digital Excellence
           </h1>
-          <p className="text-muted max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-fg-secondary max-w-3xl mx-auto text-lg leading-relaxed">
             TekZuri draws inspiration from{" "}
-            <span className="text-[#e8e8ed] font-medium">monozukuri</span> (ものづくり) — the
+            <span className="text-foreground font-medium">monozukuri</span> (ものづくり) — the
             Japanese art of making things with meticulous craftsmanship and
             attention to detail. We apply this philosophy to every digital
             experience we create.
@@ -52,7 +52,7 @@ export default function AboutPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <hr className="border-[rgba(255,255,255,0.06)]" />
+        <hr className="border-border-card" />
       </div>
 
       <Suspense fallback={<div className="px-6 lg:px-8 py-16" />}>

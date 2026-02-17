@@ -122,7 +122,10 @@ export default function RootLayout({
       email: "business@tekzuri.com",
       contactType: "customer service",
     },
-    sameAs: [],
+    sameAs: [
+      "https://instagram.com/tekzuri",
+      "https://linkedin.com/company/tekzuri",
+    ],
     knowsAbout: [
       "Web Development",
       "Mobile App Development",
@@ -159,11 +162,17 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-white focus:text-bg-deep focus:px-4 focus:py-2 focus:rounded-lg focus:font-medium"
+        >
+          Skip to content
+        </a>
         <BackgroundAnimation />
         <ScrollProgressBar />
         <div className="min-h-screen flex flex-col relative">
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>

@@ -39,7 +39,7 @@ export default function ContactPage() {
         <div className="text-center mb-16">
 
           <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>Contact Us</h1>
-          <p className="mt-4 text-muted max-w-2xl mx-auto">
+          <p className="mt-4 text-fg-secondary max-w-2xl mx-auto">
             We&apos;d love to hear from you. Fill out the form or reach out directly.
           </p>
         </div>
