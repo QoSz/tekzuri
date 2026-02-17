@@ -5,6 +5,7 @@ import { PricingGrid } from "./PricingGrid";
 import { ServiceCTA } from "./ServiceCTA";
 import { TransparencySection } from "./TransparencySection";
 import { ValuePropSection } from "./ValuePropSection";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 interface ServiceLayoutProps {
   data: ServicePageData;
@@ -60,30 +61,36 @@ export function ServiceLayout({ data }: ServiceLayoutProps) {
 
       {data.transparency && (
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <TransparencySection
-            heading={data.transparency.heading}
-            subtext={data.transparency.subtext}
-            items={data.transparency.items}
-          />
+          <ScrollReveal>
+            <TransparencySection
+              heading={data.transparency.heading}
+              subtext={data.transparency.subtext}
+              items={data.transparency.items}
+            />
+          </ScrollReveal>
         </div>
       )}
 
       {data.valueProp && (
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <ValuePropSection
-            heading={data.valueProp.heading}
-            subtext={data.valueProp.subtext}
-            items={data.valueProp.items}
-          />
+          <ScrollReveal>
+            <ValuePropSection
+              heading={data.valueProp.heading}
+              subtext={data.valueProp.subtext}
+              items={data.valueProp.items}
+            />
+          </ScrollReveal>
         </div>
       )}
 
-      <ServiceCTA
-        heading={data.cta.heading}
-        subtext={data.cta.subtext}
-        ctaText={data.cta.ctaText}
-        backgroundVariant={data.cta.backgroundVariant}
-      />
+      <ScrollReveal>
+        <ServiceCTA
+          heading={data.cta.heading}
+          subtext={data.cta.subtext}
+          ctaText={data.cta.ctaText}
+          backgroundVariant={data.cta.backgroundVariant}
+        />
+      </ScrollReveal>
     </div>
   );
 }

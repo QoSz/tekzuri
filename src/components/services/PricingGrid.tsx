@@ -1,5 +1,6 @@
 import type { PricingSection } from "@/lib/data/service-pages";
 import { PricingCard } from "./PricingCard";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 interface PricingGridProps {
   section: PricingSection;
@@ -20,23 +21,26 @@ export function PricingGrid({ section, isConsulting = false, showDecorativeNumbe
   return (
     <section className={`relative py-16 lg:py-24 px-6 lg:px-8 ${backgroundVariant === 'base' ? 'bg-bg-base' : ''}`}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-semibold mb-4 text-foreground">{section.heading}</h2>
-          <p className="text-lg text-fg-secondary max-w-3xl mx-auto">
-            {section.subtext}
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-semibold mb-4 text-foreground">{section.heading}</h2>
+            <p className="text-lg text-fg-secondary max-w-3xl mx-auto">
+              {section.subtext}
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className={`grid ${gridClass} gap-6 ${gridCols === 3 ? 'lg:gap-8' : ''}`}>
           {section.packages.map((pkg, index) => (
-            <PricingCard
-              key={index}
-              pkg={pkg}
-              index={index}
-              showDecorativeNumber={showDecorativeNumbers}
-              showCenteredLayout={showCenteredLayout}
-              isConsulting={isConsulting}
-            />
+            <ScrollReveal key={index} delay={index * 0.12}>
+              <PricingCard
+                pkg={pkg}
+                index={index}
+                showDecorativeNumber={showDecorativeNumbers}
+                showCenteredLayout={showCenteredLayout}
+                isConsulting={isConsulting}
+              />
+            </ScrollReveal>
           ))}
         </div>
 

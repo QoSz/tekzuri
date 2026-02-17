@@ -13,10 +13,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="card-3d cursor-pointer group relative flex flex-col overflow-hidden rounded-2xl bg-bg-elevated border border-border-card hover:border-border-strong animate-fade-in-up focus-ring"
-      style={{
-        animationDelay: `${index * 100}ms`,
-      }}
+      className="card-3d cursor-pointer group relative flex flex-col overflow-hidden rounded-2xl bg-bg-elevated border border-border-card hover:border-border-strong focus-ring"
     >
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden">

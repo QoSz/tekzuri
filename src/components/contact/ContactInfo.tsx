@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+
 interface ContactItem {
   title: string;
   content: React.ReactNode;
@@ -50,30 +52,34 @@ const socialLinks = [
 export function ContactInfo() {
   return (
     <div className="space-y-6">
-      {contactItems.map(({ title, content }) => (
-        <div key={title} className="card-3d bg-bg-elevated border border-border-card rounded-2xl p-6">
-          <h3 className="text-lg font-medium text-foreground mb-3">{title}</h3>
-          <div className="text-fg-secondary">{content}</div>
-        </div>
+      {contactItems.map(({ title, content }, index) => (
+        <ScrollReveal key={title} delay={index * 0.1}>
+          <div className="card-3d bg-bg-elevated border border-border-card rounded-2xl p-6">
+            <h3 className="text-lg font-medium text-foreground mb-3">{title}</h3>
+            <div className="text-fg-secondary">{content}</div>
+          </div>
+        </ScrollReveal>
       ))}
 
-      <div className="card-3d bg-bg-elevated border border-border-card rounded-2xl p-6">
-        <h3 className="text-lg font-medium text-foreground mb-4">Follow Us</h3>
-        <div className="flex gap-4">
-          {socialLinks.map(({ href, label }) => (
-            <a
-              key={href}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${label} (opens in new tab)`}
-              className="inline-block py-1 cursor-pointer text-fg-tertiary hover:text-foreground transition-colors duration-200 text-sm focus-ring rounded-sm"
-            >
-              {label}
-            </a>
-          ))}
+      <ScrollReveal delay={contactItems.length * 0.1}>
+        <div className="card-3d bg-bg-elevated border border-border-card rounded-2xl p-6">
+          <h3 className="text-lg font-medium text-foreground mb-4">Follow Us</h3>
+          <div className="flex gap-4">
+            {socialLinks.map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${label} (opens in new tab)`}
+                className="inline-block py-1 cursor-pointer text-fg-tertiary hover:text-foreground transition-colors duration-200 text-sm focus-ring rounded-sm"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
     </div>
   );
 }

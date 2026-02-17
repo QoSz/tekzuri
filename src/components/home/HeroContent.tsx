@@ -12,11 +12,6 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: spring },
-};
-
 const lineVariants = {
   hidden: { width: 0 },
   visible: { width: "2rem", transition: spring },
@@ -41,13 +36,7 @@ export function StaggerReveal({ children, className }: { children: ReactNode; cl
   );
 }
 
-export function RevealItem({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <motion.div className={className} variants={itemVariants}>
-      {children}
-    </motion.div>
-  );
-}
+export { RevealItem } from "@/components/animations/RevealItem";
 
 export function AccentLine() {
   return <motion.span className="h-px bg-border-strong w-8" variants={lineVariants} />;

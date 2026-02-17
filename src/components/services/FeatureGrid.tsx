@@ -1,4 +1,5 @@
 import type { ServiceFeature } from "@/lib/data/service-pages";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 interface FeatureGridProps {
   heading: string;
@@ -11,11 +12,13 @@ export function FeatureGrid({ heading, items, backgroundVariant = 'deep', number
   return (
     <section className={`relative py-16 lg:py-24 px-6 lg:px-8 ${backgroundVariant === 'base' ? 'bg-bg-base' : ''}`}>
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-semibold text-center mb-16 text-foreground">{heading}</h2>
+        <ScrollReveal>
+          <h2 className="text-3xl lg:text-4xl font-semibold text-center mb-16 text-foreground">{heading}</h2>
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((feature, index) => (
+            <ScrollReveal key={index} delay={index * 0.1}>
             <div
-              key={index}
               className="card-3d bg-bg-elevated border border-border-card p-6 lg:p-8 rounded-2xl hover:border-border-strong group"
             >
               {numberStyle === 'decorative' ? (
@@ -34,6 +37,7 @@ export function FeatureGrid({ heading, items, backgroundVariant = 'deep', number
                 {feature.description}
               </p>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

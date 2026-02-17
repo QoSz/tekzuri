@@ -9,6 +9,7 @@ import {
 
 import { TeamMemberBio } from "@/components/about/TeamMemberBio";
 import { OtherTeamMembers } from "@/components/about/OtherTeamMembers";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const getCachedTeamMember = cache(getTeamMemberBySlug);
 
@@ -86,7 +87,9 @@ export default async function TeamMemberPage({ params }: PageProps) {
           Back to About
         </Link>
 
-        <TeamMemberBio member={member} />
+        <ScrollReveal>
+          <TeamMemberBio member={member} />
+        </ScrollReveal>
 
         <OtherTeamMembers members={otherMembers} />
       </div>

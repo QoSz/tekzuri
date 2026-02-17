@@ -6,6 +6,7 @@ import { FeaturedWork } from "@/components/home/FeaturedWork";
 import { AboutSection } from "@/components/home/AboutSection";
 import { ContactSection } from "@/components/home/ContactSection";
 import { SectionDivider } from "@/components/common/SectionDivider";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "TekZuri | Work with Elegance",
@@ -51,11 +52,15 @@ export default function Home() {
       </Suspense>
       <SectionDivider />
       <Suspense fallback={<div className="py-16 lg:py-20" />}>
-        <AboutSection />
+        <ScrollReveal>
+          <AboutSection />
+        </ScrollReveal>
       </Suspense>
       <SectionDivider />
       <Suspense fallback={<div className="py-16 lg:py-20" />}>
-        <ContactSection />
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
       </Suspense>
     </>
   );

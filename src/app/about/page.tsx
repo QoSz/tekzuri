@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { TeamSection } from "@/components/about/TeamSection";
+import { StaggerRevealGroup } from "@/components/animations/StaggerRevealGroup";
+import { RevealItem } from "@/components/animations/RevealItem";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -36,19 +38,22 @@ export default function AboutPage() {
   return (
     <>
       <section className="px-6 lg:px-8 pt-16 lg:pt-20 pb-16">
-        <div className="max-w-7xl mx-auto text-center">
-
-          <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
-            Crafting Digital Excellence
-          </h1>
-          <p className="text-fg-secondary max-w-3xl mx-auto text-lg leading-relaxed">
-            TekZuri draws inspiration from{" "}
-            <span className="text-foreground font-medium">monozukuri</span> (ものづくり) — the
-            Japanese art of making things with meticulous craftsmanship and
-            attention to detail. We apply this philosophy to every digital
-            experience we create.
-          </p>
-        </div>
+        <StaggerRevealGroup className="max-w-7xl mx-auto text-center" staggerInterval={0.15}>
+          <RevealItem>
+            <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+              Crafting Digital Excellence
+            </h1>
+          </RevealItem>
+          <RevealItem>
+            <p className="text-fg-secondary max-w-3xl mx-auto text-lg leading-relaxed">
+              TekZuri draws inspiration from{" "}
+              <span className="text-foreground font-medium">monozukuri</span> (ものづくり) — the
+              Japanese art of making things with meticulous craftsmanship and
+              attention to detail. We apply this philosophy to every digital
+              experience we create.
+            </p>
+          </RevealItem>
+        </StaggerRevealGroup>
       </section>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">

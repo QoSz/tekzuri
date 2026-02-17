@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { ProjectGrid } from "@/components/our-work/ProjectGrid";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { StaggerRevealGroup } from "@/components/animations/StaggerRevealGroup";
+import { RevealItem } from "@/components/animations/RevealItem";
 
 export const metadata: Metadata = {
   title: "Our Work",
@@ -37,17 +40,20 @@ export default function OurWorkPage() {
     <>
       {/* Page Hero */}
       <section className="px-6 lg:px-8 pt-16 lg:pt-20 pb-16">
-        <div className="max-w-7xl mx-auto">
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
-            Projects we&apos;re proud of
-          </h1>
-          <p className="max-w-2xl text-lg text-fg-secondary leading-relaxed">
-            Every project is an opportunity to apply our philosophy of
-            monozukuri &mdash; meticulous craftsmanship meeting modern
-            technology.
-          </p>
-        </div>
+        <StaggerRevealGroup className="max-w-7xl mx-auto" staggerInterval={0.15}>
+          <RevealItem>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+              Projects we&apos;re proud of
+            </h1>
+          </RevealItem>
+          <RevealItem>
+            <p className="max-w-2xl text-lg text-fg-secondary leading-relaxed">
+              Every project is an opportunity to apply our philosophy of
+              monozukuri &mdash; meticulous craftsmanship meeting modern
+              technology.
+            </p>
+          </RevealItem>
+        </StaggerRevealGroup>
       </section>
 
       {/* Project Grid */}
@@ -55,16 +61,18 @@ export default function OurWorkPage() {
 
       {/* Bottom CTA */}
       <section className="px-6 lg:px-8 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-fg-secondary mb-6">Have a project in mind?</p>
-          <a
-            href="/contact"
-            className="cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-foreground transition-colors duration-200 group focus-ring rounded-sm"
-          >
-            Let&apos;s discuss your project
-            <ArrowIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
-        </div>
+        <ScrollReveal>
+          <div className="max-w-7xl mx-auto text-center">
+            <p className="text-fg-secondary mb-6">Have a project in mind?</p>
+            <a
+              href="/contact"
+              className="cursor-pointer inline-flex items-center gap-2 text-foreground font-medium hover:text-foreground transition-colors duration-200 group focus-ring rounded-sm"
+            >
+              Let&apos;s discuss your project
+              <ArrowIcon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </div>
+        </ScrollReveal>
       </section>
     </>
   );
