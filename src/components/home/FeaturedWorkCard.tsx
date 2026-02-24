@@ -26,7 +26,7 @@ export function FeaturedWorkCard({ project }: { project: ProjectPreview }) {
           alt={project.name}
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          className="object-contain transition-transform duration-700 group-hover:scale-105"
         />
 
         {/* Overlay on hover */}

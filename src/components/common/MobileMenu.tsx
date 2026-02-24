@@ -18,91 +18,85 @@ interface NavItem {
 
 interface MobileMenuProps {
   navItems: NavItem[];
+  isOpen: boolean;
+  onClose: () => void;
+  panelTop: number;
 }
 
-export function MobileMenu({ navItems }: MobileMenuProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+export function MobileMenu({ navItems, isOpen, onClose, panelTop }: MobileMenuProps) {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!isMobileMenuOpen) {
-      setOpenItem(null);
-      return;
-    }
+    if (!isOpen) return;
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = originalOverflow;
     };
-  }, [isMobileMenuOpen]);
+  }, [isOpen]);
 
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const handleClose = () => {
+    onClose();
+    setOpenItem(null);
+  };
 
   const toggleItem = (label: string) =>
     setOpenItem((prev) => (prev === label ? null : label));
 
   return (
     <>
-      {/* Hamburger */}
-      <button
-        type="button"
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden p-2 cursor-pointer transition-colors duration-200 rounded-[0.375rem] hover:bg-[#f5f5f5]"
-        style={{ color: "#000000" }}
-        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-        aria-expanded={isMobileMenuOpen}
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          {isMobileMenuOpen ? (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-          ) : (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-          )}
-        </svg>
-      </button>
-
-      {/* Backdrop */}
+      {/* Full-viewport blurred backdrop */}
       <div
         role="presentation"
-        className={`md:hidden fixed inset-0 top-[4.5rem] bg-black/10 transition-opacity duration-300 z-40 ${
-          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
-        onClick={closeMobileMenu}
+        style={{
+          backgroundColor: "rgba(0, 0, 0, 0.4)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+        }}
+        onClick={handleClose}
         aria-hidden="true"
       />
 
-      {/* Panel */}
+      {/* Floating glassmorphic panel */}
       <div
         id="mobile-menu"
-        className={`md:hidden absolute left-0 right-0 top-full z-50 border-b transition-all duration-300 ease-out overflow-hidden ${
-          isMobileMenuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden fixed left-4 right-4 z-50 rounded-xl transition-all duration-300 ease-out overflow-hidden ${
+          isOpen
+            ? "max-h-[36rem] opacity-100 translate-y-0 pointer-events-auto"
+            : "max-h-0 opacity-0 -translate-y-1 pointer-events-none"
         }`}
-        style={{ backgroundColor: "#ffffff", borderBottomColor: "#000000" }}
-        aria-hidden={!isMobileMenuOpen}
+        style={{
+          backgroundColor: "rgba(8, 8, 16, 0.85)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+          boxShadow:
+            "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05)",
+          top: `${panelTop}px`,
+        }}
+        aria-hidden={!isOpen}
       >
-        <div className="max-w-[90rem] mx-auto px-10 py-4">
-          <div className="flex flex-col gap-0.5">
+        <nav className="p-6">
+          <ul className="flex flex-col gap-2" role="list">
             {navItems.map((item) =>
               item.children ? (
-                <div key={item.href}>
+                <li key={item.href}>
                   {/* Accordion trigger */}
                   <button
                     type="button"
                     onClick={() => toggleItem(item.label)}
-                    className="flex items-center justify-between w-full px-4 py-3 rounded-[0.375rem] font-medium transition-colors duration-200 hover:bg-[#f5f5f5] cursor-pointer"
-                    style={{ color: "#000000", fontSize: "1rem", fontWeight: 500 }}
+                    className="flex items-center justify-between w-full py-2 font-medium text-white/90 hover:text-white transition-colors duration-200 cursor-pointer text-xl leading-7"
                   >
                     {item.label}
                     <ChevronDown
-                      size={15}
-                      strokeWidth={2.5}
-                      className={`transition-transform duration-200 ${
+                      size={16}
+                      strokeWidth={2}
+                      className={`text-white/50 transition-transform duration-200 ${
                         openItem === item.label ? "rotate-180" : ""
                       }`}
                     />
@@ -114,22 +108,19 @@ export function MobileMenu({ navItems }: MobileMenuProps) {
                       openItem === item.label ? "max-h-64" : "max-h-0"
                     }`}
                   >
-                    <div className="pl-4 pb-1 flex flex-col gap-0.5">
+                    <div className="pt-1 pb-2 flex flex-col gap-0.5">
                       {item.children.map((child) => (
                         <Link
                           key={child.href + child.label}
                           href={child.href}
-                          onClick={closeMobileMenu}
-                          className="flex flex-col px-4 py-2.5 rounded-[0.375rem] transition-colors duration-150 hover:bg-[#f5f5f5]"
+                          onClick={handleClose}
+                          className="flex flex-col px-3 py-2.5 rounded-lg transition-colors duration-150 hover:bg-white/10"
                         >
-                          <span
-                            className="font-medium"
-                            style={{ color: "#000000", fontSize: "0.875rem" }}
-                          >
+                          <span className="font-medium text-white/80 text-sm">
                             {child.label}
                           </span>
                           {child.description && (
-                            <span style={{ color: "#777777", fontSize: "0.75rem" }}>
+                            <span className="text-white/40 text-xs leading-snug">
                               {child.description}
                             </span>
                           )}
@@ -137,33 +128,37 @@ export function MobileMenu({ navItems }: MobileMenuProps) {
                       ))}
                     </div>
                   </div>
-                </div>
+                </li>
               ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  className="px-4 py-3 rounded-[0.375rem] font-medium transition-colors duration-200 hover:bg-[#f5f5f5]"
-                  style={{ color: "#000000", fontSize: "1rem", fontWeight: 500 }}
-                >
-                  {item.label}
-                </Link>
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={handleClose}
+                    className="block py-2 font-medium text-white/90 hover:text-white transition-colors duration-200 text-xl leading-7"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
               )
             )}
+          </ul>
 
-            {/* CTA row */}
-            <div className="pt-3 pb-1 flex flex-col gap-2">
-              <Link
-                href="/contact"
-                onClick={closeMobileMenu}
-                className="px-4 py-3 rounded-[0.375rem] font-medium transition-colors duration-200 hover:bg-[#f5f5f5] text-center"
-                style={{ color: "#555555", fontSize: "1rem", fontWeight: 500 }}
-              >
-                Contact
-              </Link>
-            </div>
+          {/* Divider + Contact CTA */}
+          <div
+            className="mt-4 pt-4"
+            style={{
+              borderTop: "1px solid rgba(255, 255, 255, 0.12)",
+            }}
+          >
+            <Link
+              href="/contact"
+              onClick={handleClose}
+              className="block py-2 font-medium text-white/50 hover:text-white transition-colors duration-200 text-sm"
+            >
+              Contact
+            </Link>
           </div>
-        </div>
+        </nav>
       </div>
     </>
   );
