@@ -4,10 +4,9 @@ import type { Project } from "@/lib/data/projects";
 
 interface ProjectCardProps {
   project: Project;
-  index: number;
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <a
       href={project.url}

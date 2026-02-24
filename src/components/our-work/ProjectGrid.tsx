@@ -12,7 +12,7 @@ export function ProjectGrid() {
           {projects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 0.1}>
               <div style={{ contentVisibility: "auto", containIntrinsicSize: "auto 400px" }}>
-                <ProjectCard project={project} index={index} />
+                <ProjectCard project={project} />
               </div>
             </ScrollReveal>
           ))}
