@@ -2,25 +2,35 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
-interface NavLink {
-  href: string;
+interface NavChild {
   label: string;
+  href: string;
+  description?: string;
+}
+
+interface NavItem {
+  label: string;
+  href: string;
+  children?: NavChild[];
 }
 
 interface MobileMenuProps {
-  navLinks: NavLink[];
+  navItems: NavItem[];
 }
 
-export function MobileMenu({ navLinks }: MobileMenuProps) {
+export function MobileMenu({ navItems }: MobileMenuProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openItem, setOpenItem] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!isMobileMenuOpen) return;
-
+    if (!isMobileMenuOpen) {
+      setOpenItem(null);
+      return;
+    }
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
     return () => {
       document.body.style.overflow = originalOverflow;
     };
@@ -28,17 +38,27 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
+  const toggleItem = (label: string) =>
+    setOpenItem((prev) => (prev === label ? null : label));
+
   return (
     <>
-      {/* Mobile Menu Button */}
+      {/* Hamburger */}
       <button
         type="button"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden p-2 cursor-pointer text-fg-secondary hover:text-foreground transition-colors duration-200 rounded-lg focus-ring"
+        className="md:hidden p-2 cursor-pointer transition-colors duration-200 rounded-[0.375rem] hover:bg-[#f5f5f5]"
+        style={{ color: "#000000" }}
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMobileMenuOpen}
       >
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
           {isMobileMenuOpen ? (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
           ) : (
@@ -47,43 +67,101 @@ export function MobileMenu({ navLinks }: MobileMenuProps) {
         </svg>
       </button>
 
-      {/* Mobile menu overlay */}
+      {/* Backdrop */}
       <div
         role="presentation"
-        className={`md:hidden fixed inset-0 top-16 bg-black/20 backdrop-blur-sm transition-opacity duration-300 z-40 ${
+        className={`md:hidden fixed inset-0 top-[4.5rem] bg-black/10 transition-opacity duration-300 z-40 ${
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={closeMobileMenu}
         aria-hidden="true"
       />
 
-      {/* Mobile Menu panel */}
+      {/* Panel */}
       <div
         id="mobile-menu"
-        className={`md:hidden absolute left-0 right-0 top-full z-50 bg-bg-base/95 backdrop-blur-xl border-b border-border-card shadow-lg transition-all duration-300 ease-out ${
-          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        className={`md:hidden absolute left-0 right-0 top-full z-50 border-b transition-all duration-300 ease-out overflow-hidden ${
+          isMobileMenuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
         }`}
+        style={{ backgroundColor: "#ffffff", borderBottomColor: "#000000" }}
         aria-hidden={!isMobileMenuOpen}
       >
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-col gap-1">
-            {navLinks.map((link) => (
+        <div className="max-w-[90rem] mx-auto px-10 py-4">
+          <div className="flex flex-col gap-0.5">
+            {navItems.map((item) =>
+              item.children ? (
+                <div key={item.href}>
+                  {/* Accordion trigger */}
+                  <button
+                    type="button"
+                    onClick={() => toggleItem(item.label)}
+                    className="flex items-center justify-between w-full px-4 py-3 rounded-[0.375rem] font-medium transition-colors duration-200 hover:bg-[#f5f5f5] cursor-pointer"
+                    style={{ color: "#000000", fontSize: "1rem", fontWeight: 500 }}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      size={15}
+                      strokeWidth={2.5}
+                      className={`transition-transform duration-200 ${
+                        openItem === item.label ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {/* Accordion children */}
+                  <div
+                    className={`overflow-hidden transition-all duration-200 ${
+                      openItem === item.label ? "max-h-64" : "max-h-0"
+                    }`}
+                  >
+                    <div className="pl-4 pb-1 flex flex-col gap-0.5">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href + child.label}
+                          href={child.href}
+                          onClick={closeMobileMenu}
+                          className="flex flex-col px-4 py-2.5 rounded-[0.375rem] transition-colors duration-150 hover:bg-[#f5f5f5]"
+                        >
+                          <span
+                            className="font-medium"
+                            style={{ color: "#000000", fontSize: "0.875rem" }}
+                          >
+                            {child.label}
+                          </span>
+                          {child.description && (
+                            <span style={{ color: "#777777", fontSize: "0.75rem" }}>
+                              {child.description}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMobileMenu}
+                  className="px-4 py-3 rounded-[0.375rem] font-medium transition-colors duration-200 hover:bg-[#f5f5f5]"
+                  style={{ color: "#000000", fontSize: "1rem", fontWeight: 500 }}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
+
+            {/* CTA row */}
+            <div className="pt-3 pb-1 flex flex-col gap-2">
               <Link
-                key={link.href}
-                href={link.href}
+                href="/contact"
                 onClick={closeMobileMenu}
-                className="px-4 py-3 text-base font-medium text-fg-secondary hover:text-foreground hover:bg-white/[0.04] transition-colors duration-200 rounded-lg focus-ring"
+                className="px-4 py-3 rounded-[0.375rem] font-medium transition-colors duration-200 hover:bg-[#f5f5f5] text-center"
+                style={{ color: "#555555", fontSize: "1rem", fontWeight: 500 }}
               >
-                {link.label}
+                Contact
               </Link>
-            ))}
-            <Link
-              href="/contact"
-              onClick={closeMobileMenu}
-              className="mt-4 mx-4 text-center cursor-pointer bg-white text-bg-deep px-6 py-3 text-sm font-medium rounded-full hover:bg-white/90 transition-all duration-200 active:scale-[0.98] focus-ring"
-            >
-              Get Started
-            </Link>
+            </div>
           </div>
         </div>
       </div>
